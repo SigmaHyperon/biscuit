@@ -45,11 +45,3 @@ function loadSessions()
 {
     require_once 'sessions.php';
 }
-
-function loadSql()
-{
-    require_once 'sql/connectivity.php';
-    require_once 'sql/query/query.php';
-    require_once 'sql/query/select.php';
-    require_once 'sql/query/insert.php';
-}

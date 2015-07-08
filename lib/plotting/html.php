@@ -1,13 +1,14 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace utility\html;
 
+/**
+ * opens a html tag with optional class and attributes
+ * 
+ * @param type $tag	    tag name
+ * @param type $class	    tag class attribute
+ * @param type $additional  tag additional attributes
+ */
 function openTag($tag, $class = "", $additional = "")
 {
     if((isset($tag))&&($tag != ""))
@@ -25,6 +26,11 @@ function openTag($tag, $class = "", $additional = "")
     }
 }
 
+/**
+ * closes a html tag
+ * 
+ * @param type $tag	tag name
+ */
 function closeTag($tag)
 {
     if((isset($tag))&&($tag != ""))
@@ -33,6 +39,13 @@ function closeTag($tag)
     }
 }
 
+/**
+ * opens a html tag with optional class and attributes like <input/> or <image/>
+ * 
+ * @param type $tag	    tag name
+ * @param type $class	    tag class attribute
+ * @param type $additional  tag additional attributes
+ */
 function singleTag($tag, $class, $additional)
 {
         if((isset($tag))&&($tag != ""))

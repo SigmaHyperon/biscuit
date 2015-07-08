@@ -1,10 +1,5 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 namespace utility\arrays;
 
 /**
@@ -14,7 +9,7 @@ namespace utility\arrays;
  * @param int $index
  * @return array
  */
-function array_delete($array,$index, $remove = true)
+function array_delete($array, $index, $remove = true)
 {
     if($remove)
     {
@@ -35,7 +30,7 @@ function array_delete($array,$index, $remove = true)
  * @param int $end
  * @return array
  */
-function random_array($length,$start,$end)
+function random_array($length, $start, $end)
 {
     $array = array();
     for($i=0;$i<$length;$i++)

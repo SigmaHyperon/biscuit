@@ -6,10 +6,10 @@ namespace utility\forms;
  * (probably not that safe)
  * 
  * @param string $key
- * @param mixed $default defualt value that should be returned in case of missing values
+ * @param mixed $default default value that should be returned in case of missing values
  * @return boolean
  */
-function get($key,$default)
+function get($key, $default)
 {
     if(isset($_GET[$key]))
     {
@@ -32,10 +32,10 @@ function get($key,$default)
  * (probably not that safe)
  * 
  * @param string $key
- * @param mixed $default defualt value that should be returned in case of missing values
+ * @param mixed $default default value that should be returned in case of missing values
  * @return boolean
  */
-function post($key,$default)
+function post($key, $default)
 {
     if(isset($_POST[$key]))
     {
