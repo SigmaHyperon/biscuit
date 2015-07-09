@@ -1,0 +1,22 @@
+Variablen:  $[datentyp][name]
+    [datentyp]
+	i   integer
+	f   float
+	s   string
+	a   array
+	m   mixed
+    [name]
+	erster Buchstabe groß
+	trennung mit underscore (_)
+
+Funktionen: func_[datentyp]_[name]
+    [datentyp]
+	v   void
+	+wie oben
+
+Feldbezeichnung:    [datentyp][name]
+    [datentyp]
+	txt	string
+	int	integer
+	date	datum
+	btn	button
