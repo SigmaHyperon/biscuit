@@ -5,13 +5,4 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-try {
-    header("Location: src/php/index.php");
-    die();
-} catch (Exception $ex) {}
-?>
-<html>
-    <head>
-	<meta http-equiv="Location" content="src/php/index.php">
-    </head>
-</html>
+
