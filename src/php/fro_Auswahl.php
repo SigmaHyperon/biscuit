@@ -10,7 +10,7 @@
 <body>
     <br>
     <div id="Header">
-        <table border="1" align="center">
+        <table border="0" align="center">
             <tr>
                 <td><a href="fro_Hinzufuegen.php"><button>Hinzuf&uuml;gen</button></a></td>
                 <td><a href="fro_Aendern.php"><button>&Auml;ndern</button></a></td>      
@@ -21,7 +21,7 @@
     <br><br>
     
     <div id="left">
-        <table border="1"> 
+        <table border="0"> 
             <tr>
                 <td><a href="fro_Raeume.php"><button>R&auml;me</button></a></td>
             </tr>
