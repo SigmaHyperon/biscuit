@@ -3,42 +3,46 @@
 
 <head>
     <title>fro_Auswahl</title>
-
+    <link href="../css/main.css" rel="stylesheet" type="text/css"/>
 </head>
              
 
 <body>
     <br>
-    
-    <table border="1" align="center">
-        <tr>
-            <td><a href="fro_Hinzufuegen.php">Hinzuf&uuml;gen</a></td>
-            <td><a href="fro_Aendern.php">&Auml;ndern</a></td>      
-            <td><a href="fro_Loeschen.php">L&ouml;schen</a></td>
-        </tr>   
-    </table>
-    
+    <div id="Header">
+        <table border="1" align="center">
+            <tr>
+                <td><a href="fro_Hinzufuegen.php"><button>Hinzuf&uuml;gen</button></a></td>
+                <td><a href="fro_Aendern.php"><button>&Auml;ndern</button></a></td>      
+                <td><a href="fro_Loeschen.php"><button>L&ouml;schen</button></a></td>
+            </tr>   
+        </table>
+    </div>
     <br><br>
     
-    <table border="1"> 
-        <tr>
-            <td><a href="fro_Raeume.php">R&auml;me</a></td>
-        </tr>
-        <tr>
-            <td><a href="fro_Lieranten.php">Lieferanten</a></td>
-        </tr>
-        <tr>
-            <td><a href="fro_Geraete.php">Ger&auml;te</a></td>
-        </tr>
-        <tr>
-            <td><a href="fro_Komponenten.php">Komponenten</a></td>
-        </tr>
-        <tr>
-            <td><a href="fro_Arten.php">Arten</a></td>
-        </tr>       
-    </table>
-
-
+    <div id="left">
+        <table border="1"> 
+            <tr>
+                <td><a href="fro_Raeume.php"><button>R&auml;me</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="fro_Lieranten.php"><button>Lieferanten</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="fro_Geraete.php"><button>Ger&auml;te</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="fro_Komponenten.php"><button>Komponenten</button></a></td>
+            </tr>
+            <tr>
+                <td><a href="fro_Arten.php"><button>Arten</button></a></td>
+            </tr>       
+        </table>
+    </div>
+    
+    <div id="right">
+        moin
+    </div>
 
     <?php
     
