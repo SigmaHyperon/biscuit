@@ -5,6 +5,7 @@ Variablen:  $[datentyp][name]
 	s   string
 	a   array
 	m   mixed
+	o   object
     [name]
 	erster Buchstabe groß
 	trennung mit underscore (_)
