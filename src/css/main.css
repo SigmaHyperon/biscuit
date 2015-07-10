@@ -1,6 +1,8 @@
 
 #Header {
- width:330px;   
+ width:330px; 
+ height: 50px;
+ margin: auto;
  background-color: #00ffcc;   
 }
 

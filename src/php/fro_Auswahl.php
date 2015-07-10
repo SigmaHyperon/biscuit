@@ -9,7 +9,7 @@
 
 <body>
     <br>
-    <div id="Header">
+    <div id="Header" >
         <table border="0" align="center">
             <tr>
                 <td><a href="fro_Hinzufuegen.php"><button>Hinzuf&uuml;gen</button></a></td>
