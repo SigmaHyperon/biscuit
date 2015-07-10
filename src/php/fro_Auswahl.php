@@ -42,9 +42,7 @@
 
     <?php
     
-    
-    
-    
+    include "log_lieferanten.php";
     
     ?>    
 </body>
