@@ -1,6 +1,5 @@
 <?php
 
-function func_v_connect(){
     $txt_login=0;
     $txt_kennwort=0;
     $txt_adresse=0;
@@ -11,9 +10,7 @@ function func_v_connect(){
     
     mysql_select_db($txt_datenbank)
     or die ("Datenbank nicht gefunden");
-    
-    
-}
+
 
 function func_a_auslesen(){
     $txt_sql_statement = "";    
