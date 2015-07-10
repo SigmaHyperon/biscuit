@@ -1,6 +1,6 @@
 
 #Header {
- width:100%;   
+ width:330px;   
  background-color: #00ffcc;   
 }
 
@@ -12,7 +12,8 @@
 
 #right{
   width:90%;
-  background-color: #009999;   
+  background-color: #009999;
+  float: right;
 }
 
 button{
