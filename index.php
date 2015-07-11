@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 try {
-    header("Location: src/php/index.php");
+    header("Location: src/php/fro_Auswahl.php");
     die();
 } catch (Exception $ex) {}
 ?>
