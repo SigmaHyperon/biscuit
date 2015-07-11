@@ -1,6 +1,5 @@
 <?php
 include "sql_main.php";
-include "../lib/manager.php";
 \utility\loadTables();
 
 $aLieferanten = func_a_getLieferanten();
