@@ -34,4 +34,19 @@ function func_a_getLieferanten(){
     }
     return $a_sql_ausgabe;
 }
+
+function func_a_getRaeume(){
+    $txt_sql_statement = "SELECT * from tbl_raeume";
+
+    $a_sql_result = mysql_query($txt_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
+    
+    $a_sql_ausgabe = array();
+    
+    while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
+    {
+	$a_sql_ausgabe[] = $a_sql_cache;
+    }
+    return $a_sql_ausgabe;
+}
 ?>
