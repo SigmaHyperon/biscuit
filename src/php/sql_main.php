@@ -1,9 +1,9 @@
 <?php
 
-    $txt_login=0;
-    $txt_kennwort=0;
-    $txt_adresse=0;
-    $txt_datenbank=0;
+    $txt_login="root";
+    $txt_kennwort="";
+    $txt_adresse="localhost";
+    $txt_datenbank="biscuit";
     
     mysql_connect($txt_adresse, $txt_login, $txt_kennwort)
     or die ("Keine Verbindung möglich");
@@ -26,6 +26,12 @@ function func_a_getLieferanten(){
     $a_sql_result = mysql_query($txt_sql_statemen)
             or die ("Anfrage Fehlgeschlagen");
     
-    $a_sql_ausgabe = mysql_fetch_assoc($a_sql_result);
+    $a_sql_ausgabe = array();
+    
+    while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
+    {
+	$a_sql_ausgabe[] = $a_sql_cache;
+    }
+    return $a_sql_ausgabe;
 }
 ?>
