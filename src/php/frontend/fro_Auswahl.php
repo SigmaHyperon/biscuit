@@ -46,7 +46,37 @@
 
     <?php
     
-    include "log_lieferanten.php";
+    //include "log_lieferanten.php";
+    
+    include "../lib/manager.php";
+    \utility\loadForms();
+    if($s_action = \utility\forms\get("action", false))
+    {
+	switch($s_action)
+	{
+	    case "list": 
+		func_v_list();
+		break;
+	    case "edit":
+		func_v_edit();
+		break;
+	    default:
+		break;
+	}
+    }
+    
+    function func_v_list()
+    {
+	if($s_table = \utility\forms\get("table", false))
+	{
+	    
+	}
+    }
+    
+    function func_v_edit()
+    {
+	
+    }
     
     ?>    
 </body>
