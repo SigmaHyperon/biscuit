@@ -23,10 +23,10 @@
     <div id="left">
         <table border="0"> 
             <tr>
-                <td><a href="fro_Raeume.php"><button>R&auml;me</button></a></td>
+                <td><a href="fro_Auswahl.php?action=list&table=raeume"><button>R&auml;ume</button></a></td>
             </tr>
             <tr>
-                <td><a href="fro_Lieranten.php"><button>Lieferanten</button></a></td>
+                <td><a href="fro_Auswahl.php?action=list&table=lieferanten"><button>Lieferanten</button></a></td>
             </tr>
             <tr>
                 <td><a href="fro_Geraete.php"><button>Ger&auml;te</button></a></td>
@@ -48,7 +48,7 @@
     
     //include "log_lieferanten.php";
     
-    include "../lib/manager.php";
+    require_once "../lib/manager.php";
     \utility\cake_test();
     \utility\loadForms();
     if($s_action = \utility\forms\get("action", false))
@@ -78,12 +78,22 @@
 	    {
 		include $a_table_links[$s_table];
 	    }
+	    else
+	    {
+		func_v_invalid();
+	    }
 	}
     }
     
     function func_v_edit()
     {
 	
+    }
+    
+    function func_v_invalid()
+    {
+	echo "<h1 color='red'>invalid action selected!</h1>";
+	die();
     }
     
     ?>    
