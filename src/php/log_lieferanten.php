@@ -1,9 +1,9 @@
 <?php
-include "sql_main.php";
+require_once "sql_main.php";
+require_once "../lib/manager.php";
 \utility\loadTables();
 
 $aLieferanten = func_a_getLieferanten();
-//var_dump($aLieferanten);
 $aLieferanten_Attribute = ["lieferant_id", "lieferant_name"];
 
 $oLieferanten_Tabelle = new \utility\tables\table();
