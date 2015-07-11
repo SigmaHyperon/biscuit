@@ -49,6 +49,7 @@
     //include "log_lieferanten.php";
     
     include "../lib/manager.php";
+    \utility\cake_test();
     \utility\loadForms();
     if($s_action = \utility\forms\get("action", false))
     {
