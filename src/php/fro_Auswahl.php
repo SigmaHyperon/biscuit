@@ -70,7 +70,14 @@
     {
 	if($s_table = \utility\forms\get("table", false))
 	{
-	    
+	    $a_table_links = [
+		"lieferanten"	=>  "log_lieferanten.php",
+		"raeume"	=>  "log_raeume.php",
+	    ];
+	    if(isset($a_table_links[$s_table]))
+	    {
+		include $a_table_links[$s_table];
+	    }
 	}
     }
     
