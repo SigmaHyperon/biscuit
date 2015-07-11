@@ -1,10 +1,10 @@
 <?php
-
-//include "sql_main.php";
+include "sql_main.php";
 include "../lib/manager.php";
 \utility\loadTables();
-/*
-$aLieferanten = getLieferanten_Data();
+
+$aLieferanten = func_a_getLieferanten();
+//var_dump($aLieferanten);
 $aLieferanten_Attribute = ["lieferant_id", "lieferant_name"];
 
 $oLieferanten_Tabelle = new \utility\tables\table();
@@ -15,7 +15,4 @@ foreach ($aLieferanten as $aLieferant)
     $oLieferanten_Tabelle->addRow($aLieferant);
 }
 $oLieferanten_Tabelle->end();
- * */
-
-
-echo "log test";
+?>
