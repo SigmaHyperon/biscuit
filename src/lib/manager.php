@@ -45,3 +45,8 @@ function loadSessions()
 {
     require_once 'sessions.php';
 }
+
+function cake_test()
+{
+    echo "けーき";
+}
