@@ -1,7 +1,7 @@
 <?php
 
-    $txt_login="root";
-    $txt_kennwort="";
+    $txt_login="IT-Verwaltung";
+    $txt_kennwort="X5XgY/YU6+";
     $txt_adresse="localhost";
     $txt_datenbank="biscuit";
     
