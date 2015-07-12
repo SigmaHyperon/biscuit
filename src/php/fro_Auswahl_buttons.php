@@ -8,8 +8,8 @@ Inhalt:             Buttons Hinzufügen, Ändern und Löschen
 
     <table border="0" align="center">
         <tr>
-            <td><a href="fro_Hinzufuegen.php"><button>Hinzuf&uuml;gen</button></a></td>
-            <td><a href="fro_Aendern.php"><button>&Auml;ndern</button></a></td>      
-            <td><a href="fro_Loeschen.php"><button>L&ouml;schen</button></a></td>
+            <td><input type="submit">Hinzuf&uuml;gen</input></td>
+            <td><input type="submit">&Auml;ndern</input></td>      
+            <td><input type="submit">L&ouml;schen</input></td>
         </tr>   
     </table>
