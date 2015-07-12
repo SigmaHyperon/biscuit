@@ -62,6 +62,7 @@ foreach ($aLieferanten as $aLieferant)
 $oLieferanten_tabelle->end();
 //Buttons einbinden TODO
 require_once './fro_Auswahl_buttons.php';
+$oLieferanten_formular->addInput("hidden", "table", "lieferanten");
 //Formular beenden
 $oLieferanten_formular->finish();
 ?>

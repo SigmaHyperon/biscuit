@@ -61,7 +61,11 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
 	    case "edit":
 		func_v_edit();
 		break;
+	    case "Hinzufügen":
+		func_v_add();
+		break;
 	    default:
+		func_v_invalid();
 		break;
 	}
     }
@@ -88,6 +92,25 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
     function func_v_edit()
     {
 	
+    }
+    
+    function func_v_add()
+    {
+	if($s_table = \utility\forms\get("table", false))
+	{
+	    $a_table_links = [
+		"lieferanten"	=>  "fro_Lieferanten_hinzufuegen.php",
+//		"raeume"	=>  "log_Zeige_raeume.php",
+	    ];
+	    if(isset($a_table_links[$s_table]))
+	    {
+		include $a_table_links[$s_table];
+	    }
+	    else
+	    {
+		func_v_invalid();
+	    }
+	}
     }
     
     function func_v_invalid()
