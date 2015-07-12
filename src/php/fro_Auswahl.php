@@ -71,8 +71,8 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
 	if($s_table = \utility\forms\get("table", false))
 	{
 	    $a_table_links = [
-		"lieferanten"	=>  "log_show_lieferanten.php",
-		"raeume"	=>  "log_show_raeume.php",
+		"lieferanten"	=>  "log_Zeige_lieferanten.php",
+		"raeume"	=>  "log_Zeige_raeume.php",
 	    ];
 	    if(isset($a_table_links[$s_table]))
 	    {
