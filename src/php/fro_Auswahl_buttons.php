@@ -8,8 +8,8 @@ Inhalt:             Buttons Hinzufügen, Ändern und Löschen
 
     <table border="0" align="center">
         <tr>
-            <td><input type="submit">Hinzuf&uuml;gen</input></td>
-            <td><input type="submit">&Auml;ndern</input></td>      
-            <td><input type="submit">L&ouml;schen</input></td>
+            <td><input type="submit" name="btn_Hinzufügen" value="Hinzuf&uuml;gen"/></td>
+            <td><input type="submit" name="btn_Hinzufügen" value="&Auml;ndern"/></td>      
+            <td><input type="submit" name="btn_Hinzufügen" value="L&ouml;schen"/></td>
         </tr>   
     </table>
