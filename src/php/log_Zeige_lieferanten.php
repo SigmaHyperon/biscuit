@@ -60,4 +60,8 @@ foreach ($aLieferanten as $aLieferant)
 }
 //Tabelle beenden
 $oLieferanten_tabelle->end();
+//Buttons einbinden TODO
+require_once './fro_Auswahl_buttons.php';
+//Formular beenden
+$oLieferanten_formular->finish();
 ?>
