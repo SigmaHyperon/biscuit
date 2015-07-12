@@ -4,11 +4,11 @@
 <head>
     <title>fro_Auswahl</title>
     <link href="../css/main.css" rel="stylesheet" type="text/css"/>
+    <script src="../js/jquery.js" type="text/javascript"></script>
 </head>
              
 
 <body>
-    <br>
     <div id="Header" >
         <table border="0" align="center">
             <tr>
@@ -18,7 +18,6 @@
             </tr>   
         </table>
     </div>
-    <br><br>
     
     <div id="left">
         <table border="0"> 
@@ -41,8 +40,8 @@
     </div>
     
     <div id="right">
-        moin
-    </div>
+        moin<br>
+
 
     <?php
     
@@ -71,8 +70,8 @@
 	if($s_table = \utility\forms\get("table", false))
 	{
 	    $a_table_links = [
-		"lieferanten"	=>  "log_lieferanten.php",
-		"raeume"	=>  "log_raeume.php",
+		"lieferanten"	=>  "log_show_lieferanten.php",
+		"raeume"	=>  "log_show_raeume.php",
 	    ];
 	    if(isset($a_table_links[$s_table]))
 	    {
@@ -96,6 +95,7 @@
 	die();
     }
     
-    ?>    
+    ?>
+    </div>
 </body>
 </html>
