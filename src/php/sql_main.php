@@ -12,7 +12,7 @@
     or die ("Datenbank nicht gefunden");
 
 
-function func_a_auslesen($tabelle)
+function func_a_auslesen($s_tabelle)
 {
     $txt_sql_statement = "SELECT * FROM ".$tabelle.";";    
     
@@ -135,4 +135,19 @@ function func_form_insertKomponente($txt_name, $int_anzahl){
                                    ".$int_anzahl.");";
     
     mysql_query($txt_sql_statemnet);
+}
+
+function func_a_Lesen_von_tabelle($s_Tabellenname)
+{
+    $txt_sql_statement = "SELECT * FROM ".$s_Tabellenname.";";    
+    
+    $a_sql_result =  mysql_query($txt_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
+    
+    $a_Tabellen_daten = array();
+    while($a_Tabellen_eintrag = mysql_fetch_assoc($a_sql_result))
+    {
+	$a_Tabellen_daten[] = $a_Tabellen_eintrag;
+    }
+    return $a_Tabellen_daten;
 }
