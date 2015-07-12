@@ -5,7 +5,7 @@ Erstell-Datum:      12.07.2015
 Inhalt:             Lieferanten_Formular
 ------------------------------------------------------------------->
 
-    <form action="fro_Lieferanten_formular.php" method="post">
+    <form action="fro_Lieferanten_hinzufuegen.php" method="post">
         <table border="1" >
             <tr>
                 <td>Id:</td><td> <input type="text" name="txt_Id" size="20"/>
