@@ -12,6 +12,14 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
     <title>fro_Auswahl</title>
     <link href="../css/main.css" rel="stylesheet" type="text/css"/>
     <script src="../js/jquery.js" type="text/javascript"></script>
+    <script>
+	$(function(){
+	    $("#left").css("height", $(document).height()-51+"px");
+	    $( window ).resize(function() {
+		$("#left").css("height", $(document).height()-51+"px");
+	    });
+	});
+    </script>
 </head>
              
 
