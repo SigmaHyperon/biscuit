@@ -6,7 +6,7 @@ Inhalt:             Buttons Hinzufügen, Ändern und Löschen
 ------------------------------------------------------------------->   
 
 
-    <table border="0" align="center">
+    <table border="0" class="auswahl_buttons">
         <tr>
             <td><input type="submit" name="action" value="Hinzuf&uuml;gen"/></td>
             <td><input type="submit" name="action" value="&Auml;ndern"/></td>      

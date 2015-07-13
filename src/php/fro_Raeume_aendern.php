@@ -11,8 +11,9 @@ Inhalt:             Räume hinzufügen
     
     if($sRaum_name = \utility\forms\post("txt_Raumname", false))
     {
+	$iRaum_id = \utility\forms\post("int_id", false);
 	$sRaum_notiz = \utility\forms\post("txt_Raumnotiz", false);
-	if(func_v_updateRaum($sRaum_name, $sRaum_notiz))
+	if(func_b_updateRaum($iRaum_id, $sRaum_name, $sRaum_notiz))
 	{
 	    try {
 		header("Location: fro_Auswahl.php?action=list&table=raeume");
@@ -30,7 +31,8 @@ Inhalt:             Räume hinzufügen
 	{
 	    $aRaum_daten = func_a_getRaum($int_selektiert);
 ?>
-<form action="fro_Raeume_hinzufuegen.php" method="post">
+<form action="fro_Raeume_aendern.php" method="post">
+    <input type="hidden" name="int_id" value="<?php echo $aRaum_daten["raum_id"];?>"/>
         <table border="1" cellspacing="10px">
             <tr>
                 <td width="100px">Name:</td><td><input type="text" name="txt_Raumname" size="20" value="<?php echo $aRaum_daten["raum_name"];?>"/></td>

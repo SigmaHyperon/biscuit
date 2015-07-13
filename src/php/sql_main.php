@@ -449,12 +449,10 @@ function func_a_getRaum ($id)
 
 function func_b_updateRaum ($int_id, $s_name, $s_notiz)
 {
-    $txt_sql_statement = "UPDATE tbl_raeume set raum_name='".$s_name.", raum_notiz='".$s_notiz."';";    
-    
+    $txt_sql_statement = "UPDATE tbl_raeume set raum_name='".$s_name."', raum_notiz='".$s_notiz."' where raum_id='".$int_id."';";    
+    var_dump($txt_sql_statement);
     $a_sql_result =  mysql_query($txt_sql_statement)
             or die ("Anfrage Fehlgeschlagen");
-    
-    $a_Tabellen_daten = mysql_fetch_assoc($a_sql_result);
 
-    return $a_Tabellen_daten;
+    return $a_sql_result;
 }
