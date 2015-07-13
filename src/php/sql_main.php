@@ -282,11 +282,12 @@ function func_form_insertGeraet($int_raum, $int_lieferant, $dat_ek_datum, $txt_n
  * @param type $int_anzahl - Menge d. Komponenten
  * @return Gibt Information über Erfolg d. Eintragens (Int)
  */
-function func_form_insertKomponente($txt_name, $int_anzahl)
+function func_form_insertKomponente($txt_name, $int_anzahl,$int_art_fk)
 {
-    $txt_sql_statemnet = "INSERT INTO tbl_komponenten (komponente_name, komponente_bestand)
+    $txt_sql_statemnet = "INSERT INTO tbl_komponenten (komponente_name, komponente_bestand, komponenten_art_fk)
                            VALUES (".$txt_name.",
-                                   ".$int_anzahl.");";
+                                   ".$int_anzahl.","
+				    .$int_art_fk.");";
     
     $int_response = mysql_query($txt_sql_statemnet);
     return ($int_response);
