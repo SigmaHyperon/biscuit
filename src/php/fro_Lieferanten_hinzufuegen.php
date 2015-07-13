@@ -29,6 +29,9 @@ Inhalt:             Lieferanten_Formular
     <form action="fro_Lieferanten_hinzufuegen.php" method="post">
         <table border="1" cellspacing="10px">
             <tr>
+                <td>Firma:</td><td><input type="text" name="txt_Firma" size="20"/></td>
+            </tr>
+            <tr>
                 <td width="100px">Name:</td><td><input type="text" name="txt_Name" size="20"/></td>
             </tr>
             <tr>
@@ -44,7 +47,7 @@ Inhalt:             Lieferanten_Formular
                 <td>Strasse inkl. Nr.:</td><td><input type="text" name="txt_Plz" size="20"/></td>
             </tr>
             <tr>
-                <td colspan="2" align="center"> <input type="submit" value="Abschicken" /><input type="reset" value="Verwerfen" /></td>
+                <td colspan="2" align="center"> <input type="submit" value="Eintragen" /><input type="reset" value="Verwerfen" /></td>
             </tr>              
         </table>        
     </form>
