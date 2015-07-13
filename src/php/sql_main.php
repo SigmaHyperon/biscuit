@@ -14,12 +14,17 @@
 
 function func_a_auslesen($s_tabelle)
 {
-    $txt_sql_statement = "SELECT * FROM ".$tabelle.";";    
+    $a_sql_ausgabe = array();
+    $txt_sql_statement = "SELECT * FROM ".$s_tabelle.";";    
     
-    $a_sql_result =  mysql_query($txt_sql_statement)
+    $a_sql_result = mysql_query($txt_sql_statement)
             or die ("Anfrage Fehlgeschlagen");
     
-    $a_sql_ausgabe = mysql_fetch_assoc($a_sql_result);
+    while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
+    {
+	$a_sql_ausgabe[] = $a_sql_cache;
+    }
+    return $a_sql_ausgabe;
 }
 
 function func_a_getLieferanten()
@@ -41,61 +46,91 @@ function func_a_getLieferanten()
 function func_a_getRaeume()
 {
     $txt_sql_statement = "SELECT * FROM tbl_raeume;";
+    $a_sql_ausgabe = array();
     
     $a_sql_result = mysql_query($txt_sql_statement)
             or die ("Anfrage Fehlgeschlagen");
     
-    $a_sql_ausgabe = mysql_fetch_assoc($a_sql_result);
+    while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
+    {
+	$a_sql_ausgabe[] = $a_sql_cache;
+    }
+    return $a_sql_ausgabe;
 }
 
 function func_a_getGeraete()
 {
     $txt_sql_statement = "SELECT * FROM tbl_geraete;";
+    $a_sql_ausgabe = array();
     
     $a_sql_result = mysql_query($txt_sql_statement)
-            or die("Anfrage Fehlgeschlagen");
+            or die ("Anfrage Fehlgeschlagen");
     
-    $a_sql_ausgabe = mysql_fetch_assoc($a_sql_result);
+    while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
+    {
+	$a_sql_ausgabe[] = $a_sql_cache;
+    }
+    return $a_sql_ausgabe;
 }
 
 function func_a_getKomponenten()
 {
     $txt_sql_statement = "SELECT * FROM tbl_komponenten;";
-   
+    $a_sql_ausgabe = array();
+    
     $a_sql_result = mysql_query($txt_sql_statement)
             or die ("Anfrage Fehlgeschlagen");
     
-    $a_sql_ausgabe = mysql_fetch_assoc($a_sql_result);
+    while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
+    {
+	$a_sql_ausgabe[] = $a_sql_cache;
+    }
+    return $a_sql_ausgabe;
 }
 
 function func_a_getAttribute ()
 {
-        $txt_sql_statement = "SELECT * FROM tbl_komponenten;";
-   
-    $a_sql_result = mysql_query($txt_sql_statement)
-            or die ("Anfrage Fehlgeschlagen");
+    $txt_sql_statement = "SELECT * FROM tbl_komponenten;";
+    $a_sql_ausgabe = array();
     
-    $a_sql_ausgabe = mysql_fetch_assoc($a_sql_result);
+    $a_sql_result = mysql_query($txt_sql_statement)
+        or die ("Anfrage Fehlgeschlagen");
+    
+    while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
+    {
+	$a_sql_ausgabe[] = $a_sql_cache;
+    }
+    return $a_sql_ausgabe;
 }
 
 function func_a_getZulaessigeWerte()
 {
-        $txt_sql_statement = "SELECT * FROM tbl_zulaessige_werte;";
-   
+    $txt_sql_statement = "SELECT * FROM tbl_zulaessige_werte;";
+    $a_sql_ausgabe = array();
+    
     $a_sql_result = mysql_query($txt_sql_statement)
             or die ("Anfrage Fehlgeschlagen");
     
-    $a_sql_ausgabe = mysql_fetch_assoc($a_sql_result);
+    while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
+    {
+	$a_sql_ausgabe[] = $a_sql_cache;
+    }
+    return $a_sql_ausgabe;
 }
 
 function func_a_getKomponentenArten()
 {
-        $txt_sql_statement = "SELECT * FROM tbl_komponenten_arten;";
-   
+    $txt_sql_statement = "SELECT * FROM tbl_komponenten_arten;";
+    $a_sql_ausgabe = array();
+    
     $a_sql_result = mysql_query($txt_sql_statement)
             or die ("Anfrage Fehlgeschlagen");
     
-    $a_sql_ausgabe = mysql_fetch_assoc($a_sql_result);
+    while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
+    {
+	$a_sql_ausgabe[] = $a_sql_cache;
+    }
+    return $a_sql_ausgabe;
 }
 
 function func_form_insertLieferant($txt_lieferant_name)
@@ -129,12 +164,37 @@ function func_form_insertGeraet($txt_name, $txt_lieferant, $int_raum_id, $txt_ek
     mysql_query($txt_sql_statement);
 }
 
-function func_form_insertKomponente($txt_name, $int_anzahl){
-    $txt_sql_statemnet = "INSERT INT tbl_komponenten
+function func_form_insertKomponente($txt_name, $int_anzahl)
+{
+    $txt_sql_statemnet = "INSERT INTO tbl_komponenten
                            VALUES (".$txt_name.",
                                    ".$int_anzahl.");";
     
     mysql_query($txt_sql_statemnet);
+}
+
+function func_form_instertKomponentenArt($txt_name)
+{
+    $txt_sql_statement = "INSERT INTO tbl_komponenten_arten
+                            VALUES (".$txt_name.");";
+    
+    mysql_query($txt_sql_statement);
+}
+
+function func_form_instertAttribut($txt_name)
+{
+    $txt_sql_statement = "INSERT INTO tbl_komponenten_attribute
+                            VALUES (".$txt_name.");";
+    
+    mysql_query($txt_sql_statement);
+}
+
+function func_form_instertZulaessigenWert($txt_name)
+{
+    $txt_sql_statement = "INSERT INTO tbl_zulaessige_Werte
+                            VALUES (".$txt_name.");";
+    
+    mysql_query($txt_sql_statement);
 }
 
 function func_a_Lesen_von_tabelle($s_Tabellenname)
