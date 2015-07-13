@@ -7,7 +7,7 @@ $aRaeume = func_a_getRaeume();
 $aRaeume_Attribute = ["raum_id", "raum_notiz", "raum_name"];
 
 $oRaeume_Tabelle = new \utility\tables\table();
-$oRaeume_Tabelle->start();
+$oRaeume_Tabelle->start(true);
 $oRaeume_Tabelle->addRow($aRaeume_Attribute);
 foreach ($aRaeume as $aRaum)
 {
