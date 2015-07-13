@@ -14,9 +14,9 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
     <script src="../js/jquery.js" type="text/javascript"></script>
     <script>
 	$(function(){
-	    $("#left").css("height", $(document).height()-51+"px");
+	    $("#left").css("height", $(document).height()-53+"px");
 	    $( window ).resize(function() {
-		$("#left").css("height", $(document).height()-51+"px");
+		$("#left").css("height", $(document).height()-53+"px");
 	    });
 	});
     </script>
