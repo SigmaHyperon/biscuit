@@ -29,6 +29,6 @@ body {
   float: right;
 }
 
-button, input[type="submit"]{
+button, input[type="submit"], input[type="reset"]{
    width: 100px;    
 }
