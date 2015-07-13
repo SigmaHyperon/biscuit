@@ -8,8 +8,8 @@ Inhalt:            Geräte hinzufügen
 <form action="fro_Geraete_hinzufuegen.php" method="post">
         <table border="1" cellspacing="10px">
             <tr>
-                <td width="100px">Gerätetyp:</td><td> <select name="txt_Geraetetyp" size="1">
-                                            <option>Rechner</option>
+                <td width="100px">Gerätetyp:</td><td> <select name="txt_Geraetetyp" size="1" >
+                                            <option padding-right="20px">Rechner</option>
                                             <option>Beamer</option>
                                             <option>Monitor</option>
                                             <option>Drucker</option>
