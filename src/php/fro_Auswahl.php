@@ -89,12 +89,12 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
 	    $a_table_attributes = [
 		"lieferanten"	=>  [
 		    "Id",
+		    "Firmenname",
 		    "Vorname",
 		    "Nachname",
 		    "Postleitzahl",
 		    "Ort",
 		    "Strasse",
-		    "Firmen",
 		],
 		"raeume"	=>  [
 		    "Id",
@@ -151,6 +151,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
 	    $a_table_links = [
 		"lieferanten"	=>  "fro_Lieferanten_hinzufuegen.php",
 		"raeume"	=>  "fro_Raeume_hinzufuegen.php",
+		"geraete"	=>  "fro_Geraete_hinzufuegen.php",
 	    ];
 	    if(isset($a_table_links[$s_table]))
 	    {

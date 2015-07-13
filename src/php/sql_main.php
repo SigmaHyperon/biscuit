@@ -77,13 +77,12 @@ function func_a_getRaeume()
  */
 function func_a_getGeraete()
 {
-    $txt_sql_statement = "SELECT tbl_geraete.geraete_id, tbl_raeume.raum_name, tbl_lieferanten.lieferanten_firmenname, tbl_geraete.geraet_ek_datum, tbl_geraete.geraet_notiz, tbl_geraete.geraet_hersteller, tbl_geraete.geraet_gewaehr_beginn, tbl_geraete.geraet_gewaehr_ende, tbl_geraete.geraete_seriennummer, tbl_geraete_art.geraete_art_name   "
+    $txt_sql_statement = "SELECT tbl_geraete.geraete_id, tbl_raeume.raum_name, tbl_lieferanten.lieferant_firmenname, tbl_geraete.geraet_ek_datum, tbl_geraete.geraet_notiz, tbl_geraete.geraet_hersteller, tbl_geraete.geraet_gewaehr_beginn, tbl_geraete.geraet_gewaehr_ende, tbl_geraete.geraete_seriennummer, tbl_geraete_art.geraete_art_name   "
 			."FROM biscuit.tbl_geraete "
 			."left join tbl_raeume on tbl_raeume.raum_id = tbl_geraete.raum_fk "
 			."left join tbl_lieferanten on tbl_lieferanten.lieferant_id = tbl_geraete.lieferant_fk "
 			."left join tbl_geraete_art on tbl_geraete_art.geraete_art_id = tbl_geraete.geraete_art_fk;";
     $a_sql_ausgabe = array();
-    
     $a_sql_result = mysql_query($txt_sql_statement)
             or die ("Anfrage Fehlgeschlagen");
     
@@ -201,18 +200,19 @@ function func_a_getBenutzer()
  * @param type $txt_lieferant_strasse - Straße Lieferant
  * @return Gibt zurück ob Eintragen erfolgreich (int)
  */
-function func_form_insertLieferant($txt_lieferant_firmenname, $txt_lieferant_vorname, $txt_lieferant_nachname, $_int_lieferant_plz, $txt_lieferant_ort, $txt_lieferant_strasse)
+function func_form_insertLieferant($txt_lieferant_firmenname, $txt_lieferant_vorname, $txt_lieferant_nachname, $int_lieferant_plz, $txt_lieferant_ort, $txt_lieferant_strasse)
 {
     $txt_sql_statement = "INSERT INTO tbl_lieferanten (lieferant_firmenname, lieferant_vorname, lieferant_nachname, lieferant_plz, lieferant_ort, lieferant_strasse)
                             VALUES (
-                                     ".$txt_lieferant_firmenname.",
-                                     ".$txt_lieferant_vorname.",
-                                     ".$txt_lieferant_nachname.",
-                                     ".$int_lieferant_plz.",
-                                     ".$txt_lieferant_ort.",
-                                     ".$txt_lieferant_strasse.");";
+                                     '".$txt_lieferant_firmenname."',
+                                     '".$txt_lieferant_vorname."',
+                                     '".$txt_lieferant_nachname."',
+                                     '".$int_lieferant_plz."',
+                                     '".$txt_lieferant_ort."',
+                                     '".$txt_lieferant_strasse."');";
     
     $int_response = mysql_query($txt_sql_statement);
+    var_dump($txt_sql_statement);
     return($int_response);
 }
 
