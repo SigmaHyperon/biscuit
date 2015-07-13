@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 13. Jul 2015 um 11:59
+-- Erstellungszeit: 13. Jul 2015 um 19:47
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -23,20 +23,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `tbl_benutzer`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_benutzer` (
-`benutzer_id` int(11) NOT NULL,
-  `benutzer_name` text,
-  `benutzer_kennwort` text,
-  `benutzer_mail` text,
-  `benutzer_rechte` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Tabellenstruktur für Tabelle `tbl_geraete`
 --
 
@@ -50,9 +36,15 @@ CREATE TABLE IF NOT EXISTS `tbl_geraete` (
   `geraet_gewaehr_beginn` date DEFAULT NULL,
   `geraet_gewaehr_ende` date DEFAULT NULL,
   `geraete_seriennummer` text,
-  `geraete_art_fk` int(11) DEFAULT NULL,
-  `geraete_name` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `geraete_art_fk` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `tbl_geraete`
+--
+
+INSERT INTO `tbl_geraete` (`geraete_id`, `raum_fk`, `lieferant_fk`, `geraet_ek_datum`, `geraet_notiz`, `geraet_hersteller`, `geraet_gewaehr_beginn`, `geraet_gewaehr_ende`, `geraete_seriennummer`, `geraete_art_fk`) VALUES
+(1, 1, 2, '2015-07-13', 'in use', 'aperture labs', '2015-07-13', '2015-07-13', '0042', 6);
 
 -- --------------------------------------------------------
 
@@ -63,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `tbl_geraete` (
 CREATE TABLE IF NOT EXISTS `tbl_geraete_art` (
 `geraete_art_id` int(11) NOT NULL,
   `geraete_art_name` text
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_geraete_art`
@@ -74,7 +66,8 @@ INSERT INTO `tbl_geraete_art` (`geraete_art_id`, `geraete_art_name`) VALUES
 (2, 'Projektor'),
 (3, 'Rechner'),
 (4, 'Monitore'),
-(5, 'Drucker');
+(5, 'Drucker'),
+(6, 'handheld');
 
 -- --------------------------------------------------------
 
@@ -87,7 +80,14 @@ CREATE TABLE IF NOT EXISTS `tbl_komponenten` (
   `komponente_name` text,
   `komponente_bestand` int(11) DEFAULT NULL,
   `komponenten_art_fk` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `tbl_komponenten`
+--
+
+INSERT INTO `tbl_komponenten` (`komponenten_id`, `komponente_name`, `komponente_bestand`, `komponenten_art_fk`) VALUES
+(1, 'miniature black hole', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -98,7 +98,14 @@ CREATE TABLE IF NOT EXISTS `tbl_komponenten` (
 CREATE TABLE IF NOT EXISTS `tbl_komponenten_arten` (
 `komponenten_art_id` int(11) NOT NULL,
   `komponenten_art_name` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `tbl_komponenten_arten`
+--
+
+INSERT INTO `tbl_komponenten_arten` (`komponenten_art_id`, `komponenten_art_name`) VALUES
+(1, 'energy source');
 
 -- --------------------------------------------------------
 
@@ -125,7 +132,14 @@ CREATE TABLE IF NOT EXISTS `tbl_lieferanten` (
   `lieferant_plz` int(11) DEFAULT NULL,
   `lieferant_ort` text,
   `lieferant_strasse` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `tbl_lieferanten`
+--
+
+INSERT INTO `tbl_lieferanten` (`lieferant_id`, `lieferant_firmenname`, `lieferant_vorname`, `lieferant_nachname`, `lieferant_plz`, `lieferant_ort`, `lieferant_strasse`) VALUES
+(2, 'Aperture Laboratories', 'Cave', 'Johnson', 90556, 'michigan', 'salt mine 6');
 
 -- --------------------------------------------------------
 
@@ -137,14 +151,15 @@ CREATE TABLE IF NOT EXISTS `tbl_raeume` (
 `raum_id` int(11) NOT NULL,
   `raum_notiz` text,
   `raum_name` text
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_raeume`
 --
 
 INSERT INTO `tbl_raeume` (`raum_id`, `raum_notiz`, `raum_name`) VALUES
-(1, '8 PCs', '103');
+(1, '9 PCs', '104'),
+(2, 'sjghsd', 'test');
 
 -- --------------------------------------------------------
 
@@ -207,12 +222,6 @@ CREATE TABLE IF NOT EXISTS `tbl_z_komponente_attribute` (
 --
 -- Indizes der exportierten Tabellen
 --
-
---
--- Indizes für die Tabelle `tbl_benutzer`
---
-ALTER TABLE `tbl_benutzer`
- ADD PRIMARY KEY (`benutzer_id`);
 
 --
 -- Indizes für die Tabelle `tbl_geraete`
@@ -291,30 +300,25 @@ ALTER TABLE `tbl_z_komponente_attribute`
 --
 
 --
--- AUTO_INCREMENT für Tabelle `tbl_benutzer`
---
-ALTER TABLE `tbl_benutzer`
-MODIFY `benutzer_id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT für Tabelle `tbl_geraete`
 --
 ALTER TABLE `tbl_geraete`
-MODIFY `geraete_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `geraete_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_geraete_art`
 --
 ALTER TABLE `tbl_geraete_art`
-MODIFY `geraete_art_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `geraete_art_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_komponenten`
 --
 ALTER TABLE `tbl_komponenten`
-MODIFY `komponenten_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `komponenten_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_komponenten_arten`
 --
 ALTER TABLE `tbl_komponenten_arten`
-MODIFY `komponenten_art_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `komponenten_art_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_komponenten_attribute`
 --
@@ -324,12 +328,12 @@ MODIFY `komponenten_attribut_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT für Tabelle `tbl_lieferanten`
 --
 ALTER TABLE `tbl_lieferanten`
-MODIFY `lieferant_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `lieferant_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_raeume`
 --
 ALTER TABLE `tbl_raeume`
-MODIFY `raum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `raum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_zulaessige_werte`
 --
