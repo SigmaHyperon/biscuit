@@ -44,7 +44,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
     </div>
     
     <div id="right">
-        moin<br>
+        
 
 
     <?php
