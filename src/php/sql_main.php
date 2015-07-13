@@ -146,7 +146,7 @@ function func_form_insertLieferant($txt_lieferant_name, $txt_lieferant_name, $tx
 
 function func_form_insertRaum($txt_raum_name, $txt_raum_notiz)
 {
-    $txt_sql_statement = "INSERT INTO tbl_raueme (raum_name, raum_notiz)
+    $txt_sql_statement = "INSERT INTO tbl_raeume (raum_name, raum_notiz)
                             VALUES ('".$txt_raum_name."','".$txt_raum_notiz."');";
     
     $int_response = mysql_query($txt_sql_statement);
