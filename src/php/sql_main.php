@@ -233,28 +233,41 @@ function func_form_insertRaum($txt_raum_name, $txt_raum_notiz)
 
 /**
  * 
- * @param type $txt_name - Name des Gerätes
- * @param type $int_lieferant - Name des Lieferanten
- * @param type $int_raum_id - Raum in dem sich das Gerät befindet
- * @param type $txt_ek_datum - Einkaufsdatum
- * @param type $txt_notiz - Notiz
- * @param type $txt_hersteller - Hersteller d. Geräts
- * @param type $txt_gewaehr_beginn - Zeitraum Beginn Gewähr
- * @param type $txt_gewaehr_ende - Zeitraum Ende Gewähr
- * @return Gibt Information über Erfolg d. Eintragens (Int)
+ * @param type $int_raum
+ * @param type $int_lieferant
+ * @param type $dat_ek_datum
+ * @param type $txt_notiz
+ * @param type $txt_hersteller
+ * @param type $dat_gewaehr_beginn
+ * @param type $dat_gewaehr_ende
+ * @param type $txt_seriennummer
+ * @param type $int_art
+ * @param type $text_name
+ * @return Gibt an ob der Eintrag erfolgreich war (int)
  */
-function func_form_insertGeraet($txt_name, $int_lieferant, $int_raum_id, $txt_ek_datum, $txt_notiz, $txt_hersteller, $txt_gewaehr_beginn, $txt_gewaehr_ende)
+function func_form_insertGeraet($int_raum, $int_lieferant, $dat_ek_datum, $txt_notiz, $txt_hersteller, $dat_gewaehr_beginn, $dat_gewaehr_ende, $txt_seriennummer, $int_art, $text_name)
 {
-    $txt_sql_statement = "INSERT INTO tbl_geraete (
-                           VALUES (".$txt_name.",
-                                   ".$txt_lieferant.",
-                                   ".$int_raum_id.",
-                                   ".$txt_ek_datum.",
-                                   ".$txt_notiz.",
-                                   ".$txt_hersteller.",
-                                   ".$txt_gewaehr_beginn.",
-                                   ".$txt_gewaehr_ende.");";
-    
+    $txt_sql_statement = "INSERT INTO tbl_geraete (raum_fk,
+                                                                        lieferant_fk,
+                                                                        geraete_ek_datum,
+                                                                        geraet_notiz,
+                                                                        geraet hersteller,
+                                                                        geraet_gewaehr_beginn,
+                                                                        geraet_gewaehr_ende,
+                                                                        geraet_seriennummer
+                                                                        geraet_art_fk,
+                                                                        geraet_name)
+                                                       VALUES ('".$int_raum."',
+                                                                    '".$int_lieferant."',
+                                                                    '".$dat_ek_datum."',
+                                                                    '".$txt_notiz."',
+                                                                    '".$txt_hersteller."',
+                                                                    '".$dat_gewaehr_beginn."',
+                                                                    '".$dat_gewaehr_ende."',
+                                                                    '".$txt_seriennummer."',
+                                                                    '".$int_art."',
+                                                                    '".$text_name."');";
+
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
 }
@@ -376,7 +389,7 @@ function funct_form_KennwortAendern($txt_benutzer, $txt_kennwort, $txt_kennwort_
     $txt_sql_statement = "SELECT benutzer_kennwort FROM tbl_benutzer WHERE benutzer_name = ".$txt_benutzer.";";
     $txt_kennwort_cache = mysql_query($txt_sql_statement);
     
-    $txt_kennwort_alt = mysql_fetch_assoc($txt_kennwort_cache)
+    $txt_kennwort_alt = mysql_fetch_assoc($txt_kennwort_cache);
     
     if($txt_kennwort_md5 == $txt_kennwort_alt)
     {
