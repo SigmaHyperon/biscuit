@@ -45,9 +45,6 @@ function func_a_getLieferanten()
     
     $a_sql_ausgabe = array();
     
-//    $a_sql_ausgabe[] = mysql_fetch_field($a_sql_result);
-    var_dump(mysql_fetch_field($a_sql_result));
-    
     while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
     {
 	$a_sql_ausgabe[] = $a_sql_cache;
