@@ -21,7 +21,10 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
     </div>
     
     <div id="left">
-        <table border="0"> 
+        <table border="0">
+            <tr>
+                <td><a href="fro_Auswahl.php"><button>Home</button></a></td>
+            </tr>
             <tr>
                 <td><a href="fro_Auswahl.php?action=list&table=raeume"><button>R&auml;ume</button></a></td>
             </tr>
