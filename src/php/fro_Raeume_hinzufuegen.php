@@ -4,7 +4,29 @@ Erstell-Datum:      13.07.2015
 Änderungsdatum: 
 Inhalt:             Räume hinzufügen
 -------------------------------------------------------------------> 
-
+<?php
+    require_once '../lib/manager.php';
+    require_once './sql_main.php';
+    \utility\loadForms();
+    
+    if($sRaum_name = \utility\forms\post("txt_Raumname", false))
+    {
+	$sRaum_notiz = \utility\forms\post("txt_Raumnotiz", false);
+	if(func_form_insertRaum($sRaum_name, $sRaum_notiz))
+	{
+	    try {
+		header("Location: fro_Auswahl.php?action=list&table=raeume");
+		die();
+	    } catch (Exception $ex) {}
+	}
+	else
+	{
+	    echo "An error occured!";
+	}
+    }
+    else
+    {
+?>
 <form action="fro_Raeume_hinzufuegen.php" method="post">
         <table border="1" cellspacing="10px">
             <tr>
@@ -18,3 +40,6 @@ Inhalt:             Räume hinzufügen
             </tr>              
         </table>        
 </form>
+<?php
+    }
+?>
