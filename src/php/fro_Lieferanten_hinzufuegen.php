@@ -21,10 +21,11 @@ Inhalt:             Lieferanten_Formular
 
 <?php
     require_once '../lib/manager.php';
+    require_once './sql_main.php';
     \utility\loadForms();
     
     if($s_Lieferant_name = \utility\forms\post("txt_Name", false))
     {
-	func_form_insertLieferant($txt_lieferant_name);
+	func_form_insertLieferant($s_Lieferant_name);
     }
     

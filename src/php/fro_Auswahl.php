@@ -52,7 +52,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
     //include "log_lieferanten.php";
     
     require_once "../lib/manager.php";
-    \utility\cake_test();
+    //\utility\cake_test();
     \utility\loadForms();
     if($s_action = \utility\forms\get("action", false))
     {
