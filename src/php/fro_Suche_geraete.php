@@ -11,7 +11,19 @@ Inhalt:             Suchen ein oder mehreren Geräten
                 <td colspan="2"><b>Welches Gerät suchen Sie?</b></td>
             </tr>
             <tr>
-                <td> <input type="text" name="txt_Suche_geraete" size="30"/><td><input type="submit" name="action" value="Suchen"/></td><td colspan="2" align="right"> <input type="reset" value="Verwerfen" /></td>
-            </tr>            
+                <td>Raum:</td><td> <input type="text" name="txt_Suche_raum" size="20"/></td>
+            </tr>
+            <tr>
+                <td>Lieferant:</td><td> <input type="text" name="txt_Suche_lieferant" size="20"/></td>
+            </tr>
+            <tr>
+                <td>Serienummer:</td><td> <input type="text" name="txt_Suche_seriennummer" size="20"/></td>
+            </tr>
+            <tr>
+                <td>Art:</td><td> <input type="text" name="txt_Suche_art" size="20"/></td>
+            </tr> 
+            <tr>
+                <td colspan="2" align="right"><input type="submit" name="action" value="Suchen"/> <input type="reset" value="Verwerfen" /></td>
+            </tr>
         </table>        
 </form>

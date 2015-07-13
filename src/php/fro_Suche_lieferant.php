@@ -11,7 +11,16 @@ Inhalt:             Suchen eines oder mehrerer Lieferanten
                 <td colspan="2"><b>Welchen Lieferanten suchen Sie?</b></td>
             </tr>
             <tr>
-                <td> <input type="text" name="txt_Suche_lieferant" size="30"/><td><input type="submit" name="action" value="Suchen"/></td><td colspan="2" align="right"> <input type="reset" value="Verwerfen" /></td>
-            </tr>            
+                <td>Firmenname:</td><td> <input type="text" name="txt_Suche_firmenname" size="20"/></td>
+            </tr>
+            <tr>
+                <td>Ort:</td><td> <input type="text" name="txt_Suche_ort" size="20"/></td>
+            </tr>
+            <tr>
+                <td>PLZ:</td><td> <input type="text" name="txt_Suche_plz" size="20"/></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" name="action" value="Suchen"/><input type="reset" value="Verwerfen" /></td>
+            </tr>
         </table>        
     </form>

@@ -35,9 +35,9 @@ Inhalt:            Geräte hinzufügen
 <form action="fro_Geraete_hinzufuegen.php" method="post">
         <table  class="formular">
             <tr>
-                <td width="100px">Gerätetyp:</td>
+                <td>Gerätetyp:</td>
 		<td> 
-		    <select name="txt_Geraetetyp" size="1" >
+		    <select name="txt_Geraetetyp_select" size="1" >
 			<option padding-right="20px">Rechner</option>
 			<option>Beamer</option>
 			<option>Monitor</option>
@@ -49,6 +49,14 @@ Inhalt:            Geräte hinzufügen
 	    <tr>
 		<td>Name:</td><td><input type="text" name="txt_Name" size="20"/></td>
 	    </tr>
+            <tr>
+                <td>Lieferanten:</td>
+                <td>
+                    <select name="txt_Lieferanten_select" size="1">
+                        <option></option>
+                    </select>
+                </td>
+            </tr>
             <tr>
                 <td>Hersteller:</td><td><input type="text" name="txt_Hersteller" size="20"/></td>
             </tr>
@@ -64,6 +72,14 @@ Inhalt:            Geräte hinzufügen
             <tr>
                 <td>Seriennummer:</td><td><input type="text" name="txt_Geraete_seriennummer" size="20"/></td>
             </tr>
+            <tr>
+                <td>Raum:</td>
+                <td>
+                    <select name="txt_Raum_select" size="1">
+                        <option></option>
+                    </select>
+                </td>
+            </tr>               
             <tr>
                 <td colspan="2" align="center"> <input type="submit" value="Eintragen" /><input type="reset" value="Verwerfen" /></td>
             </tr>              

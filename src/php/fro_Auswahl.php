@@ -48,10 +48,13 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
                 <td><a href="fro_Auswahl.php?action=list&table=geraete"><button>Ger&auml;te</button></a></td>
             </tr>
             <tr>
+                <td><a href="fro_Auswahl.php?action=list&table=geraetearten"><button>Ger&auml;tearten</button></a></td>
+            </tr>
+            <tr>
                 <td><a href="fro_Auswahl.php?action=list&table=komponenten"><button>Komponenten</button></a></td>
             </tr>
             <tr>
-                <td><a href="fro_Arten.php"><button>Arten</button></a></td>
+                <td><a href="fro_Arten.php"><button>Komponentenarten</button></a></td>
             </tr>       
         </table>
     </div>

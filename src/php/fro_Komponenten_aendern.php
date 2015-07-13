@@ -14,6 +14,14 @@ Inhalt:             Komponenten hinzufügen
                 <td >Komponentenbestand:</td><td><input type="text" name="txt_Komponentenbestand" size="20"/></td>
             </tr>
             <tr>
+                <td>Komponentenart:</td>
+                <td>
+                    <select name="txt_Komponentenart_select" size="1">
+                        <option></option>
+                    </select>
+                </td>
+            </tr> 
+            <tr>
                 <td colspan="2" align="center"> <input type="submit" value="Eintragen" /><input type="reset" value="Verwerfen" /></td>
             </tr>              
         </table>        

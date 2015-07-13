@@ -36,6 +36,9 @@ Inhalt:             Räume hinzufügen
                 <td width="100px">Name:</td><td><input type="text" name="txt_Raumname" size="20" value="<?php echo $aRaum_daten["raum_name"];?>"/></td>
             </tr>
             <tr>
+                <td>Stockwerk</td><td><input type="text" name="txt_Stockwerk" size="20"/></td>
+            </tr>
+            <tr>
                 <td >Raumnotiz:</td><td><input type="text" name="txt_Raumnotiz" size="20" value="<?php echo $aRaum_daten["raum_notiz"];?>"/></td>
             </tr>
             <tr>
