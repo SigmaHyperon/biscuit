@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 13. Jul 2015 um 11:30
+-- Erstellungszeit: 13. Jul 2015 um 11:59
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -23,6 +23,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `tbl_benutzer`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_benutzer` (
+`benutzer_id` int(11) NOT NULL,
+  `benutzer_name` text,
+  `benutzer_kennwort` text,
+  `benutzer_mail` text,
+  `benutzer_rechte` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `tbl_geraete`
 --
 
@@ -36,7 +50,8 @@ CREATE TABLE IF NOT EXISTS `tbl_geraete` (
   `geraet_gewaehr_beginn` date DEFAULT NULL,
   `geraet_gewaehr_ende` date DEFAULT NULL,
   `geraete_seriennummer` text,
-  `geraete_art_fk` int(11) DEFAULT NULL
+  `geraete_art_fk` int(11) DEFAULT NULL,
+  `geraete_name` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -194,6 +209,12 @@ CREATE TABLE IF NOT EXISTS `tbl_z_komponente_attribute` (
 --
 
 --
+-- Indizes für die Tabelle `tbl_benutzer`
+--
+ALTER TABLE `tbl_benutzer`
+ ADD PRIMARY KEY (`benutzer_id`);
+
+--
 -- Indizes für die Tabelle `tbl_geraete`
 --
 ALTER TABLE `tbl_geraete`
@@ -269,6 +290,11 @@ ALTER TABLE `tbl_z_komponente_attribute`
 -- AUTO_INCREMENT für exportierte Tabellen
 --
 
+--
+-- AUTO_INCREMENT für Tabelle `tbl_benutzer`
+--
+ALTER TABLE `tbl_benutzer`
+MODIFY `benutzer_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_geraete`
 --
