@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 13. Jul 2015 um 11:18
+-- Erstellungszeit: 13. Jul 2015 um 11:30
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -104,12 +104,12 @@ CREATE TABLE IF NOT EXISTS `tbl_komponenten_attribute` (
 
 CREATE TABLE IF NOT EXISTS `tbl_lieferanten` (
 `lieferant_id` int(11) NOT NULL,
-  `firmenname` text,
-  `vorname` text,
-  `nachname` text,
-  `plz` int(11) DEFAULT NULL,
-  `ort` text,
-  `strasse` text
+  `lieferant_firmenname` text,
+  `lieferant_vorname` text,
+  `lieferant_nachname` text,
+  `lieferant_plz` int(11) DEFAULT NULL,
+  `lieferant_ort` text,
+  `lieferant_strasse` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
