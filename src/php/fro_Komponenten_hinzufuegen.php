@@ -6,7 +6,7 @@ Inhalt:             Komponenten hinzufügen
 ------------------------------------------------------------------->
 
 <form action="fro_Komponenten_hinzufuegen.php" method="post">
-        <table border="1" cellspacing="10px">
+        <table  class="formular">
             <tr>
                 <td width="100px">Name:</td><td><input type="text" name="txt_Komponentenname" size="20"/></td>
             </tr>

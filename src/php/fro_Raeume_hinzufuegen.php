@@ -28,7 +28,7 @@ Inhalt:             Räume hinzufügen
     {
 ?>
 <form action="fro_Raeume_hinzufuegen.php" method="post">
-        <table border="1" cellspacing="10px">
+        <table class="formular">
             <tr>
                 <td width="100px">Name:</td><td><input type="text" name="txt_Raumname" size="20"/></td>
             </tr>
