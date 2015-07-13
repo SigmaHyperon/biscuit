@@ -187,10 +187,13 @@ function func_a_getBenutzer()
 
 /**
  * 
- * @param type $txt_lieferant_firmenname - Der Name der Firma
- * @param type $txt_lieferant_name - Der Nachname des Ansprechpartner
- * @param type $txt_lieferant_vorname - Der Vorname des Ansprechpartner
- * @return Gibt Information über Erfolg d. Eintragens (Int)
+ * @param type $txt_lieferant_firmenname - Name Firma
+ * @param type $txt_lieferant_vorname - Vorname Kontaktperson
+ * @param type $txt_lieferant_nachname - Nachname Kontaktperson
+ * @param type $_int_lieferant_plz - PLZ
+ * @param type $txt_lieferant_ort - Ort Lieferant
+ * @param type $txt_lieferant_strasse - Straße Lieferant
+ * @return Gibt zurück ob Eintragen erfolgreich (int)
  */
 function func_form_insertLieferant($txt_lieferant_firmenname, $txt_lieferant_vorname, $txt_lieferant_nachname, $_int_lieferant_plz, $txt_lieferant_ort, $txt_lieferant_strasse)
 {
