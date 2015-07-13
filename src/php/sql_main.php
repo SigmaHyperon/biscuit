@@ -45,6 +45,9 @@ function func_a_getLieferanten()
     
     $a_sql_ausgabe = array();
     
+//    $a_sql_ausgabe[] = mysql_fetch_field($a_sql_result);
+    var_dump(mysql_fetch_field($a_sql_result));
+    
     while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
     {
 	$a_sql_ausgabe[] = $a_sql_cache;
@@ -100,7 +103,9 @@ function func_a_getGeraete()
  */
 function func_a_getKomponenten()
 {
-    $txt_sql_statement = "SELECT * FROM tbl_komponenten;";
+    $txt_sql_statement = "SELECT tbl_komponenten.komponenten_id, tbl_komponenten.komponente_name, tbl_komponenten.komponente_bestand, tbl_komponenten_arten.komponenten_art_name "
+			."FROM biscuit.tbl_komponenten "
+			."left join tbl_komponenten_arten on tbl_komponenten_arten.komponenten_art_id = tbl_komponenten.komponenten_id;";
     $a_sql_ausgabe = array();
     
     $a_sql_result = mysql_query($txt_sql_statement)

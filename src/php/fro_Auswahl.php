@@ -40,10 +40,10 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
                 <td><a href="fro_Auswahl.php?action=list&table=lieferanten"><button>Lieferanten</button></a></td>
             </tr>
             <tr>
-                <td><a href="fro_Geraete.php"><button>Ger&auml;te</button></a></td>
+                <td><a href="fro_Auswahl.php?action=list&table=geraete"><button>Ger&auml;te</button></a></td>
             </tr>
             <tr>
-                <td><a href="fro_Komponenten.php"><button>Komponenten</button></a></td>
+                <td><a href="fro_Auswahl.php?action=list&table=komponenten"><button>Komponenten</button></a></td>
             </tr>
             <tr>
                 <td><a href="fro_Arten.php"><button>Arten</button></a></td>
@@ -60,6 +60,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
     //include "log_lieferanten.php";
     
     require_once "../lib/manager.php";
+    require_once "./sql_main.php";
     //\utility\cake_test();
     \utility\loadForms();
     if($s_action = \utility\forms\get("action", false))
@@ -85,13 +86,51 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
     {
 	if($s_table = \utility\forms\get("table", false))
 	{
+	    $a_table_attributes = [
+		"lieferanten"	=>  [
+		    "Id",
+		    "Vorname",
+		    "Nachname",
+		    "Postleitzahl",
+		    "Ort",
+		    "Strasse",
+		    "Firmen",
+		],
+		"raeume"	=>  [
+		    "Id",
+		    "Notiz",
+		    "Name",
+		],
+		"geraete"	=>  [
+		    "Id",
+		    "Raum",
+		    "Lieferant",
+		    "Einkaufsdatum",
+		    "Notiz",
+		    "Hersteller",
+		    "Gewährleistungsbeginn",
+		    "Gewährleistungsende",
+		    "Seriennummer",
+		    "Art",
+		],
+		"komponenten"	=>  [
+		    "Id",
+		    "Name",
+		    "Bestand",
+		    "Art"
+		],
+	    ];
 	    $a_table_links = [
-		"lieferanten"	=>  "log_Zeige_lieferanten.php",
-		"raeume"	=>  "log_Zeige_raeume.php",
+		"lieferanten"	=>  "func_a_getLieferanten",
+		"raeume"	=>  "func_a_getRaeume",
+		"geraete"	=>  "func_a_getGeraete",
+		"komponenten"	=>  "func_a_getKomponenten"
 	    ];
 	    if(isset($a_table_links[$s_table]))
 	    {
-		include $a_table_links[$s_table];
+		$aErgebnisse = call_user_func($a_table_links[$s_table]);
+		$aErgebnis_attribute = $a_table_attributes[$s_table];
+		include "log_Liste.php";
 	    }
 	    else
 	    {
