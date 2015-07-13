@@ -5,7 +5,7 @@ require_once "../lib/manager.php";
 //tabellen und formular modul laden
 \utility\loadTables();
 \utility\loadForms();
-//Lieferantendaten auas der Datenbank abfragen
+//Lieferantendaten aus der Datenbank abfragen
 $aLieferanten = func_a_Lesen_von_tabelle("tbl_lieferanten");
 //definieren der Namen der Tabellenspalten
 $aLieferanten_attribute = ["lieferant_id", "lieferant_name"];
