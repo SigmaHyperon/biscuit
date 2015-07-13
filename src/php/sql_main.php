@@ -340,17 +340,19 @@ function func_form_instertZulaessigenWert($txt_name, $int_wert)
 
 /**
  * 
- * @param type $txt_name - Name des Benutzers
- * @param type $txt_kennwort - Kennwort des Benutzers (Wird als MD5 gespeichert!)
+ * @param txt $txt_name - Name des Benutzers
+ * @param txt $txt_kennwort - Kennwort des Benutzers (Wird als MD5 gespeichert!)
+ * @param txt $txt_mail - Mailadresse
  * @return Gibt Information über Erfolg d. Eintragens (Int)
  */
-function func_form_insertBenutzer($txt_name, $txt_kennwort)
+function func_form_insertBenutzer($txt_name, $txt_kennwort, $txt_mail)
 {
     $txt_kennwort_md5 = CRYPT_MD5($txt_kennwort);
     
-    $txt_sql_statement = "INSERT INTO tbl_benutzer (benutzer_name, benutzer_kennwort)
+    $txt_sql_statement = "INSERT INTO tbl_benutzer (benutzer_name, benutzer_kennwort, benutzer_mail)
                                     VALUES(".$txt_name.",
-                                                ".$txt_kenwort_md5.");";
+                                                ".$txt_kenwort_md5.",
+                                                ".$txt_mail.");";
     
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
