@@ -192,12 +192,16 @@ function func_a_getBenutzer()
  * @param type $txt_lieferant_vorname - Der Vorname des Ansprechpartner
  * @return Gibt Information über Erfolg d. Eintragens (Int)
  */
-function func_form_insertLieferant($txt_lieferant_firmenname, $txt_lieferant_name, $txt_lieferant_vorname)
+function func_form_insertLieferant($txt_lieferant_firmenname, $txt_lieferant_vorname, $txt_lieferant_nachname, $_int_lieferant_plz, $txt_lieferant_ort, $txt_lieferant_strasse)
 {
-    $txt_sql_statement = "INSERT INTO tbl_lieferanten (lieferant_firmenname, lieferant_name, lieferant_vorname)
-                            VALUES ('".$txt_lieferant_firmenname.",
-                                     ".$txt_lieferant_name.",
-                                     ".$txt_lieferant_vorname.");";
+    $txt_sql_statement = "INSERT INTO tbl_lieferanten (lieferant_firmenname, lieferant_vorname, lieferant_nachname, lieferant_plz, lieferant_ort, lieferant_strasse)
+                            VALUES (
+                                     ".$txt_lieferant_firmenname.",
+                                     ".$txt_lieferant_vorname.",
+                                     ".$txt_lieferant_nachname.",
+                                     ".$int_lieferant_plz.",
+                                     ".$txt_lieferant_ort.",
+                                     ".$txt_lieferant_strasse.");";
     
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
@@ -363,3 +367,4 @@ function func_a_Lesen_von_tabelle($s_Tabellenname)
     }
     return $a_Tabellen_daten;
 }
+
