@@ -32,7 +32,8 @@ Inhalt:             Lieferanten_Formular
     {
 	?>
     <form action="fro_Lieferanten_hinzufuegen.php" method="post">
-        <table border="1" cellspacing="10px">
+        
+        <table cellspacing="10px" class="formular">
             <tr>
                 <td>Firma:</td><td><input type="text" name="txt_Firma" size="20"/></td>
             </tr>

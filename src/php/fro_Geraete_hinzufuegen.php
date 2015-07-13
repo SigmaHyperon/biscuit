@@ -33,7 +33,7 @@ Inhalt:            Geräte hinzufügen
     {
 ?>
 <form action="fro_Geraete_hinzufuegen.php" method="post">
-        <table border="1" cellspacing="10px">
+        <table  class="formular">
             <tr>
                 <td width="100px">Gerätetyp:</td>
 		<td> 
