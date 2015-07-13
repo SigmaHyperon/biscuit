@@ -327,6 +327,25 @@ function func_form_insertBenutzer($txt_name, $txt_kennwort)
 
 /**
  * 
+ * @param type $txt_benutzer - Benutzernamen
+ * @param type $txt_kennwort - Benutzerkennwort
+ * @return int - Gibt zurück:  0: Kennwort falsch. 1: Kennwort korrekt.
+ */
+function func_form_login($txt_benutzer, $txt_kennwort)
+{
+    $txt_kennwort_md5 = CRYPT_MD5($txt_kennwort);
+    
+    $txt_sql_statement = "SELECT benutzer_kennwort WHERE benutzer_name = ".$txt_benutzer.";";
+    $txt_kennwort_saved = mysql($txt_sql_statement);
+    
+    if($txt_kennwort_md5 == $txt_kennwort_saved){
+        return 1;
+    }
+    else {return 0;}
+}
+
+/**
+ * 
  * @param type $s_Tabellenname - Name d. Tabelle
  * @return Gibt Information über Erfolg d. Eintragens (Int)
  */
