@@ -196,17 +196,24 @@ function func_a_getBenutzer()
 
 /**
  * 
- * @param type $txt_lieferant_firmenname - Der Name der Firma
- * @param type $txt_lieferant_name - Der Nachname des Ansprechpartner
- * @param type $txt_lieferant_vorname - Der Vorname des Ansprechpartner
- * @return Gibt Information über Erfolg d. Eintragens (Int)
+ * @param type $txt_lieferant_firmenname - Name Firma
+ * @param type $txt_lieferant_vorname - Vorname Kontaktperson
+ * @param type $txt_lieferant_nachname - Nachname Kontaktperson
+ * @param type $_int_lieferant_plz - PLZ
+ * @param type $txt_lieferant_ort - Ort Lieferant
+ * @param type $txt_lieferant_strasse - Straße Lieferant
+ * @return Gibt zurück ob Eintragen erfolgreich (int)
  */
-function func_form_insertLieferant($txt_lieferant_firmenname, $txt_lieferant_name, $txt_lieferant_vorname)
+function func_form_insertLieferant($txt_lieferant_firmenname, $txt_lieferant_vorname, $txt_lieferant_nachname, $_int_lieferant_plz, $txt_lieferant_ort, $txt_lieferant_strasse)
 {
-    $txt_sql_statement = "INSERT INTO tbl_lieferanten (lieferant_firmenname, lieferant_name, lieferant_vorname)
-                            VALUES ('".$txt_lieferant_firmenname.",
-                                     ".$txt_lieferant_name.",
-                                     ".$txt_lieferant_vorname.");";
+    $txt_sql_statement = "INSERT INTO tbl_lieferanten (lieferant_firmenname, lieferant_vorname, lieferant_nachname, lieferant_plz, lieferant_ort, lieferant_strasse)
+                            VALUES (
+                                     ".$txt_lieferant_firmenname.",
+                                     ".$txt_lieferant_vorname.",
+                                     ".$txt_lieferant_nachname.",
+                                     ".$int_lieferant_plz.",
+                                     ".$txt_lieferant_ort.",
+                                     ".$txt_lieferant_strasse.");";
     
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
@@ -336,6 +343,25 @@ function func_form_insertBenutzer($txt_name, $txt_kennwort)
 
 /**
  * 
+ * @param type $txt_benutzer - Benutzernamen
+ * @param type $txt_kennwort - Benutzerkennwort
+ * @return int - Gibt zurück:  0: Kennwort falsch. 1: Kennwort korrekt.
+ */
+function func_form_login($txt_benutzer, $txt_kennwort)
+{
+    $txt_kennwort_md5 = CRYPT_MD5($txt_kennwort);
+    
+    $txt_sql_statement = "SELECT benutzer_kennwort WHERE benutzer_name = ".$txt_benutzer.";";
+    $txt_kennwort_saved = mysql($txt_sql_statement);
+    
+    if($txt_kennwort_md5 == $txt_kennwort_saved){
+        return 1;
+    }
+    else {return 0;}
+}
+
+/**
+ * 
  * @param type $s_Tabellenname - Name d. Tabelle
  * @return Gibt Information über Erfolg d. Eintragens (Int)
  */
@@ -353,3 +379,4 @@ function func_a_Lesen_von_tabelle($s_Tabellenname)
     }
     return $a_Tabellen_daten;
 }
+

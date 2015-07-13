@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 13. Jul 2015 um 09:08
+-- Erstellungszeit: 13. Jul 2015 um 10:45
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Datenbank: `b3projekt`
+-- Datenbank: `biscuit`
 --
 
 -- --------------------------------------------------------
@@ -48,7 +48,18 @@ CREATE TABLE IF NOT EXISTS `tbl_geraete` (
 CREATE TABLE IF NOT EXISTS `tbl_geraete_art` (
 `geraete_art_id` int(11) NOT NULL,
   `geraete_art_name` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `tbl_geraete_art`
+--
+
+INSERT INTO `tbl_geraete_art` (`geraete_art_id`, `geraete_art_name`) VALUES
+(1, 'Beamer'),
+(2, 'Projektor'),
+(3, 'Rechner'),
+(4, 'Monitore'),
+(5, 'Drucker');
 
 -- --------------------------------------------------------
 
@@ -93,12 +104,12 @@ CREATE TABLE IF NOT EXISTS `tbl_komponenten_attribute` (
 
 CREATE TABLE IF NOT EXISTS `tbl_lieferanten` (
 `lieferant_id` int(11) NOT NULL,
-  `lieferant_name` text,
-  `lieferant_plz` int(11) DEFAULT NULL,
-  `lieferant_ort` text,
-  `lieferant_strasse` text,
-  `lieferanten_vorname` text,
-  `lieferanten_firmenname` text
+  `firmenname` text,
+  `vorname` text,
+  `nachname` text,
+  `plz` int(11) DEFAULT NULL,
+  `ort` text,
+  `strasse` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -260,7 +271,7 @@ MODIFY `geraete_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT für Tabelle `tbl_geraete_art`
 --
 ALTER TABLE `tbl_geraete_art`
-MODIFY `geraete_art_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `geraete_art_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_komponenten`
 --
