@@ -376,7 +376,7 @@ function funct_form_KennwortAendern($txt_benutzer, $txt_kennwort, $txt_kennwort_
     $txt_sql_statement = "SELECT benutzer_kennwort FROM tbl_benutzer WHERE benutzer_name = ".$txt_benutzer.";";
     $txt_kennwort_cache = mysql_query($txt_sql_statement);
     
-    $txt_kennwort_alt = mysql_fetch_assoc($txt_kennwort_cache)
+    $txt_kennwort_alt = mysql_fetch_assoc($txt_kennwort_cache);
     
     if($txt_kennwort_md5 == $txt_kennwort_alt)
     {
