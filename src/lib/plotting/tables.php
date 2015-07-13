@@ -15,17 +15,17 @@ class table
      * 
      * @return \utility\tables\table|boolean
      */
-    public function start($border = false)
+    public function start($border = false, $class="")
     {
 	if($this->started == false)
 	{
 	    if(!$border)
 	    {
-		\utility\html\openTag("table");
+		\utility\html\openTag("table", $class);
 	    }
 	    else
 	    {
-		\utility\html\openTag("table", "", "border='1'");
+		\utility\html\openTag("table", $class, "border='1'");
 	    }
 	    echo "\n";
 	    $this->started = true;

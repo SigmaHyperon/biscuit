@@ -20,7 +20,7 @@ $oFormular->start("", "get");
 
 //Tabelle beginnen
 $oTabelle = new \utility\tables\table();
-$oTabelle->start(true);
+$oTabelle->start(true, "liste");
 
 /**
  * Zeile mit Spaltennamen in die Tabelle eintragen

@@ -435,3 +435,26 @@ function func_a_Lesen_von_tabelle($s_Tabellenname)
     return $a_Tabellen_daten;
 }
 
+function func_a_getRaum ($id)
+{
+    $txt_sql_statement = "SELECT * FROM tbl_raeume where raum_id = '".$id."';";    
+    
+    $a_sql_result =  mysql_query($txt_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
+    
+    $a_Tabellen_daten = mysql_fetch_assoc($a_sql_result);
+
+    return $a_Tabellen_daten;
+}
+
+function func_b_updateRaum ($int_id, $s_name, $s_notiz)
+{
+    $txt_sql_statement = "UPDATE tbl_raeume set raum_name='".$s_name.", raum_notiz='".$s_notiz."';";    
+    
+    $a_sql_result =  mysql_query($txt_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
+    
+    $a_Tabellen_daten = mysql_fetch_assoc($a_sql_result);
+
+    return $a_Tabellen_daten;
+}

@@ -75,7 +75,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
 	    case "list": 
 		func_v_list();
 		break;
-	    case "edit":
+	    case "Ändern":
 		func_v_edit();
 		break;
 	    case "Hinzufügen":
@@ -142,11 +142,32 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
 		func_v_invalid();
 	    }
 	}
+	else
+	{
+	    func_v_invalid();
+	}
     }
     
     function func_v_edit()
     {
-	
+	if($s_table = \utility\forms\get("table", false))
+	{
+	    $a_table_links = [
+		"raeume"	    =>	"fro_Raeume_aendern.php",
+	    ];
+	    if(isset($a_table_links[$s_table]))
+	    {
+		include $a_table_links[$s_table];
+	    }
+	    else
+	    {
+		func_v_invalid();
+	    }
+	}
+	else
+	{
+	    func_v_invalid();
+	}
     }
     
     function func_v_add()
@@ -157,6 +178,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
 		"lieferanten"	=>  "fro_Lieferanten_hinzufuegen.php",
 		"raeume"	=>  "fro_Raeume_hinzufuegen.php",
 		"geraete"	=>  "fro_Geraete_hinzufuegen.php",
+		"komponenten"	=>  "fro_Komponenten_hinzufuegen.php"
 	    ];
 	    if(isset($a_table_links[$s_table]))
 	    {
@@ -166,6 +188,10 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
 	    {
 		func_v_invalid();
 	    }
+	}
+	else
+	{
+	    func_v_invalid();
 	}
     }
     
