@@ -133,10 +133,12 @@ function func_a_getKomponentenArten()
     return $a_sql_ausgabe;
 }
 
-function func_form_insertLieferant($txt_lieferant_name)
+function func_form_insertLieferant($txt_lieferant_name, $txt_lieferant_name, $txt_lieferant_vorname)
 {
-    $txt_sql_statement = "INSERT INTO tbl_lieferanten (lieferant_name)
-                            VALUES ('".$txt_lieferant_name."');";   
+    $txt_sql_statement = "INSERT INTO tbl_lieferanten (lieferant_firmenname, lieferant_name, lieferant_vorname)
+                            VALUES ('".$txt_lieferant_firmenname.",
+                                     ".$txt_lieferant_name.",
+                                     ".$txt_lieferant_vorname.");";
     
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
