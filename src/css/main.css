@@ -93,3 +93,15 @@ table.formular td{
    width: 150px; 
    
 }
+
+table.liste{
+    position: relative;
+    margin: auto;
+    top: 10px;
+    border: 1px solid black;
+}
+
+table.liste td{
+    border: 1px solid black;
+    width: 75px;
+}
