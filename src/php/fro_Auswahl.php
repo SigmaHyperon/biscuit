@@ -111,7 +111,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
 	{
 	    $a_table_links = [
 		"lieferanten"	=>  "fro_Lieferanten_hinzufuegen.php",
-//		"raeume"	=>  "log_Zeige_raeume.php",
+		"raeume"	=>  "fro_Raeume_hinzufuegen.php",
 	    ];
 	    if(isset($a_table_links[$s_table]))
 	    {

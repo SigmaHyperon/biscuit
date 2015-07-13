@@ -12,7 +12,12 @@
     or die ("Datenbank nicht gefunden");
 
 
-function func_a_auslesen($s_tabelle)
+ /**
+  * 
+  * @param $s_tabelle - Die Tabelle die Ausgegeben werden soll
+  * @return Gibt die vollständige Tabelle aus
+  */
+function func_a_getFullTable($s_tabelle)
 {
     $a_sql_ausgabe = array();
     $txt_sql_statement = "SELECT * FROM ".$s_tabelle.";";    
@@ -27,6 +32,10 @@ function func_a_auslesen($s_tabelle)
     return $a_sql_ausgabe;
 }
 
+/**
+ * 
+ * @return Gibt alle Lieferanten aus
+ */
 function func_a_getLieferanten()
 {
     $txt_sql_statement = "SELECT * FROM tbl_lieferanten;";
@@ -43,6 +52,10 @@ function func_a_getLieferanten()
     return $a_sql_ausgabe;
 }
 
+/**
+ * 
+ * @return Gibt alle Räume aus
+ */
 function func_a_getRaeume()
 {
     $txt_sql_statement = "SELECT * FROM tbl_raeume;";
@@ -58,6 +71,10 @@ function func_a_getRaeume()
     return $a_sql_ausgabe;
 }
 
+/**
+ * 
+ * @return Gibt alle Geräte aus
+ */
 function func_a_getGeraete()
 {
     $txt_sql_statement = "SELECT * FROM tbl_geraete;";
@@ -73,6 +90,10 @@ function func_a_getGeraete()
     return $a_sql_ausgabe;
 }
 
+/**
+ * 
+ * @return Gibt alle Komponenten aus
+ */
 function func_a_getKomponenten()
 {
     $txt_sql_statement = "SELECT * FROM tbl_komponenten;";
@@ -88,6 +109,10 @@ function func_a_getKomponenten()
     return $a_sql_ausgabe;
 }
 
+/**
+ * 
+ * @return Gibt alle Attribute aus
+ */
 function func_a_getAttribute ()
 {
     $txt_sql_statement = "SELECT * FROM tbl_komponenten;";
@@ -103,6 +128,10 @@ function func_a_getAttribute ()
     return $a_sql_ausgabe;
 }
 
+/**
+ * 
+ * @return Gibt alle Zusässigen Werte aus
+ */
 function func_a_getZulaessigeWerte()
 {
     $txt_sql_statement = "SELECT * FROM tbl_zulaessige_werte;";
@@ -118,6 +147,10 @@ function func_a_getZulaessigeWerte()
     return $a_sql_ausgabe;
 }
 
+/**
+ * 
+ * @return Gibt alle Komponenten-Arten aus
+ */
 function func_a_getKomponentenArten()
 {
     $txt_sql_statement = "SELECT * FROM tbl_komponenten_arten;";
@@ -133,7 +166,33 @@ function func_a_getKomponentenArten()
     return $a_sql_ausgabe;
 }
 
-function func_form_insertLieferant($txt_lieferant_name, $txt_lieferant_name, $txt_lieferant_vorname)
+/**
+ * 
+ * @return Gibt die Benutzer ohne Kennwörter zurück
+ */
+function func_a_getBenutzer()
+{
+    $txt_sql_statement = "SELECT benutzer_name FROM tbl_benutzer;";
+    $a_sql_ausgabe = array();
+    
+    $a_sql_result = mysql_query($txt_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
+    
+    while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
+    {
+        $a_sql_ausgabe[] = $a_sql_cache;
+    }
+    return $a_sql_ausgabe;
+}
+
+/**
+ * 
+ * @param type $txt_lieferant_firmenname - Der Name der Firma
+ * @param type $txt_lieferant_name - Der Nachname des Ansprechpartner
+ * @param type $txt_lieferant_vorname - Der Vorname des Ansprechpartner
+ * @return Gibt Information über Erfolg d. Eintragens (Int)
+ */
+function func_form_insertLieferant($txt_lieferant_firmenname, $txt_lieferant_name, $txt_lieferant_vorname)
 {
     $txt_sql_statement = "INSERT INTO tbl_lieferanten (lieferant_firmenname, lieferant_name, lieferant_vorname)
                             VALUES ('".$txt_lieferant_firmenname.",
@@ -144,15 +203,33 @@ function func_form_insertLieferant($txt_lieferant_name, $txt_lieferant_name, $tx
     return($int_response);
 }
 
+/**
+ * 
+ * @param type $txt_raum_name - Der Name des Raumes
+ * @param type $txt_raum_notiz - Die Raumnotiz
+ * @return Gibt Information über Erfolg d. Eintragens (Int)
+ */
 function func_form_insertRaum($txt_raum_name, $txt_raum_notiz)
 {
-    $txt_sql_statement = "INSERT INTO tbl_raueme (raum_name, raum_notiz)
-                            VALUES (".$txt_raum_name.",".$txt_raum_notiz.");";
+    $txt_sql_statement = "INSERT INTO tbl_raeume (raum_name, raum_notiz)
+                            VALUES ('".$txt_raum_name."','".$txt_raum_notiz."');";
     
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
 }
 
+/**
+ * 
+ * @param type $txt_name - Name des Gerätes
+ * @param type $int_lieferant - Name des Lieferanten
+ * @param type $int_raum_id - Raum in dem sich das Gerät befindet
+ * @param type $txt_ek_datum - Einkaufsdatum
+ * @param type $txt_notiz - Notiz
+ * @param type $txt_hersteller - Hersteller d. Geräts
+ * @param type $txt_gewaehr_beginn - Zeitraum Beginn Gewähr
+ * @param type $txt_gewaehr_ende - Zeitraum Ende Gewähr
+ * @return Gibt Information über Erfolg d. Eintragens (Int)
+ */
 function func_form_insertGeraet($txt_name, $int_lieferant, $int_raum_id, $txt_ek_datum, $txt_notiz, $txt_hersteller, $txt_gewaehr_beginn, $txt_gewaehr_ende)
 {
     $txt_sql_statement = "INSERT INTO tbl_geraete (
@@ -169,6 +246,12 @@ function func_form_insertGeraet($txt_name, $int_lieferant, $int_raum_id, $txt_ek
     return($int_response);
 }
 
+/**
+ * 
+ * @param type $txt_name - Komponentenname
+ * @param type $int_anzahl - Menge d. Komponenten
+ * @return Gibt Information über Erfolg d. Eintragens (Int)
+ */
 function func_form_insertKomponente($txt_name, $int_anzahl)
 {
     $txt_sql_statemnet = "INSERT INTO tbl_komponenten (komponente_name, komponente_bestand)
@@ -180,6 +263,11 @@ function func_form_insertKomponente($txt_name, $int_anzahl)
     
 }
 
+/**
+ * 
+ * @param type $txt_name - Name der Art
+ * @return Gibt Information über Erfolg d. Eintragens (Int)
+ */
 function func_form_instertKomponentenArt($txt_name)
 {
     $txt_sql_statement = "INSERT INTO tbl_komponenten_arten (komponenten_art_name)
@@ -189,6 +277,11 @@ function func_form_instertKomponentenArt($txt_name)
     return ($int_response);
 }
 
+/**
+ * 
+ * @param type $txt_name - Name des Attributs
+ * @return Gibt Information über Erfolg d. Eintragens (Int)
+ */
 function func_form_instertAttribut($txt_name)
 {
     $txt_sql_statement = "INSERT INTO tbl_komponenten_attribute (koponenten_attribut_name)
@@ -198,16 +291,45 @@ function func_form_instertAttribut($txt_name)
     return($int_response);
 }
 
+/**
+ * 
+ * @param type $txt_name - Name des Wertes
+ * @param type $int_wert - Der eigentliche Wert
+ * @return Gibt Information über Erfolg d. Eintragens (Int)
+ */
 function func_form_instertZulaessigenWert($txt_name, $int_wert)
 {
     $txt_sql_statement = "INSERT INTO tbl_zulaessige_Werte (zulaessiger_wert_name, zulaessiger_wert) 
-                            VALUES (".$txt_name."),
+                                     VALUES (".$txt_name."),
                                    (".$int_wert.");";                       
     
     $int_response = mysql_query($txt_sql_statement);
     return($response);
 }
 
+/**
+ * 
+ * @param type $txt_name - Name des Benutzers
+ * @param type $txt_kennwort - Kennwort des Benutzers (Wird als MD5 gespeichert!)
+ * @return Gibt Information über Erfolg d. Eintragens (Int)
+ */
+function func_form_insertBenutzer($txt_name, $txt_kennwort)
+{
+    $txt_kennwort_md5 = CRYPT_MD5($txt_kennwort);
+    
+    $txt_sql_statement = "INSERT INTO tbl_benutzer (benutzer_name, benutzer_kennwort)
+                                    VALUES(".$txt_name.",
+                                                ".$txt_kenwort_md5.");";
+    
+    $int_response = mysql_query($txt_sql_statement);
+    return($int_response);
+}
+
+/**
+ * 
+ * @param type $s_Tabellenname - Name d. Tabelle
+ * @return Gibt Information über Erfolg d. Eintragens (Int)
+ */
 function func_a_Lesen_von_tabelle($s_Tabellenname)
 {
     $txt_sql_statement = "SELECT * FROM ".$s_Tabellenname.";";    
