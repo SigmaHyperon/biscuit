@@ -1,5 +1,5 @@
 <!-----------------------------------------------------------------
-Ersteller:          Pf3y
+Ersteller:          K!l1an
 Erstell-Datum:      12.07.2015
 Änderungsdatum: 
 Inhalt:             Lieferanten_Formular
@@ -31,7 +31,7 @@ Inhalt:             Lieferanten_Formular
     else
     {
 	?>
-    <form action="fro_Lieferanten_hinzufuegen.php" method="post">
+    <form action="fro_Lieferanten_aendern.php" method="post">
         <table border="1" cellspacing="10px">
             <tr>
                 <td>Firma:</td><td><input type="text" name="txt_Firma" size="20"/></td>
