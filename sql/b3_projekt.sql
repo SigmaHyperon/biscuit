@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 10. Jul 2015 um 11:33
+-- Erstellungszeit: 13. Jul 2015 um 09:08
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Datenbank: `b3_projekt`
+-- Datenbank: `b3projekt`
 --
 
 -- --------------------------------------------------------
@@ -35,7 +35,19 @@ CREATE TABLE IF NOT EXISTS `tbl_geraete` (
   `geraet_hersteller` text,
   `geraet_gewaehr_beginn` date DEFAULT NULL,
   `geraet_gewaehr_ende` date DEFAULT NULL,
-  `geraete_seriennummer` text
+  `geraete_seriennummer` text,
+  `geraete_art_fk` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `tbl_geraete_art`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_geraete_art` (
+`geraete_art_id` int(11) NOT NULL,
+  `geraete_art_name` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -81,7 +93,12 @@ CREATE TABLE IF NOT EXISTS `tbl_komponenten_attribute` (
 
 CREATE TABLE IF NOT EXISTS `tbl_lieferanten` (
 `lieferant_id` int(11) NOT NULL,
-  `lieferant_name` text
+  `lieferant_name` text,
+  `lieferant_plz` int(11) DEFAULT NULL,
+  `lieferant_ort` text,
+  `lieferant_strasse` text,
+  `lieferanten_vorname` text,
+  `lieferanten_firmenname` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -162,7 +179,13 @@ CREATE TABLE IF NOT EXISTS `tbl_z_komponente_attribute` (
 -- Indizes für die Tabelle `tbl_geraete`
 --
 ALTER TABLE `tbl_geraete`
- ADD PRIMARY KEY (`geraete_id`), ADD KEY `foreignkey_tbl_geraete_lieferant_fk` (`lieferant_fk`), ADD KEY `foreignkey_tbl_geraete_raum_fk` (`raum_fk`);
+ ADD PRIMARY KEY (`geraete_id`), ADD KEY `foreignkey_tbl_geraete_lieferant_fk` (`lieferant_fk`), ADD KEY `foreignkey_tbl_geraete_raum_fk` (`raum_fk`), ADD KEY `geraete_art_fk` (`geraete_art_fk`);
+
+--
+-- Indizes für die Tabelle `tbl_geraete_art`
+--
+ALTER TABLE `tbl_geraete_art`
+ ADD PRIMARY KEY (`geraete_art_id`);
 
 --
 -- Indizes für die Tabelle `tbl_komponenten`
@@ -234,6 +257,11 @@ ALTER TABLE `tbl_z_komponente_attribute`
 ALTER TABLE `tbl_geraete`
 MODIFY `geraete_id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT für Tabelle `tbl_geraete_art`
+--
+ALTER TABLE `tbl_geraete_art`
+MODIFY `geraete_art_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT für Tabelle `tbl_komponenten`
 --
 ALTER TABLE `tbl_komponenten`
@@ -271,6 +299,7 @@ MODIFY `zulaessiger_wert_id` int(11) NOT NULL AUTO_INCREMENT;
 -- Constraints der Tabelle `tbl_geraete`
 --
 ALTER TABLE `tbl_geraete`
+ADD CONSTRAINT `geraete_art_fk` FOREIGN KEY (`geraete_art_fk`) REFERENCES `tbl_geraete_art` (`geraete_art_id`),
 ADD CONSTRAINT `tbl_geraete_ibfk_1` FOREIGN KEY (`lieferant_fk`) REFERENCES `tbl_lieferanten` (`lieferant_id`),
 ADD CONSTRAINT `tbl_geraete_ibfk_2` FOREIGN KEY (`raum_fk`) REFERENCES `tbl_raeume` (`raum_id`);
 
