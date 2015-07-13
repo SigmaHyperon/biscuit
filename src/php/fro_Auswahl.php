@@ -14,9 +14,13 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
     <script src="../js/jquery.js" type="text/javascript"></script>
     <script>
 	$(function(){
-	    $("#left").css("height", $(document).height()-53+"px");
+	    var dyn = $(document).height()-163+"px";
+	    $("#left").css("height", dyn);
+	    $("#right").css("height", dyn);
 	    $( window ).resize(function() {
-		$("#left").css("height", $(document).height()-53+"px");
+		dyn = $(document).height()-163+"px";
+		$("#left").css("height", dyn);
+		$("#right").css("height", dyn);
 	    });
 	});
     </script>
@@ -30,7 +34,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
     </div>
  
     <div id="left">
-        <table border="0">
+        <table border="0" align="center">
             <tr>
                 <td><a href="fro_Auswahl.php"><button>Home</button></a></td>
             </tr>
