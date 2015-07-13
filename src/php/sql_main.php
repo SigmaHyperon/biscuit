@@ -447,9 +447,36 @@ function func_a_getRaum ($id)
     return $a_Tabellen_daten;
 }
 
+function func_a_getLieferant ($id)
+{
+    $txt_sql_statement = "SELECT * FROM tbl_lieferanten where lieferant_id = '".$id."';";    
+    
+    $a_sql_result =  mysql_query($txt_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
+    
+    $a_Tabellen_daten = mysql_fetch_assoc($a_sql_result);
+
+    return $a_Tabellen_daten;
+}
+
 function func_b_updateRaum ($int_id, $s_name, $s_notiz)
 {
     $txt_sql_statement = "UPDATE tbl_raeume set raum_name='".$s_name."', raum_notiz='".$s_notiz."' where raum_id='".$int_id."';";    
+    var_dump($txt_sql_statement);
+    $a_sql_result =  mysql_query($txt_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
+
+    return $a_sql_result;
+}
+
+function func_b_updateLieferant ($int_id, $s_firmenname, $s_vorname, $s_nachname, $s_plz, $s_ort, $s_strasse)
+{
+    $txt_sql_statement = "UPDATE tbl_lieferanten set lieferant_firmenname='".$s_firmenname."'"
+	    . ", lieferant_vorname='".$s_vorname."'"
+	    . ", lieferant_nachname='".$s_nachname."'"
+	    . ", lieferant_plz='".$s_plz."'"
+	    . ", lieferant_ort='".$s_ort."'"
+	    . ", lieferant_strasse='".$s_strasse."' where lieferant_id='".$int_id."';";    
     var_dump($txt_sql_statement);
     $a_sql_result =  mysql_query($txt_sql_statement)
             or die ("Anfrage Fehlgeschlagen");
