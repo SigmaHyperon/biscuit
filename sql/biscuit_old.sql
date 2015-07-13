@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 13. Jul 2015 um 11:18
+-- Erstellungszeit: 13. Jul 2015 um 10:45
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -122,14 +122,7 @@ CREATE TABLE IF NOT EXISTS `tbl_raeume` (
 `raum_id` int(11) NOT NULL,
   `raum_notiz` text,
   `raum_name` text
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
---
--- Daten für Tabelle `tbl_raeume`
---
-
-INSERT INTO `tbl_raeume` (`raum_id`, `raum_notiz`, `raum_name`) VALUES
-(1, '8 PCs', '103');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -303,7 +296,7 @@ MODIFY `lieferant_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT für Tabelle `tbl_raeume`
 --
 ALTER TABLE `tbl_raeume`
-MODIFY `raum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `raum_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_zulaessige_werte`
 --
