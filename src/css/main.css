@@ -26,9 +26,9 @@ background: linear-gradient(to bottom, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* 
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=0 ); /* IE6-9 */
 }
 
-#Header table {
+#Header h2 {
     position: relative;
-    bottom: 0px;
+    top: -7px;
 }
 
 
