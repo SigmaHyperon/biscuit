@@ -24,10 +24,11 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
              
 
 <body>
+    <div id="main" > 
     <div id="Header" >
         <h2 align="center">Inventar</h2>
     </div>
-    
+ 
     <div id="left">
         <table border="0">
             <tr>
@@ -171,5 +172,6 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
     
     ?>
     </div>
+    </div>  
 </body>
 </html>
