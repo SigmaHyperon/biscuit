@@ -202,14 +202,18 @@ function func_a_getBenutzer()
  */
 function func_form_insertLieferant($txt_lieferant_firmenname, $txt_lieferant_vorname, $txt_lieferant_nachname, $int_lieferant_plz, $txt_lieferant_ort, $txt_lieferant_strasse)
 {
-    $txt_sql_statement = "INSERT INTO tbl_lieferanten (lieferant_firmenname, lieferant_vorname, lieferant_nachname, lieferant_plz, lieferant_ort, lieferant_strasse)
-                            VALUES (
-                                     '".$txt_lieferant_firmenname."',
-                                     '".$txt_lieferant_vorname."',
-                                     '".$txt_lieferant_nachname."',
-                                     '".$int_lieferant_plz."',
-                                     '".$txt_lieferant_ort."',
-                                     '".$txt_lieferant_strasse."');";
+    $txt_sql_statement = "INSERT INTO tbl_lieferanten (lieferant_firmenname, 
+                                                                             lieferant_vorname,
+                                                                             lieferant_nachname,
+                                                                             lieferant_plz, 
+                                                                             lieferant_ort, 
+                                                                             lieferant_strasse)
+                                                            VALUES ('".$txt_lieferant_firmenname."',
+                                                                           '".$txt_lieferant_vorname."',
+                                                                           '".$txt_lieferant_nachname."',
+                                                                           '".$int_lieferant_plz."',
+                                                                           '".$txt_lieferant_ort."',
+                                                                           '".$txt_lieferant_strasse."');";
     
     $int_response = mysql_query($txt_sql_statement);
     var_dump($txt_sql_statement);
@@ -233,16 +237,16 @@ function func_form_insertRaum($txt_raum_name, $txt_raum_notiz)
 
 /**
  * 
- * @param type $int_raum
- * @param type $int_lieferant
- * @param type $dat_ek_datum
- * @param type $txt_notiz
- * @param type $txt_hersteller
- * @param type $dat_gewaehr_beginn
- * @param type $dat_gewaehr_ende
- * @param type $txt_seriennummer
- * @param type $int_art
- * @param type $text_name
+ * @param type $int_raum - Raum Gerät
+ * @param type $int_lieferant - Lieferant Gerät
+ * @param type $dat_ek_datum - Einkaufsdatum Gerät
+ * @param type $txt_notiz -Der Gerät wird nicht müde
+ * @param type $txt_hersteller - Der Gerät schläft nie
+ * @param type $dat_gewaehr_beginn - Der Gerät macht nicht schlapp
+ * @param type $dat_gewaehr_ende - Gewähr Ende
+ * @param type $txt_seriennummer - Seriennummer Gerät
+ * @param type $int_art - Typenbeschreibung / art
+ * @param type $text_name Name des Gerätes
  * @return Gibt an ob der Eintrag erfolgreich war (int)
  */
 function func_form_insertGeraet($int_raum, $int_lieferant, $dat_ek_datum, $txt_notiz, $txt_hersteller, $dat_gewaehr_beginn, $dat_gewaehr_ende, $txt_seriennummer, $int_art, $text_name)
