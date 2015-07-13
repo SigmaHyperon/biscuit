@@ -147,12 +147,13 @@ function func_form_insertRaum($txt_raum_name, $txt_raum_notiz)
     $txt_sql_statement = "INSERT INTO tbl_raueme (raum_name, raum_notiz)
                             VALUES (".$txt_raum_name.",".$txt_raum_notiz.");";
     
-    mysql_query($txt_sql_statement);
+    $int_response = mysql_query($txt_sql_statement);
+    return($int_response);
 }
 
 function func_form_insertGeraet($txt_name, $int_lieferant, $int_raum_id, $txt_ek_datum, $txt_notiz, $txt_hersteller, $txt_gewaehr_beginn, $txt_gewaehr_ende)
 {
-    $txt_sql_statement = "INSERT INTO tbl_geraete 
+    $txt_sql_statement = "INSERT INTO tbl_geraete (
                            VALUES (".$txt_name.",
                                    ".$txt_lieferant.",
                                    ".$int_raum_id.",
@@ -162,7 +163,8 @@ function func_form_insertGeraet($txt_name, $int_lieferant, $int_raum_id, $txt_ek
                                    ".$txt_gewaehr_beginn.",
                                    ".$txt_gewaehr_ende.");";
     
-    mysql_query($txt_sql_statement);
+    $int_response = mysql_query($txt_sql_statement);
+    return($int_response);
 }
 
 function func_form_insertKomponente($txt_name, $int_anzahl)
@@ -171,7 +173,9 @@ function func_form_insertKomponente($txt_name, $int_anzahl)
                            VALUES (".$txt_name.",
                                    ".$int_anzahl.");";
     
-    mysql_query($txt_sql_statemnet);
+    $int_response = mysql_query($txt_sql_statemnet);
+    return ($int_response);
+    
 }
 
 function func_form_instertKomponentenArt($txt_name)
@@ -179,7 +183,8 @@ function func_form_instertKomponentenArt($txt_name)
     $txt_sql_statement = "INSERT INTO tbl_komponenten_arten (komponenten_art_name)
                             VALUES (".$txt_name.");";
     
-    mysql_query($txt_sql_statement);
+    $int_response = mysql_query($txt_sql_statement);
+    return ($int_response);
 }
 
 function func_form_instertAttribut($txt_name)
@@ -187,7 +192,8 @@ function func_form_instertAttribut($txt_name)
     $txt_sql_statement = "INSERT INTO tbl_komponenten_attribute (koponenten_attribut_name)
                             VALUES (".$txt_name.");";
     
-    mysql_query($txt_sql_statement);
+    $int_response = mysql_query($txt_sql_statement);
+    return($int_response);
 }
 
 function func_form_instertZulaessigenWert($txt_name, $int_wert)
@@ -196,7 +202,8 @@ function func_form_instertZulaessigenWert($txt_name, $int_wert)
                             VALUES (".$txt_name."),
                                    (".$int_wert.");";                       
     
-    mysql_query($txt_sql_statement);
+    $int_response = mysql_query($txt_sql_statement);
+    return($response);
 }
 
 function func_a_Lesen_von_tabelle($s_Tabellenname)
