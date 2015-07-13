@@ -27,9 +27,21 @@ Inhalt:             Lieferanten_Formular
     {
 	?>
     <form action="fro_Lieferanten_hinzufuegen.php" method="post">
-        <table border="1">
+        <table border="1" cellspacing="10px">
             <tr>
-                <td>Name:</td><td><input type="text" name="txt_Name" size="20"/></td>
+                <td width="100px">Name:</td><td><input type="text" name="txt_Name" size="20"/></td>
+            </tr>
+            <tr>
+                <td>Vorname:</td><td><input type="text" name="txt_Vorname" size="20"/></td>
+            </tr>
+            <tr>
+                <td>Ort:</td><td><input type="text" name="txt_Ort" size="20"/></td>
+            </tr>
+            <tr>
+                <td>PLZ:</td><td><input type="text" name="txt_Plz" size="20"/></td>
+            </tr>
+            <tr>
+                <td>Strasse inkl. Nr.:</td><td><input type="text" name="txt_Plz" size="20"/></td>
             </tr>
             <tr>
                 <td colspan="2" align="center"> <input type="submit" value="Abschicken" /><input type="reset" value="Verwerfen" /></td>
