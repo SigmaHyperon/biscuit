@@ -12,6 +12,14 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
     <title>fro_Auswahl</title>
     <link href="../css/main.css" rel="stylesheet" type="text/css"/>
     <script src="../js/jquery.js" type="text/javascript"></script>
+    <script>
+	$(function(){
+	    $("#left").css("height", $(document).height()-51+"px");
+	    $( window ).resize(function() {
+		$("#left").css("height", $(document).height()-51+"px");
+	    });
+	});
+    </script>
 </head>
              
 
@@ -103,7 +111,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
 	{
 	    $a_table_links = [
 		"lieferanten"	=>  "fro_Lieferanten_hinzufuegen.php",
-//		"raeume"	=>  "log_Zeige_raeume.php",
+		"raeume"	=>  "fro_Raeume_hinzufuegen.php",
 	    ];
 	    if(isset($a_table_links[$s_table]))
 	    {
