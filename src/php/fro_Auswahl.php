@@ -14,9 +14,9 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
     <script src="../js/jquery.js" type="text/javascript"></script>
     <script>
 	$(function(){
-	    $("#left").css("height", $(document).height()-51+"px");
+	    $("#left").css("height", $(document).height()-53+"px");
 	    $( window ).resize(function() {
-		$("#left").css("height", $(document).height()-51+"px");
+		$("#left").css("height", $(document).height()-53+"px");
 	    });
 	});
     </script>
@@ -24,10 +24,11 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
              
 
 <body>
+    <div id="main" > 
     <div id="Header" >
         <h2 align="center">Inventar</h2>
     </div>
-    
+ 
     <div id="left">
         <table border="0">
             <tr>
@@ -172,5 +173,6 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
     
     ?>
     </div>
+    </div>  
 </body>
 </html>
