@@ -201,18 +201,19 @@ function func_a_getBenutzer()
  * @param type $txt_lieferant_strasse - Straße Lieferant
  * @return Gibt zurück ob Eintragen erfolgreich (int)
  */
-function func_form_insertLieferant($txt_lieferant_firmenname, $txt_lieferant_vorname, $txt_lieferant_nachname, $_int_lieferant_plz, $txt_lieferant_ort, $txt_lieferant_strasse)
+function func_form_insertLieferant($txt_lieferant_firmenname, $txt_lieferant_vorname, $txt_lieferant_nachname, $int_lieferant_plz, $txt_lieferant_ort, $txt_lieferant_strasse)
 {
-    $txt_sql_statement = "INSERT INTO tbl_lieferanten (lieferant_firmenname, lieferant_vorname, lieferant_nachname, lieferant_plz, lieferant_ort, lieferant_strasse)
+    $txt_sql_statement = "INSERT INTO tbl_lieferanten (lieferanten_firmenname, lieferant_vorname, lieferant_nachname, lieferant_plz, lieferant_ort, lieferant_strasse)
                             VALUES (
-                                     ".$txt_lieferant_firmenname.",
-                                     ".$txt_lieferant_vorname.",
-                                     ".$txt_lieferant_nachname.",
-                                     ".$int_lieferant_plz.",
-                                     ".$txt_lieferant_ort.",
-                                     ".$txt_lieferant_strasse.");";
+                                     '".$txt_lieferant_firmenname."',
+                                     '".$txt_lieferant_vorname."',
+                                     '".$txt_lieferant_nachname."',
+                                     '".$int_lieferant_plz."',
+                                     '".$txt_lieferant_ort."',
+                                     '".$txt_lieferant_strasse."');";
     
     $int_response = mysql_query($txt_sql_statement);
+    var_dump($txt_sql_statement);
     return($int_response);
 }
 
