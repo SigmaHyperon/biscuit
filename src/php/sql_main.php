@@ -136,7 +136,7 @@ function func_a_getKomponentenArten()
 function func_form_insertLieferant($txt_lieferant_name)
 {
     $txt_sql_statement = "INSERT INTO tbl_lieferanten (lieferant_name)
-                            VALUES (".$txt_lieferant_name.");";   
+                            VALUES ('".$txt_lieferant_name."');";   
     
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
