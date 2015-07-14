@@ -4,7 +4,28 @@ Erstell-Datum:      14.07.2015
 Änderungsdatum: 
 Inhalt:             Komponentenarten hinzufügen
 ------------------------------------------------------------------->
-
+<?php
+    require_once '../lib/manager.php';
+    require_once './sql_main.php';
+    \utility\loadForms();
+    
+    if($s_Komponentenart_name = \utility\forms\post("txt_Komponenten_art_name", false))
+    {
+	if(func_form_instertKomponentenArt($s_Komponentenart_name))
+	{
+	    try {
+		header("Location: fro_Auswahl.php?action=list&table=komponentenarten");
+		die();
+	    } catch (Exception $ex) {}
+	}
+	else
+	{
+	    echo "An error occured!";
+	}
+    }
+    else
+    {
+?>
 <form action="fro_Komponentenarten_hinzufuegen.php" method="post">
         <table  class="formular">
             <tr>
@@ -15,3 +36,6 @@ Inhalt:             Komponentenarten hinzufügen
             </tr> 
         </table>        
 </form>
+<?php
+    }
+?>
