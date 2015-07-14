@@ -30,13 +30,13 @@ Inhalt:             Räume hinzufügen
 <form action="fro_Raeume_hinzufuegen.php" method="post">
         <table class="formular">
             <tr>
-                <td>Name:</td><td><input type="text" name="txt_Raumname" size="20"/></td>
+                <td>Name:</td><td><input type="text" name="txt_Raumname"/></td>
             </tr>
             <tr>
-                <td>Stockwerk</td><td><input type="text" name="txt_Stockwerk" size="20"/></td>
+                <td>Stockwerk</td><td><input type="text" name="txt_Stockwerk"/></td>
             </tr>
             <tr>
-                <td >Raumnotiz:</td><td><input type="text" name="txt_Raumnotiz" size="20"/></td>
+                <td >Raumnotiz:</td><td><input type="text" name="txt_Raumnotiz"/></td>
             </tr>
             <tr>
                 <td colspan="2" align="center"> <input type="submit" value="Eintragen" /><input type="reset" value="Verwerfen" /></td>

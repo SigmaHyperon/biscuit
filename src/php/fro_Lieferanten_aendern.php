@@ -39,22 +39,22 @@ Inhalt:             Lieferanten_Formular
 	<input type="hidden" name="int_id" value="<?php echo $aLieferant_daten["lieferant_id"];?>"/>
         <table border="1" class="formular">
             <tr>
-                <td>Firma:</td><td><input type="text" name="txt_Firma" size="20" value="<?php echo $aLieferant_daten["lieferant_firmenname"];?>"/></td>
+                <td>Firma:</td><td><input type="text" name="txt_Firma" value="<?php echo $aLieferant_daten["lieferant_firmenname"];?>"/></td>
             </tr>
             <tr>
-                <td width="100px">Name:</td><td><input type="text" name="txt_Name" size="20" value="<?php echo $aLieferant_daten["lieferant_nachname"];?>"/></td>
+                <td>Name:</td><td><input type="text" name="txt_Name" value="<?php echo $aLieferant_daten["lieferant_nachname"];?>"/></td>
             </tr>
             <tr>
-                <td>Vorname:</td><td><input type="text" name="txt_Vorname" size="20" value="<?php echo $aLieferant_daten["lieferant_vorname"];?>"/></td>
+                <td>Vorname:</td><td><input type="text" name="txt_Vorname" value="<?php echo $aLieferant_daten["lieferant_vorname"];?>"/></td>
             </tr>
             <tr>
-                <td>Ort:</td><td><input type="text" name="txt_Ort" size="20" value="<?php echo $aLieferant_daten["lieferant_ort"];?>"/></td>
+                <td>Ort:</td><td><input type="text" name="txt_Ort" value="<?php echo $aLieferant_daten["lieferant_ort"];?>"/></td>
             </tr>
             <tr>
-                <td>PLZ:</td><td><input type="text" name="txt_Plz" size="20" value="<?php echo $aLieferant_daten["lieferant_plz"];?>"/></td>
+                <td>PLZ:</td><td><input type="text" name="txt_Plz" value="<?php echo $aLieferant_daten["lieferant_plz"];?>"/></td>
             </tr>
             <tr>
-                <td>Strasse inkl. Nr.:</td><td><input type="text" name="txt_Strasse" size="20" value="<?php echo $aLieferant_daten["lieferant_strasse"];?>"/></td>
+                <td>Strasse inkl. Nr.:</td><td><input type="text" name="txt_Strasse" value="<?php echo $aLieferant_daten["lieferant_strasse"];?>"/></td>
             </tr>
             <tr>
                 <td colspan="2" align="center"> <input type="submit" value="Eintragen" /><input type="reset" value="Verwerfen" /></td>
