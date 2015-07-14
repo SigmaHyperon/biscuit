@@ -113,6 +113,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
 		    "Id",
 		    "Raum",
 		    "Lieferant",
+		    "Name",
 		    "Einkaufsdatum",
 		    "Notiz",
 		    "Hersteller",
