@@ -2,13 +2,13 @@
 Ersteller:          K!l1an
 Erstell-Datum:      13.07.2015
 Änderungsdatum: 
-Inhalt:             Komponenten hinzufügen
+Inhalt:             Komponenten ändern
 ------------------------------------------------------------------->
 
-<form action="fro_Komponenten_hinzufuegen.php" method="post">
-        <table border="1" cellspacing="10px">
+<form action="fro_Komponenten_aendern.php" method="post">
+        <table border="1" class="formular">
             <tr>
-                <td width="100px">Name:</td><td><input type="text" name="txt_Komponentenname" size="20"/></td>
+                <td>Name:</td><td><input type="text" name="txt_Komponentenname" size="20"/></td>
             </tr>
             <tr>
                 <td >Komponentenbestand:</td><td><input type="text" name="txt_Komponentenbestand" size="20"/></td>
