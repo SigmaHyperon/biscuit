@@ -144,5 +144,5 @@ function func_form_instertZulaessigenWert($txt_name, $int_wert)
                                    (".$int_wert.");";                       
     
     $int_response = mysql_query($txt_sql_statement);
-    return($response);
+    return($int_response);
 }
