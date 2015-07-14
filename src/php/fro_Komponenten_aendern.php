@@ -4,7 +4,6 @@ Erstell-Datum:      13.07.2015
 Änderungsdatum: 
 Inhalt:             Komponenten ändern
 ------------------------------------------------------------------->
-<<<<<<< HEAD
 <?php
     require_once '../lib/manager.php';
     require_once './sql_main.php';
