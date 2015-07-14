@@ -20,6 +20,9 @@ if($s_action = \utility\forms\get("action", false))
 	case "Löschen":
 	    func_v_delete();
 	    break;
+	case "home":
+	    func_v_home();
+	    break;
 	default:
 	    func_v_invalid();
 	    break;
@@ -201,4 +204,9 @@ function func_v_invalid()
 {
     echo "<h1 color='red'>invalid action selected!</h1>";
     die();
+}
+
+function func_v_home()
+{
+    include "./fro_Home.php";
 }
