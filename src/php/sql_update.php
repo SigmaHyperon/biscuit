@@ -141,7 +141,12 @@ function func_form_updateBenutzer($int_id, $txt_name)
     return($int_response);
 }
 
-
+/**
+ * 
+ * @param int $int_id ID der Geräteart
+ * @param txt $txt_geraeteart_name Name d. Geräteart
+ * @return int Rückgabeinfo
+ */
 function func_form_updateGeraeteArt($int_id, $txt_geraeteart_name)
 {
     $txt_sql_statement = "UPDATE tbl_geraete_art SET geraete_art_name = '".$txt_geraeteart_name."'
