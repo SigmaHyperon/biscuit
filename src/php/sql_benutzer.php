@@ -9,7 +9,7 @@
  */
 function func_form_insertBenutzer($txt_name, $txt_kennwort, $txt_mail)
 {
-    $txt_kennwort_md5 = CRYPT_MD5($txt_kennwort);
+    $txt_kennwort_md5 = MD5($txt_kennwort);
     
     $txt_sql_statement = "INSERT INTO tbl_benutzer (benutzer_name, benutzer_kennwort, benutzer_mail)
                                     VALUES(".$txt_name.",
@@ -20,6 +20,7 @@ function func_form_insertBenutzer($txt_name, $txt_kennwort, $txt_mail)
     return($int_response);
 }
 
+
 /**
  * 
  * @param type $txt_benutzer - Benutzernamen
@@ -28,7 +29,7 @@ function func_form_insertBenutzer($txt_name, $txt_kennwort, $txt_mail)
  */
 function func_form_login($txt_benutzer, $txt_kennwort)
 {
-    $txt_kennwort_md5 = CRYPT_MD5($txt_kennwort);
+    $txt_kennwort_md5 = MD5($txt_kennwort);
     
     $txt_sql_statement = "SELECT benutzer_kennwort FROM tbl_benutzer WHERE benutzer_name = ".$txt_benutzer.";";
     $txt_kennwort_cache = mysql_query($txt_sql_statement);
@@ -54,7 +55,7 @@ function func_form_login($txt_benutzer, $txt_kennwort)
  */
 function funct_form_KennwortAendern($txt_benutzer, $txt_kennwort, $txt_kennwort_neu)
 {
-    $txt_kennwort_md5 = CRYPT_MD5($txt_kennwort);
+    $txt_kennwort_md5 = MD5($txt_kennwort);
     $txt_sql_statement = "SELECT benutzer_kennwort FROM tbl_benutzer WHERE benutzer_name = ".$txt_benutzer.";";
     $txt_kennwort_cache = mysql_query($txt_sql_statement);
     
@@ -62,7 +63,7 @@ function funct_form_KennwortAendern($txt_benutzer, $txt_kennwort, $txt_kennwort_
     
     if($txt_kennwort_md5 == $txt_kennwort_alt)
     {
-        $txt_kennwort_neu_md5 = CRYPT_MD5($txt_kennwort_neu);
+        $txt_kennwort_neu_md5 = MD5($txt_kennwort_neu);
                 
         $txt_sql_statement = "UPDATE tbl_benutzer SET benutzer_kennwort = ".$txt_kennwort_neu_md5."
                                         WHERE benutzer_kennwort = ".$txt_kennwort_alt.";";
