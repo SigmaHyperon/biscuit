@@ -1,10 +1,10 @@
 <?php
 
-require_once "../lib/manager.php";
-require_once "./sql_main.php";
-//\utility\cake_test();
-\utility\loadForms();
-\utility\loadSessions();
+function func_b_isAdmin()
+{
+    return \utility\sessions\sessionGet("login", false);
+}
+
 if($s_action = \utility\forms\get("action", false))
 {
     switch($s_action)

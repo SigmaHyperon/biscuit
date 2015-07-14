@@ -25,6 +25,7 @@
         
     {
         require_once 'sql_main.php';
+	session_start();
 
         $benutzername = $_POST["txt_Benutzer"];
         $passwort = $_POST["txt_Passwort"];
@@ -34,7 +35,10 @@
                 $_SESSION["benutzername"] = $benutzername;
                 $_SESSION["login"] = 1;
 
-                echo "test";
+                try {
+		    header("Location: fro_Auswahl.php");
+		    die();
+		} catch (Exception $ex) {}
             }
         else 
             {

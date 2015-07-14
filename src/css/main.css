@@ -19,7 +19,7 @@ body {
  border: 1px solid black;
  border-radius: 15px;
  box-shadow: 1px 1px 6px #292929;
- 
+ text-align: right;
  background: #feffff; /* Old browsers */
  background: -moz-linear-gradient(top, #feffff 0%, #ddf1f9 35%, #a0d8ef 100%); /* FF3.6+ */
  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(35%,#ddf1f9), color-stop(100%,#a0d8ef)); /* Chrome,Safari4+ */
@@ -175,7 +175,15 @@ select{
 {
 color: #000000;
 background-repeat: repeat-x;
-line-height: 50px
+    margin-top: 10px;
+}
+span.username {
+    display: inline-block;
+}
+
+a.logout button {
+    width: 50px;
+    margin-right: 10px;
 }
 
 table.multi_form{
