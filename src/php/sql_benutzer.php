@@ -35,7 +35,8 @@ function func_form_login($txt_benutzer, $txt_kennwort)
     $txt_kennwort_cache = mysql_query($txt_sql_statement);
     
     $txt_kennwort_saved = mysql_fetch_assoc($txt_kennwort_cache);
-            
+    var_dump($txt_kennwort_saved);
+    
     if($txt_kennwort_md5 == $txt_kennwort_saved['benutzer_kennwort'])
     {
         return 1;
