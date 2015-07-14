@@ -556,6 +556,24 @@ function func_form_updateAttribute($int_id, $txt_name)
     return($int_response);
 }
 
+function func_form_updateZulaessigeWerte($int_id, $txt_wert_name, $int_wert)
+{
+    $txt_sql_statement = "UPDATE tbl_zulaessige_werte SET zulaessiger_wert_name ='".$txt_wert_name."',
+                                                                                    zulaessiger_wert = '".$int_wert."'
+                                                                         WHERE zulaessiger_wert_id ='".$int_id."'";
+    $int_response = mysql_query($txt_sql_statement);
+    return($int_response);
+}
+
+function func_form_updateBenutzer($int_id, $txt_name)
+{
+    $txt_sql_statement = "UPDATE tbl_benutzer SET benutzer_name = '".$txt_name."'
+                                                              WHERE benutzer_id ='".$int_id."'";
+    $int_response = mysql_query($txt_sql_statement);
+    return($int_response);
+}
+
+
 function func_form_delLieferantByName($txt_lieferant)
 {
    $txt_sql_statement = "DELETE FROM tbl_lieferanten WHERE lieferant_name = ".$txt_lieferant.";";
