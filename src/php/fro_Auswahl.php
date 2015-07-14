@@ -63,7 +63,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
                     <td><a href="fro_Auswahl.php?action=list&table=zulaessigewerte"><button>Zulässige Werte</button></a></td>
                 </tr> 
                 <tr>
-                    <td><a href="fro_Auswahl.php?action=detail&table=geraete_komponente"><button>Zulässige Werte</button></a></td>
+                    <td><a href="fro_Auswahl.php?action=detail&table=geraete_komponente"><button>Zuordnung Geräte Komponente</button></a></td>
                 </tr> 
                 
             </table>
