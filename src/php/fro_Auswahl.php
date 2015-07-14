@@ -84,6 +84,9 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
                 case "Hinzufügen":
                     func_v_add();
                     break;
+                case "Löschen":
+                    func_v_delete();
+                    break;
                 default:
                     func_v_invalid();
                     break;
@@ -200,6 +203,35 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
                 func_v_invalid();
             }
         }
+	
+	function func_v_delete()
+	{
+	    if($s_table = \utility\forms\get("table", false))
+            {
+                $a_table_links = [
+                    "lieferanten"	=>  "func_form_delLieferantByID",
+                    "raeume"	=>  "func_form_delRaumByID",
+                    "geraete"	=>  "func_form_delGeraetByID",
+                    "komponenten"	=>  "func_form_delKomponenteByID"
+                ];
+                if(isset($a_table_links[$s_table]) && $int_selektiert = \utility\forms\get("selektiert", false))
+                {
+                    call_user_func($a_table_links[$s_table], $int_selektiert);
+		    try {
+			header("Location: fro_Auswahl.php?action=list&table=".$s_table);
+			die();
+		    } catch (Exception $ex) {}
+                }
+                else
+                {
+                    func_v_invalid();
+                }
+            }
+            else
+            {
+                func_v_invalid();
+            }
+	}
 
         function func_v_invalid()
         {
