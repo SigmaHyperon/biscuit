@@ -2,8 +2,9 @@
 Ersteller:          Pf3y
 Erstell-Datum:      13.07.2015
 Änderungsdatum: 
-Inhalt:             Komponenten hinzufügen
+Inhalt:             Komponenten ändern
 ------------------------------------------------------------------->
+<<<<<<< HEAD
 <?php
     require_once '../lib/manager.php';
     require_once './sql_main.php';
@@ -33,11 +34,13 @@ Inhalt:             Komponenten hinzufügen
 	{
 	    $aKomponenten_daten = func_a_getKomponente($int_selektiert);
 ?>
-<form action="fro_Komponenten_hinzufuegen.php" method="post">
+<form action="fro_Komponenten_aendern.php" method="post">
     <input type="hidden" name="int_id" value="<?php echo $aKomponenten_daten["komponenten_id"];?>"/>
-        <table  class="formular">
+
+        <table border="1" class="formular">
             <tr>
                 <td width="100px">Name:</td><td><input type="text" name="txt_Komponentenname" size="20" value="<?php echo $aKomponenten_daten["komponenten_id"];?>"/></td>
+
             </tr>
             <tr>
                 <td >Komponentenbestand:</td><td><input type="text" name="txt_Komponentenbestand" size="20" value="<?php echo $aKomponenten_daten["komponenten_id"];?>"/></td>
