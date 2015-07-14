@@ -165,7 +165,8 @@ function func_v_delete()
 	    "raeume"	=>  "func_form_delRaumByID",
 	    "geraete"	=>  "func_form_delGeraetByID",
 	    "komponenten"	=>  "func_form_delKomponenteByID",
-	    "komponentenarten"	=>  "func_form_delKomponentenArtByID"
+	    "komponentenarten"	=>  "func_form_delKomponentenArtByID",
+	    "zulaessigewerte"	=>  "func_form_delZulaessigenWertByID",
 	];
 	if(isset($a_table_links[$s_table]) && $int_selektiert = \utility\forms\get("selektiert", false))
 	{

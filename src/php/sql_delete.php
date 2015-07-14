@@ -161,7 +161,7 @@ function func_form_delRaumByID($int_raum)
  */
 function func_form_delGeraetByID($int_geraet)
 {
-    $txt_sql_statement = "DELETE FROM tbl_geraete WHERE geraet_id = ".$int_geraet.";";
+    $txt_sql_statement = "DELETE FROM tbl_geraete WHERE geraete_id = '".$int_geraet."';";
     
     $int_response = mysql_query($txt_sql_statement);
     
@@ -203,7 +203,7 @@ function func_form_delAttributByID($int_attribut)
  */
 function func_form_delZulaessigenWertByID($int_wert)
 {
-    $txt_sql_statement = "DELETE FROM tbl_zulaessigeWerte WHERE wert_id =".$int_wert.";";
+    $txt_sql_statement = "DELETE FROM tbl_zulaessige_werte WHERE zulaessiger_wert_id ='".$int_wert."';";
     
     $int_response = mysql_query($txt_sql_statement);
     
