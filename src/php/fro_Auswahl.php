@@ -58,7 +58,11 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
                 </tr>
                 <tr>
                     <td><a href="fro_Auswahl.php?action=list&table=komponentenarten"><button>Komponentenarten</button></a></td>
-                </tr>       
+                </tr>
+                <tr>
+                    <td><a href="fro_Auswahl.php?action=list&table=zulaessigewerte"><button>Zulässige Werte</button></a></td>
+                </tr> 
+                
             </table>
         </div>
 <!-- --------------------- Start des Interaktionsfeldes -------------------- -->    
