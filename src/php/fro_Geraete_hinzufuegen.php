@@ -37,12 +37,13 @@ Inhalt:            Geräte hinzufügen
     else
     {
 ?>
+<!-- -------------- Gerätehinzufügenformular ---------------------------------->
 <form action="fro_Geraete_hinzufuegen.php" method="post">
         <table  class="formular">
             <tr>
                 <td>Gerätetyp:</td>
 		<td> 
-		    <select name="txt_Geraetetyp_select" size="1" width="3000">
+		    <select name="txt_Geraetetyp_select" size="1" >
 			<?php
 			    $aAlle_geraete_typen = func_a_getGeraeteArten();
 			    foreach ($aAlle_geraete_typen as $value) {

@@ -41,6 +41,7 @@ Inhalt:            Geräte hinzufügen
 	{
 	    $aGeraet_daten = func_a_getGeraet($int_selektiert);
 ?>
+<!------------------- Geräteändernformular ------------------------------------>
 <form action="fro_Geraete_aendern.php" method="post">
     <input type="hidden" name="int_id" value="<?php echo $aGeraet_daten["geraete_id"];?>"/>
         <table  class="formular">

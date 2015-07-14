@@ -33,7 +33,7 @@ Inhalt:             Räume hinzufügen
 ?>
 <form action="fro_Raeume_aendern.php" method="post">
     <input type="hidden" name="int_id" value="<?php echo $aRaum_daten["raum_id"];?>"/>
-        <table border="1" cellspacing="10px">
+        <table border="1" class="formular">
             <tr>
                 <td width="100px">Name:</td><td><input type="text" name="txt_Raumname" size="20" value="<?php echo $aRaum_daten["raum_name"];?>"/></td>
             </tr>

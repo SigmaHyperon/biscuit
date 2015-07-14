@@ -37,7 +37,7 @@ Inhalt:             Lieferanten_Formular
 	?>
     <form action="fro_Lieferanten_aendern.php" method="post">
 	<input type="hidden" name="int_id" value="<?php echo $aLieferant_daten["lieferant_id"];?>"/>
-        <table border="1" cellspacing="10px">
+        <table border="1" class="formular">
             <tr>
                 <td>Firma:</td><td><input type="text" name="txt_Firma" size="20" value="<?php echo $aLieferant_daten["lieferant_firmenname"];?>"/></td>
             </tr>
