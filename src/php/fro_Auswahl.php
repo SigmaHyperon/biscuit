@@ -19,6 +19,7 @@ var_dump($_SESSION);
     <title>fro_Auswahl</title>
     <link href="../css/main.css" rel="stylesheet" type="text/css"/>
     <script src="../js/jquery.js" type="text/javascript"></script>
+    <script src="../js/konami.js" type="text/javascript"></script>
     <script>
 	$(function(){
 	    var dyn = $(document).height()-163+"px";
