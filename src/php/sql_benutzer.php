@@ -9,7 +9,7 @@
  */
 function func_form_insertBenutzer($txt_name, $txt_kennwort, $txt_mail)
 {
-    $txt_kennwort_md5 = MD5($txt_kennwort);
+    $txt_kennwort_md5 = MD5 ($txt_kennwort);
     
     $txt_sql_statement = "INSERT INTO tbl_benutzer (benutzer_name, benutzer_kennwort, benutzer_mail)
                                     VALUES(".$txt_name.",
@@ -29,7 +29,7 @@ function func_form_insertBenutzer($txt_name, $txt_kennwort, $txt_mail)
  */
 function func_form_login($txt_benutzer, $txt_kennwort)
 {
-    $txt_kennwort_md5 = MD5($txt_kennwort);
+    $txt_kennwort_md5 = ($txt_kennwort);
     
     $txt_sql_statement = "SELECT benutzer_kennwort FROM tbl_benutzer WHERE benutzer_name = '".$txt_benutzer."';";
     $txt_kennwort_cache = mysql_query($txt_sql_statement);
