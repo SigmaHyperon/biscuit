@@ -22,7 +22,7 @@ echo "<div id='logindiv'>
 
 elseif ($_SESSION["login"] == 1) 
     {
-        
+    echo 'Hier sollte etwas stehen';
     }
 
 
