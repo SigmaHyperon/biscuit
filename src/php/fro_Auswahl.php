@@ -57,7 +57,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
                     <td><a href="fro_Auswahl.php?action=list&table=komponenten"><button>Komponenten</button></a></td>
                 </tr>
                 <tr>
-                    <td><a href="fro_Arten.php"><button>Komponentenarten</button></a></td>
+                    <td><a href="fro_Auswahl.php?action=list&table=komponentenarten"><button>Komponentenarten</button></a></td>
                 </tr>       
             </table>
         </div>
@@ -131,12 +131,17 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
                         "Bestand",
                         "Art"
                     ],
+                    "komponentenarten"	=>  [
+                        "Id",
+                        "Name"
+                    ],
                 ];
                 $a_table_links = [
                     "lieferanten"	=>  "func_a_getLieferanten",
                     "raeume"	=>  "func_a_getRaeume",
                     "geraete"	=>  "func_a_getGeraete",
-                    "komponenten"	=>  "func_a_getKomponenten"
+                    "komponenten"	=>  "func_a_getKomponenten",
+                    "komponentenarten"	=>  "func_a_getKomponentenArten"
                 ];
                 if(isset($a_table_links[$s_table]))
                 {
@@ -187,7 +192,8 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
                     "lieferanten"	=>  "fro_Lieferanten_hinzufuegen.php",
                     "raeume"	=>  "fro_Raeume_hinzufuegen.php",
                     "geraete"	=>  "fro_Geraete_hinzufuegen.php",
-                    "komponenten"	=>  "fro_Komponenten_hinzufuegen.php"
+                    "komponenten"	=>  "fro_Komponenten_hinzufuegen.php",
+                    "komponentenarten"	=>  "fro_Komponentenarten_hinzufuegen.php"
                 ];
                 if(isset($a_table_links[$s_table]))
                 {
