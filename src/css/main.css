@@ -97,7 +97,7 @@ table.formular td{
    width: 150px;
 }
 
-input{
+input[type="text"]{
  
  width:153px;
 }

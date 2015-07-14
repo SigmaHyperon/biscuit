@@ -39,12 +39,12 @@ Inhalt:             Komponenten ändern
         <table border="1" class="formular">
             <tr>
 
-                <td width="100px">Name:</td><td><input type="text" name="txt_Komponentenname" size="20" value="<?php echo $aKomponenten_daten["komponente_name"];?>"/></td>
+                <td>Name:</td><td><input type="text" name="txt_Komponentenname" value="<?php echo $aKomponenten_daten["komponente_name"];?>"/></td>
 
 
             </tr>
             <tr>
-                <td >Komponentenbestand:</td><td><input type="text" name="txt_Komponentenbestand" size="20" value="<?php echo $aKomponenten_daten["komponente_bestand"];?>"/></td>
+                <td >Komponentenbestand:</td><td><input type="text" name="txt_Komponentenbestand" value="<?php echo $aKomponenten_daten["komponente_bestand"];?>"/></td>
             </tr>
             <tr>
                 <td>Komponentenart:</td>
