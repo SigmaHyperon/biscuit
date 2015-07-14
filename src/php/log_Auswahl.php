@@ -72,6 +72,11 @@ function func_v_list()
 		"Id",
 		"Name"
 	    ],
+	    "zulaessigewerte"	=>  [
+		"Id",
+		"Name",
+		"Wert"
+	    ],
 	];
 	$a_table_links = [
 	    "lieferanten"	=>  "func_a_getLieferanten",
@@ -79,7 +84,8 @@ function func_v_list()
 	    "geraete"	=>  "func_a_getGeraete",
 	    "komponenten"	=>  "func_a_getKomponenten",
 	    "komponentenarten"	=>  "func_a_getKomponentenArten",
-	    "geraetearten"	=>  "func_a_getGeraeteArten"
+	    "geraetearten"	=>  "func_a_getGeraeteArten",
+	    "zulaessigewerte"	=>  "func_a_getZulaessigeWerte",
 	];
 	if(isset($a_table_links[$s_table]))
 	{
