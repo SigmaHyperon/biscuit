@@ -15,7 +15,7 @@ Inhalt:             Komponenten ändern
 	$s_Komponente_art = \utility\forms\post("txt_Komponentenart_select", "");
 	$i_Komponente_bestand = \utility\forms\post("txt_Komponentenbestand", "");
 	
-	if(func_form_updateKomponentenKomponente($s_Komponente_name, $i_Komponente_bestand, $s_Komponente_art))
+	if(func_form_updateKomponenten($s_Komponente_name, $i_Komponente_bestand, $s_Komponente_art))
 	{
 	    try {
 		header("Location: fro_Auswahl.php?action=list&table=komponenten");
