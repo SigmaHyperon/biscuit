@@ -233,3 +233,75 @@ function func_a_getGeraet ($id)
 
     return $a_Tabellen_daten;
 }
+
+function func_a_getKomponente($id)
+{
+    $txt_sql_statement = "SELCET * FROM tbl_komponenten WHERE komponenten_id='".$id."';";
+    
+    $a_sql_result = mysql_query($txt_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
+    
+    $a_Tabellen_daten = mysql_fetch_assoc($a_sql_result);
+    
+    return $a_Tabellen_daten;
+}
+
+function func_a_getGeraeteArt($id)
+{
+    $txt_sql_statement = "SELECT * FROM tbl_komponenten_arten WHERE komponenten_art_id = '".$id."'";
+    
+    $a_sql_result = mysql_query($txt_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
+    
+    $a_Tabellen_daten = mysql_fetch_assoc($a_sql_result);
+    
+    return $a_Tabellen_daten;
+}
+
+function func_a_getAttribut($id)
+{
+    $txt_sql_statement = "SELECT * FROM tbl_komponenten_attribute WHERE komponenten_attribut_id ='".$id."'";
+    
+    $a_sql_result = mysql_query($txt_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
+    
+    $a_Tabellen_daten = mysql_fetch_assoc($a_sql_result);
+    
+    return $a_Tabellen_daten;
+}
+
+function func_a_getKomponentenArt($id)
+{
+    $txt_sql_statement = "SELECT * FROM tbl_komponenten_arten WHERE komponenten_art_id ='".$id."'";
+    
+    $a_sql_result = mysql_query($txt_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
+    
+    $a_Tabellen_daten = mysql_fetch_assoc($a_sql_result);
+    
+    return($a_Tabellen_daten);
+}
+
+function func_a_getZulaessigenWert($id)
+{
+    $txt_sql_statement ="SELECT * FROM tbl_zulaessige_werte WHERE zulaessiger_wert_id ='".$id."'";
+    
+    $a_sql_result = mysql_query($txt_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
+    
+    $a_Tabellen_daten = mysql_fetch_assoc($a_sql_result);
+    
+    return($a_Tabellen_daten);
+}
+
+function func_a_getNutzer($id)
+{
+    $tst_sql_statement = "SELCT * FROM tbl_benutzer WHERE benutzer_id ='".$id."'";
+    
+    $a_sql_result = mysql_query($tst_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
+    
+    $a_Tabellen_daten = mysql_fetch_assoc($a_sql_result);
+    
+    return($a_Tabellen_daten);
+}
