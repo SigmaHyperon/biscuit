@@ -1,13 +1,16 @@
 
+
 body {
     padding: 0;
     margin: 0;
 }
+// Design des Hauptbereichs*****************************************************
 #main{
     margin: auto;
     width: 1080px;
       
 }
+// Design des Banners***********************************************************
 #Header {
  position: relative;
  top: 10px;
@@ -15,85 +18,79 @@ body {
  margin: auto;
  border: 1px solid black;
  
- 
-background: #feffff; /* Old browsers */
-background: -moz-linear-gradient(top, #feffff 0%, #ddf1f9 35%, #a0d8ef 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(35%,#ddf1f9), color-stop(100%,#a0d8ef)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* IE10+ */
-background: linear-gradient(to bottom, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=0 ); /* IE6-9 */
+ background: #feffff; /* Old browsers */
+ background: -moz-linear-gradient(top, #feffff 0%, #ddf1f9 35%, #a0d8ef 100%); /* FF3.6+ */
+ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(35%,#ddf1f9), color-stop(100%,#a0d8ef)); /* Chrome,Safari4+ */
+ background: -webkit-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* Chrome10+,Safari5.1+ */
+ background: -o-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* Opera 11.10+ */
+ background: -ms-linear-gradient(top, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* IE10+ */
+ background: linear-gradient(to bottom, #feffff 0%,#ddf1f9 35%,#a0d8ef 100%); /* W3C */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=0 ); /* IE6-9 */
 }
-
+//Design der Schrift im Banner**************************************************
 #Header h2 {
     position: relative;
     top: -7px;
 }
 
-
+// Design des Navigationsbereiches**********************************************
 #left{
   position: relative;
   top: 20px;
   width: 145px; 
   float: left;
   border: 1px solid black;
-
   text-align: center;
 
-  
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f9ff+0,cbebff+49,a1dbff+100 */
-background: rgb(240,249,255); /* Old browsers */
-background: -moz-linear-gradient(45deg, rgba(240,249,255,1) 0%, rgba(203,235,255,1) 49%, rgba(161,219,255,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(240,249,255,1)), color-stop(49%,rgba(203,235,255,1)), color-stop(100%,rgba(161,219,255,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(45deg, rgba(240,249,255,1) 0%,rgba(203,235,255,1) 49%,rgba(161,219,255,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(45deg, rgba(240,249,255,1) 0%,rgba(203,235,255,1) 49%,rgba(161,219,255,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(45deg, rgba(240,249,255,1) 0%,rgba(203,235,255,1) 49%,rgba(161,219,255,1) 100%); /* IE10+ */
-background: linear-gradient(45deg, rgba(240,249,255,1) 0%,rgba(203,235,255,1) 49%,rgba(161,219,255,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+ background: rgb(240,249,255); /* Old browsers */
+ background: -moz-linear-gradient(45deg, rgba(240,249,255,1) 0%, rgba(203,235,255,1) 49%, rgba(161,219,255,1) 100%); /* FF3.6+ */
+ background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(240,249,255,1)), color-stop(49%,rgba(203,235,255,1)), color-stop(100%,rgba(161,219,255,1))); /* Chrome,Safari4+ */
+ background: -webkit-linear-gradient(45deg, rgba(240,249,255,1) 0%,rgba(203,235,255,1) 49%,rgba(161,219,255,1) 100%); /* Chrome10+,Safari5.1+ */
+ background: -o-linear-gradient(45deg, rgba(240,249,255,1) 0%,rgba(203,235,255,1) 49%,rgba(161,219,255,1) 100%); /* Opera 11.10+ */
+ background: -ms-linear-gradient(45deg, rgba(240,249,255,1) 0%,rgba(203,235,255,1) 49%,rgba(161,219,255,1) 100%); /* IE10+ */
+ background: linear-gradient(45deg, rgba(240,249,255,1) 0%,rgba(203,235,255,1) 49%,rgba(161,219,255,1) 100%); /* W3C */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
-
+// Design des Interaktionsbereiches*********************************************
 #right{
   position: relative;
   top: 20px;
-
   width: 920px;
   height: 100%;
   border: 1px solid black;
   float: right;
   
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a1dbff+0,cbebff+49,f0f9ff+100 */
-background: rgb(161,219,255); /* Old browsers */
-background: -moz-linear-gradient(top, rgba(161,219,255,1) 0%, rgba(203,235,255,1) 49%, rgba(240,249,255,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(161,219,255,1)), color-stop(49%,rgba(203,235,255,1)), color-stop(100%,rgba(240,249,255,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(161,219,255,1) 0%,rgba(203,235,255,1) 49%,rgba(240,249,255,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(161,219,255,1) 0%,rgba(203,235,255,1) 49%,rgba(240,249,255,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, rgba(161,219,255,1) 0%,rgba(203,235,255,1) 49%,rgba(240,249,255,1) 100%); /* IE10+ */
-background: linear-gradient(to bottom, rgba(161,219,255,1) 0%,rgba(203,235,255,1) 49%,rgba(240,249,255,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1dbff', endColorstr='#f0f9ff',GradientType=0 ); /* IE6-9 */
+ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a1dbff+0,cbebff+49,f0f9ff+100 */
+ background: rgb(161,219,255); /* Old browsers */
+ background: -moz-linear-gradient(top, rgba(161,219,255,1) 0%, rgba(203,235,255,1) 49%, rgba(240,249,255,1) 100%); /* FF3.6+ */
+ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(161,219,255,1)), color-stop(49%,rgba(203,235,255,1)), color-stop(100%,rgba(240,249,255,1))); /* Chrome,Safari4+ */
+ background: -webkit-linear-gradient(top, rgba(161,219,255,1) 0%,rgba(203,235,255,1) 49%,rgba(240,249,255,1) 100%); /* Chrome10+,Safari5.1+ */
+ background: -o-linear-gradient(top, rgba(161,219,255,1) 0%,rgba(203,235,255,1) 49%,rgba(240,249,255,1) 100%); /* Opera 11.10+ */
+ background: -ms-linear-gradient(top, rgba(161,219,255,1) 0%,rgba(203,235,255,1) 49%,rgba(240,249,255,1) 100%); /* IE10+ */
+ background: linear-gradient(to bottom, rgba(161,219,255,1) 0%,rgba(203,235,255,1) 49%,rgba(240,249,255,1) 100%); /* W3C */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1dbff', endColorstr='#f0f9ff',GradientType=0 ); /* IE6-9 */
 }
-
+// Button Design ***************************************************************
 button, input[type="submit"], input[type="reset"]{
    width: 135px;    
 }
-
+// Beginn des Formular-Table-Designs *******************************************
 table.formular{
     position: relative;
     margin: auto;
     top: 10px;
     border: 1px solid black;
-    border-spacing: 15px
-   
+    border-spacing: 15px  
 }
 table.formular tr{
  
 }
 
 table.formular td{
-   width: 150px; 
-   
+   width: 150px;   
 }
-
+//Beginn des Formular-Listen-Designs *******************************************
 table.liste{
     position: relative;
     margin: auto;
@@ -101,13 +98,34 @@ table.liste{
     border: 1px solid black;
 }
 
+table.liste tr{
+    
+}
+
 table.liste td{
     border: 1px solid black;
     width: 75px;
 }
+// Beginn des Formular-Suche-Designs *******************************************
+table.suche{
+    position: relative;
+    margin: auto;
+    top: 10px;
+    border: 1px solid black;     
+}
 
+table.suche tr{
+    
+}
+
+table.suche td{
+    width: 75px;
+}
+
+//Beginn des Formular-Auswahl_Buttons-Designs***********************************
 table.auswahl_buttons {
     position: relative;
     margin: auto;
     top: 20px;
 }
+
