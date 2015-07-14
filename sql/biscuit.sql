@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 14. Jul 2015 um 09:05
+-- Erstellungszeit: 14. Jul 2015 um 09:09
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `tbl_geraete` (
 `geraete_id` int(11) NOT NULL,
   `raum_fk` int(11) DEFAULT NULL,
   `lieferant_fk` int(11) DEFAULT NULL,
-  `geraete_name` text,
+  `geraet_name` text,
   `geraet_ek_datum` date DEFAULT NULL,
   `geraet_notiz` text,
   `geraet_hersteller` text,
@@ -44,8 +44,8 @@ CREATE TABLE IF NOT EXISTS `tbl_geraete` (
 -- Daten für Tabelle `tbl_geraete`
 --
 
-INSERT INTO `tbl_geraete` (`geraete_id`, `raum_fk`, `lieferant_fk`, `geraete_name`, `geraet_ek_datum`, `geraet_notiz`, `geraet_hersteller`, `geraet_gewaehr_beginn`, `geraet_gewaehr_ende`, `geraete_seriennummer`, `geraete_art_fk`) VALUES
-(1, 1, 2, NULL, '2015-07-13', 'in use', 'aperture labs', '2015-07-13', '2015-07-13', '0042', 6);
+INSERT INTO `tbl_geraete` (`geraete_id`, `raum_fk`, `lieferant_fk`, `geraet_name`, `geraet_ek_datum`, `geraet_notiz`, `geraet_hersteller`, `geraet_gewaehr_beginn`, `geraet_gewaehr_ende`, `geraete_seriennummer`, `geraete_art_fk`) VALUES
+(1, 1, 2, 'portal gun', '2015-07-13', 'in use', 'aperture labs', '2015-07-13', '2015-07-13', '0042', 6);
 
 -- --------------------------------------------------------
 
