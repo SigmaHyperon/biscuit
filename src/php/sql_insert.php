@@ -163,3 +163,12 @@ function func_form_insertGeraeteArt($txt_name)
     return($int_response);
 }
 
+function func_form_insertGeraet_komponete($iGeraet_id,$Komponeten_id)
+{
+    $txt_sql_statement = "INSERT INTO tbl_z_enthaelt (geraet_fk,komponente_fk,datum)
+                                               VALUES ('".$iGeraet_id."','".$Komponeten_id."',current_date());";
+                                               
+    $int_response = mysql_query($txt_sql_statement); 
+    return($int_response);
+}
+

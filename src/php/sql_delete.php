@@ -251,3 +251,12 @@ function func_form_delGeraeteArtByID($int_id)
     
     return($int_response);
 }
+
+function func_form_delGeraet_komponeten($id)
+{
+    $txt_sql_statement = "DELETE FROM tbl_z_enthaelt WHERE geraet_fk ='".$id."';";
+    
+    $int_response = mysql_query($txt_sql_statement);
+    
+    return($int_response);
+}
