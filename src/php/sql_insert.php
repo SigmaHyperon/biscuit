@@ -34,7 +34,7 @@ function func_form_insertLieferant($txt_lieferant_firmenname, $txt_lieferant_vor
  * 
  * @param txt $txt_raum_name - Der Name des Raumes
  * @param txt $txt_raum_notiz - Die Raumnotiz
- * @param txt $txt_stockwert - Stockwerk
+ * @param txt $txt_stockwerk - Stockwerk
  * @return Gibt Information über Erfolg d. Eintragens (Int)
  */
 function func_form_insertRaum($txt_raum_name, $txt_raum_notiz, $txt_stockwerk)
