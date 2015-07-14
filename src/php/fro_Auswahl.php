@@ -64,7 +64,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
         <div id="right">
         <?php
 
-        //include "log_lieferanten.php";
+
 
         require_once "../lib/manager.php";
         require_once "./sql_main.php";
@@ -206,6 +206,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
 
         ?>
         </div>
+
     </div>  
 </body>
 </html>
