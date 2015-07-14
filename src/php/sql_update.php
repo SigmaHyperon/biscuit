@@ -142,3 +142,10 @@ function func_form_updateBenutzer($int_id, $txt_name)
 }
 
 
+function func_form_updateGeraeteArt($int_id, $txt_geraeteart_name)
+{
+    $txt_sql_statement = "UPDATE tbl_geraete_art SET geraete_art_name = '".$txt_geraeteart_name."'
+                                                                                  WHERE geraete_art_id ='".$int_id."'";
+    $int_response = mysql_query($txt_sql_statement);
+    return($int_response);
+}
