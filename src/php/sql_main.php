@@ -290,7 +290,6 @@ function func_form_insertGeraet($int_raum, $int_lieferant, $dat_ek_datum, $txt_n
                                                                     '".$txt_seriennummer."',
                                                                     '".$int_art."',
                                                                     '".$text_name."');";
-    var_dump($txt_sql_statement);
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
 }
@@ -477,6 +476,17 @@ function func_a_getLieferant ($id)
 
     return $a_Tabellen_daten;
 }
+function func_a_getGeraet ($id)
+{
+    $txt_sql_statement = "SELECT * FROM tbl_geraete where geraete_id = '".$id."';";    
+    
+    $a_sql_result =  mysql_query($txt_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
+    
+    $a_Tabellen_daten = mysql_fetch_assoc($a_sql_result);
+
+    return $a_Tabellen_daten;
+}
 
 function func_b_updateRaum ($int_id, $s_name, $s_notiz)
 {
@@ -501,6 +511,23 @@ function func_b_updateLieferant ($int_id, $s_firmenname, $s_vorname, $s_nachname
             or die ("Anfrage Fehlgeschlagen");
 
     return $a_sql_result;
+}
+
+function func_form_updateGeraet($int_id, $int_raum, $int_lieferant, $dat_ek_datum, $txt_notiz, $txt_hersteller, $dat_gewaehr_beginn, $dat_gewaehr_ende, $txt_seriennummer, $int_art, $text_name)
+{
+    $txt_sql_statement = "UPDATE tbl_geraete SET raum_fk='".$int_raum."',
+						lieferant_fk='".$int_lieferant."',
+						geraet_ek_datum='".$dat_ek_datum."',
+						geraet_notiz='".$txt_notiz."',
+						geraet_hersteller='".$txt_hersteller."',
+						geraet_gewaehr_beginn='".$dat_gewaehr_beginn."',
+						geraet_gewaehr_ende='".$dat_gewaehr_ende."',
+						geraete_seriennummer='".$txt_seriennummer."',
+						geraete_art_fk='".$int_art."',
+						geraet_name='".$text_name."'
+						WHERE geraete_id='".$int_id."'";
+    $int_response = mysql_query($txt_sql_statement);
+    return($int_response);
 }
 /*
 function func_form_delFromTable($txt_table, $int_id)

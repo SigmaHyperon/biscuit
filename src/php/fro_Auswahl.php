@@ -158,6 +158,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
                 $a_table_links = [
                     "raeume"	    =>	"fro_Raeume_aendern.php",
                     "lieferanten"	    =>	"fro_Lieferanten_aendern.php",
+                    "geraete"	    =>	"fro_Geraete_aendern.php",
                 ];
                 if(isset($a_table_links[$s_table]))
                 {
