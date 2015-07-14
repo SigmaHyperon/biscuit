@@ -1,3 +1,9 @@
+<!-----------------------------------------------------------------
+Ersteller:          Fr3d.dy
+Erstell-Datum:      14.07.2015 (Auslagerung)
+Änderungsdatum: 
+Inhalt:            Funktionen zum Löschen PHP / SQL
+-------------------------------------------------------------------> 
 <?php
 
 /**
@@ -246,6 +252,15 @@ function func_form_delBenutzerByID($int_benutzer)
 function func_form_delGeraeteArtByID($int_id)
 {
     $txt_sql_statement = "DELETE FROM tbl_geraete_art WHERE geraete_art_id ='".$int_id."';";
+    
+    $int_response = mysql_query($txt_sql_statement);
+    
+    return($int_response);
+}
+
+function func_form_delGeraet_komponeten($id)
+{
+    $txt_sql_statement = "DELETE FROM tbl_z_enthaelt WHERE geraet_fk ='".$id."';";
     
     $int_response = mysql_query($txt_sql_statement);
     

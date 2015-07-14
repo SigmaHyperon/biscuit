@@ -1,3 +1,9 @@
+<!-----------------------------------------------------------------
+Ersteller:          Fr3d.dy
+Erstell-Datum:      14.07.2015 (Auslagerung)
+Änderungsdatum: 
+Inhalt:            Funktionen zum Einfügen PHP / SQL
+-------------------------------------------------------------------> 
 <?php
 
 /**
@@ -158,6 +164,15 @@ function func_form_insertGeraeteArt($txt_name)
 {
     $txt_sql_statement = "INSERT INTO tbl_geraete_art (geraete_art_name)
                                                VALUES ('".$txt_name."');";
+                                               
+    $int_response = mysql_query($txt_sql_statement); 
+    return($int_response);
+}
+
+function func_form_insertGeraet_komponete($iGeraet_id,$Komponeten_id)
+{
+    $txt_sql_statement = "INSERT INTO tbl_z_enthaelt (geraet_fk,komponente_fk,datum)
+                                               VALUES ('".$iGeraet_id."','".$Komponeten_id."',current_date());";
                                                
     $int_response = mysql_query($txt_sql_statement); 
     return($int_response);
