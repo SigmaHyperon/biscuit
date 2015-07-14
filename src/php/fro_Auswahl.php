@@ -4,7 +4,14 @@ Erstell-Datum:      10.07.2015
 Änderungsdatum:     12.07.2015
 Inhalt:             Hauptseite mit Auswahlmöglichkeiten
 -------------------------------------------------------------------> 
-
+<?php
+//    require necessary stuff
+require_once './sql_main.php';
+require_once '../lib/manager.php';
+\utility\loadForms();
+\utility\loadSessions();
+var_dump($_SESSION);
+?>
 <!DOCTYPE>
 <html >
 
@@ -33,6 +40,12 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
 <!-- ---------------------------- Start des Bannerfeldes ------------------- -->    
         <div id="Header" >
             <marquee class="marquee" behavior="alternate">Inventar</marquee>
+	    <?php
+		if(\utility\sessions\sessionGet("benutzername", false))
+		{
+		    echo "<span class='username'>angemeldet als: ".\utility\sessions\sessionGet("benutzername", false)."</span>";
+		}
+	    ?>
         </div>
  <!-- --------------------------- Start des Navigationsfeldes -------------- -->
         <div id="left">
