@@ -1,6 +1,8 @@
-<div id="login">
-    <form action="fro_Home.php" method="post" class="loginn">
-        <table>
+
+
+<div id="logindiv">
+    <form action="fro_Home.php" method="post" >
+        <table class="login">
             <tr>
                 <td>Benutzer:</td><td><input type="text" name="txt_Benutzer"/></td>
             </tr>

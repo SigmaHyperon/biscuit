@@ -78,21 +78,28 @@ body {
  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1dbff', endColorstr='#f0f9ff',GradientType=0 ); /* IE6-9 */
 }
 
-#login{
+#logindiv{
   position: relative;
-  top: 20px;
-  width: 300px;
-  heigth: 200px;
+  top: 100px;
+  width: 320px;
+  height: 100px;
   border: 1px solid black;
   border-radius: 15px;
   box-shadow: 1px 1px 6px #292929;
   margin: auto;
 }
-table.loginn{
+table.login{
   position: relative;
   margin: auto;
   top: 10px;
-  border: 1px solid black;  
+    
+}
+table.login tr{
+ 
+}
+
+table.login td{
+   width: 120px;
 }
 
 /* Button Design ***************************************************************/
