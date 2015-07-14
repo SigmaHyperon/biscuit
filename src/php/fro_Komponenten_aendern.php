@@ -1,23 +1,59 @@
 <!-----------------------------------------------------------------
-Ersteller:          K!l1an
+Ersteller:          Pf3y
 Erstell-Datum:      13.07.2015
 Änderungsdatum: 
 Inhalt:             Komponenten hinzufügen
 ------------------------------------------------------------------->
-
+<?php
+    require_once '../lib/manager.php';
+    require_once './sql_main.php';
+    \utility\loadForms();
+    
+    if($s_Komponente_name = \utility\forms\post("txt_Komponentenname", false))
+    {
+	$s_Komponente_art = \utility\forms\post("txt_Komponentenart_select", "");
+	$s_Komponente_art = \utility\forms\post("txt_Komponentenart_select", "");
+	$i_Komponente_bestand = \utility\forms\post("txt_Komponentenbestand", "");
+	
+	if(func_form_updateKomponentenKomponente($s_Komponente_name, $i_Komponente_bestand, $s_Komponente_art))
+	{
+	    try {
+		header("Location: fro_Auswahl.php?action=list&table=komponenten");
+		die();
+	    } catch (Exception $ex) {}
+	}
+	else 
+	{
+	    echo "An error occured!";
+	}
+    }
+    else
+    {
+	if($int_selektiert = \utility\forms\get("selektiert", false))
+	{
+	    $aKomponenten_daten = func_a_getKomponente($int_selektiert);
+?>
 <form action="fro_Komponenten_hinzufuegen.php" method="post">
-        <table border="1" cellspacing="10px">
+    <input type="hidden" name="int_id" value="<?php echo $aKomponenten_daten["komponenten_id"];?>"/>
+        <table  class="formular">
             <tr>
-                <td width="100px">Name:</td><td><input type="text" name="txt_Komponentenname" size="20"/></td>
+                <td width="100px">Name:</td><td><input type="text" name="txt_Komponentenname" size="20" value="<?php echo $aKomponenten_daten["komponenten_id"];?>"/></td>
             </tr>
             <tr>
-                <td >Komponentenbestand:</td><td><input type="text" name="txt_Komponentenbestand" size="20"/></td>
+                <td >Komponentenbestand:</td><td><input type="text" name="txt_Komponentenbestand" size="20" value="<?php echo $aKomponenten_daten["komponenten_id"];?>"/></td>
             </tr>
             <tr>
                 <td>Komponentenart:</td>
                 <td>
                     <select name="txt_Komponentenart_select" size="1">
-                        <option></option>
+                        <?php
+			    $aAlle_komponenten_arten = func_a_getKomponentenArten();
+			    foreach ($aAlle_komponenten_arten as $value) {
+				echo "<option " ;
+				if($value["komponenten_art_id"] == $aGeraet_daten["komponenten_art_fk"]) echo "selected";
+				echo " value='".$value["komponenten_art_id"]."'>".$value["komponenten_art_name"]."</option>";
+			    }
+			?>
                     </select>
                 </td>
             </tr> 
@@ -26,3 +62,7 @@ Inhalt:             Komponenten hinzufügen
             </tr>              
         </table>        
 </form>
+<?php
+	}
+    }
+    ?>
