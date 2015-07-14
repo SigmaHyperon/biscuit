@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 13. Jul 2015 um 19:47
+-- Erstellungszeit: 14. Jul 2015 um 09:05
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS `tbl_geraete` (
 `geraete_id` int(11) NOT NULL,
   `raum_fk` int(11) DEFAULT NULL,
   `lieferant_fk` int(11) DEFAULT NULL,
+  `geraete_name` text,
   `geraet_ek_datum` date DEFAULT NULL,
   `geraet_notiz` text,
   `geraet_hersteller` text,
@@ -43,8 +44,8 @@ CREATE TABLE IF NOT EXISTS `tbl_geraete` (
 -- Daten für Tabelle `tbl_geraete`
 --
 
-INSERT INTO `tbl_geraete` (`geraete_id`, `raum_fk`, `lieferant_fk`, `geraet_ek_datum`, `geraet_notiz`, `geraet_hersteller`, `geraet_gewaehr_beginn`, `geraet_gewaehr_ende`, `geraete_seriennummer`, `geraete_art_fk`) VALUES
-(1, 1, 2, '2015-07-13', 'in use', 'aperture labs', '2015-07-13', '2015-07-13', '0042', 6);
+INSERT INTO `tbl_geraete` (`geraete_id`, `raum_fk`, `lieferant_fk`, `geraete_name`, `geraet_ek_datum`, `geraet_notiz`, `geraet_hersteller`, `geraet_gewaehr_beginn`, `geraet_gewaehr_ende`, `geraete_seriennummer`, `geraete_art_fk`) VALUES
+(1, 1, 2, NULL, '2015-07-13', 'in use', 'aperture labs', '2015-07-13', '2015-07-13', '0042', 6);
 
 -- --------------------------------------------------------
 
@@ -151,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `tbl_raeume` (
 `raum_id` int(11) NOT NULL,
   `raum_notiz` text,
   `raum_name` text
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_raeume`
@@ -333,7 +334,7 @@ MODIFY `lieferant_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT für Tabelle `tbl_raeume`
 --
 ALTER TABLE `tbl_raeume`
-MODIFY `raum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `raum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_zulaessige_werte`
 --
