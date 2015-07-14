@@ -225,7 +225,7 @@ function func_v_detail()
     if($s_table = \utility\forms\get("table", false))
     {
 	$a_table_links = [
-	    "geraete_komponente"	=>  "fro_geraete-komponente.php",
+	    "geraete_komponente"	=>  "fro_Zuordnung_geraete_komponenten.php",
 	];
 	if(isset($a_table_links[$s_table]))
 	{
