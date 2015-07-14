@@ -236,7 +236,7 @@ function func_a_getGeraet ($id)
 
 function func_a_getKomponente($id)
 {
-    $txt_sql_statement = "SELCET * FROM tbl_komponenten WHERE komponenten_id='".$id."';";
+    $txt_sql_statement = "SELECT * FROM tbl_komponenten WHERE komponenten_id='".$id."';";
     
     $a_sql_result = mysql_query($txt_sql_statement)
             or die ("Anfrage Fehlgeschlagen");
