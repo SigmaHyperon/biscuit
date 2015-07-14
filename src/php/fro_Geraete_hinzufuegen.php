@@ -38,7 +38,7 @@ Inhalt:            Geräte hinzufügen
                 <td>Gerätetyp:</td>
 		<td> 
 		    <select name="txt_Geraetetyp_select" size="1" >
-			<option padding-right="20px">Rechner</option>
+			<option>Rechner</option>
 			<option>Beamer</option>
 			<option>Monitor</option>
 			<option>Drucker</option>
