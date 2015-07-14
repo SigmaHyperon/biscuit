@@ -1,3 +1,9 @@
+<!-----------------------------------------------------------------
+Ersteller:          Fr3d.dy
+Erstell-Datum:      14.07.2015 (Auslagerung)
+Änderungsdatum: 
+Inhalt:            Benutzer-Bezogene Funktionen PHP / SQL
+-------------------------------------------------------------------> 
 <?php
 
 /**
