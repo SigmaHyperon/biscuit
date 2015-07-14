@@ -94,7 +94,12 @@ table.formular tr{
 }
 
 table.formular td{
-   width: 150px;   
+   width: 150px;
+}
+
+input[type="text"]{
+ 
+ width:153px;
 }
 /*Beginn des Formular-Listen-Designs *******************************************/
 table.liste{
@@ -111,6 +116,7 @@ table.liste tr{
 table.liste td{
     border: 1px solid black;
     width: 75px;
+    text-align: center;
 }
 /* Beginn des Formular-Suche-Designs *******************************************/
 table.suche{

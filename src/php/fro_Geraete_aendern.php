@@ -61,10 +61,10 @@ Inhalt:            Geräte hinzufügen
 		</td>
             </tr>
 	    <tr>
-		<td>Name:</td><td><input type="text" name="txt_Name" size="20" value="<?php echo $aGeraet_daten["geraet_name"];?>"/></td>
+		<td>Name:</td><td><input type="text" name="txt_Name" value="<?php echo $aGeraet_daten["geraet_name"];?>"/></td>
 	    </tr>
 	    <tr>
-		<td>Notiz:</td><td><input type="text" name="txt_Notiz" size="20" value="<?php echo $aGeraet_daten["geraet_notiz"];?>"/></td>
+		<td>Notiz:</td><td><input type="text" name="txt_Notiz" value="<?php echo $aGeraet_daten["geraet_notiz"];?>"/></td>
 	    </tr>
             <tr>
                 <td>Lieferanten:</td>
@@ -82,19 +82,19 @@ Inhalt:            Geräte hinzufügen
                 </td>
             </tr>
             <tr>
-                <td>Hersteller:</td><td><input type="text" name="txt_Hersteller" size="20" value="<?php echo $aGeraet_daten["geraet_hersteller"];?>"/></td>
+                <td>Hersteller:</td><td><input type="text" name="txt_Hersteller" value="<?php echo $aGeraet_daten["geraet_hersteller"];?>"/></td>
             </tr>
             <tr>
-                <td >Einkaufsdatum:</td><td><input type="text" name="txt_Datum" size="20" value="<?php echo $aGeraet_daten["geraet_ek_datum"];?>"/></td>
+                <td >Einkaufsdatum:</td><td><input type="text" name="txt_Datum" value="<?php echo $aGeraet_daten["geraet_ek_datum"];?>"/></td>
             </tr>
             <tr>
-                <td>Gewährleistungsbeginn:</td><td><input type="text" name="txt_Gewaehr_beginn" size="20" value="<?php echo $aGeraet_daten["geraet_gewaehr_beginn"];?>"/></td>
+                <td>Gewährleistungsbeginn:</td><td><input type="text" name="txt_Gewaehr_beginn" value="<?php echo $aGeraet_daten["geraet_gewaehr_beginn"];?>"/></td>
             </tr>
             <tr>
-                <td>Gewährleistungsende:</td><td><input type="text" name="txt_Gewaehr_ende" size="20" value="<?php echo $aGeraet_daten["geraet_gewaehr_ende"];?>"/></td>
+                <td>Gewährleistungsende:</td><td><input type="text" name="txt_Gewaehr_ende" value="<?php echo $aGeraet_daten["geraet_gewaehr_ende"];?>"/></td>
             </tr>
             <tr>
-                <td>Seriennummer:</td><td><input type="text" name="txt_Geraete_seriennummer" size="20" value="<?php echo $aGeraet_daten["geraete_seriennummer"];?>"/></td>
+                <td>Seriennummer:</td><td><input type="text" name="txt_Geraete_seriennummer" value="<?php echo $aGeraet_daten["geraete_seriennummer"];?>"/></td>
             </tr>
             <tr>
                 <td>Raum:</td>

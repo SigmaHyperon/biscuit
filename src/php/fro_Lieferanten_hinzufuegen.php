@@ -35,22 +35,22 @@ Inhalt:             Lieferanten_Formular
         
         <table cellspacing="10px" class="formular">
             <tr>
-                <td>Firma:</td><td><input type="text" name="txt_Firma" size="20"/></td>
+                <td>Firma:</td><td><input type="text" name="txt_Firma"/></td>
             </tr>
             <tr>
-                <td width="100px">Name:</td><td><input type="text" name="txt_Name" size="20"/></td>
+                <td>Name:</td><td><input type="text" name="txt_Name"/></td>
             </tr>
             <tr>
-                <td>Vorname:</td><td><input type="text" name="txt_Vorname" size="20"/></td>
+                <td>Vorname:</td><td><input type="text" name="txt_Vorname"/></td>
             </tr>
             <tr>
-                <td>Ort:</td><td><input type="text" name="txt_Ort" size="20"/></td>
+                <td>Ort:</td><td><input type="text" name="txt_Ort"/></td>
             </tr>
             <tr>
-                <td>PLZ:</td><td><input type="text" name="txt_Plz" size="20"/></td>
+                <td>PLZ:</td><td><input type="text" name="txt_Plz"/></td>
             </tr>
             <tr>
-                <td>Strasse inkl. Nr.:</td><td><input type="text" name="txt_Strasse" size="20"/></td>
+                <td>Strasse inkl. Nr.:</td><td><input type="text" name="txt_Strasse"/></td>
             </tr>
             <tr>
                 <td colspan="2" align="center"> <input type="submit" value="Eintragen" /><input type="reset" value="Verwerfen" /></td>
