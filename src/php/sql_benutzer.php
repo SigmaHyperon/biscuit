@@ -36,7 +36,7 @@ function func_form_login($txt_benutzer, $txt_kennwort)
     
     $txt_kennwort_saved = mysql_fetch_assoc($txt_kennwort_cache);
             
-    if($txt_kennwort_md5 == $txt_kennwort_saved)
+    if($txt_kennwort_md5 == $txt_kennwort_saved['benutzer_kennwort'])
     {
         return 1;
     }
@@ -61,7 +61,7 @@ function funct_form_KennwortAendern($txt_benutzer, $txt_kennwort, $txt_kennwort_
     
     $txt_kennwort_alt = mysql_fetch_assoc($txt_kennwort_cache);
     
-    if($txt_kennwort_md5 == $txt_kennwort_alt)
+    if($txt_kennwort_md5 == $txt_kennwort_alt['benutzer_kennwort'])
     {
         $txt_kennwort_neu_md5 = MD5($txt_kennwort_neu);
                 
