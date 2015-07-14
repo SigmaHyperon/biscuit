@@ -4,8 +4,30 @@ Erstell-Datum:      14.07.2015
 Änderungsdatum: 
 Inhalt:            Zulässige Werte hinzufügen
 ------------------------------------------------------------------->
-
-<form action="fro_Zulaessige_werte_aendern.php" method="post">
+<?php
+    require_once '../lib/manager.php';
+    require_once './sql_main.php';
+    \utility\loadForms();
+    
+    if($sZWert_name = \utility\forms\post("txt_zulaessiger_wert_name", false))
+    {
+	$sZWert_wert = \utility\forms\post("num_zulaessiger_wert", false);
+	if(func_form_instertZulaessigenWert($sZWert_name, $sZWert_wert))
+	{
+	    try {
+		header("Location: fro_Auswahl.php?action=list&table=zulaessigewerte");
+		die();
+	    } catch (Exception $ex) {}
+	}
+	else
+	{
+	    echo "An error occured!";
+	}
+    }
+    else
+    {
+?>
+<form action="fro_Zulaessige_werte_hinzufuegen.php" method="post">
         <table  class="formular">
             <tr>
                 <td>Zulässiger Wert Name</td><td><input type="text" name="txt_zulaessiger_wert_name"/></td>
@@ -18,3 +40,6 @@ Inhalt:            Zulässige Werte hinzufügen
             </tr> 
         </table>        
 </form>
+<?php
+    }
+?>
