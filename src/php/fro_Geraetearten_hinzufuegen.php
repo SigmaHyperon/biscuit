@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-----------------------------------------------------------------
 Ersteller:          FFleischmann
 Erstell-Datum:      14.07.2015
@@ -39,3 +40,4 @@ Inhalt:            Gerätearten ändern
 <?php
     }
 ?>
+

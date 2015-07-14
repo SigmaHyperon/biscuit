@@ -122,7 +122,6 @@ function func_form_updateZulaessigeWerte($int_id, $txt_wert_name, $int_wert)
     $txt_sql_statement = "UPDATE tbl_zulaessige_werte SET zulaessiger_wert_name ='".$txt_wert_name."',
                                                                                     zulaessiger_wert = '".$int_wert."'
                                                                          WHERE zulaessiger_wert_id ='".$int_id."'";
-    var_dump($txt_sql_statement);
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
 }
@@ -142,11 +141,4 @@ function func_form_updateBenutzer($int_id, $txt_name)
     return($int_response);
 }
 
-function func_form_updareGeraeteArt($int_id, $txt_name)
-{
-    $txt_sql_statement = "UPDATE tbl_geraete_art SET geraete_art_name = '".$txt_name."'
-                                                                 WHERE geraete_art_id='".$int_id."'";
-    $int_response = mysql_query($txt_sql_statement);
-    return($int_response);
-}
 

@@ -145,3 +145,10 @@ table.auswahl_buttons {
 select{
    width: 153px;  
 }
+
+.marquee
+{
+color: #000000;
+background-repeat: repeat-x;
+line-height: 50px
+}
