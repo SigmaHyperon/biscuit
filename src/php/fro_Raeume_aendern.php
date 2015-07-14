@@ -35,13 +35,13 @@ Inhalt:             Räume hinzufügen
     <input type="hidden" name="int_id" value="<?php echo $aRaum_daten["raum_id"];?>"/>
         <table border="1" class="formular">
             <tr>
-                <td width="100px">Name:</td><td><input type="text" name="txt_Raumname" size="20" value="<?php echo $aRaum_daten["raum_name"];?>"/></td>
+                <td>Name:</td><td><input type="text" name="txt_Raumname" value="<?php echo $aRaum_daten["raum_name"];?>"/></td>
             </tr>
             <tr>
-                <td>Stockwerk</td><td><input type="text" name="txt_Stockwerk" size="20"/></td>
+                <td>Stockwerk</td><td><input type="text" name="txt_Stockwerk" /></td>
             </tr>
             <tr>
-                <td >Raumnotiz:</td><td><input type="text" name="txt_Raumnotiz" size="20" value="<?php echo $aRaum_daten["raum_notiz"];?>"/></td>
+                <td >Raumnotiz:</td><td><input type="text" name="txt_Raumnotiz" value="<?php echo $aRaum_daten["raum_notiz"];?>"/></td>
             </tr>
             <tr>
                 <td colspan="2" align="center"> <input type="submit" value="Eintragen" /><input type="reset" value="Verwerfen" /></td>

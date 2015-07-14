@@ -73,19 +73,19 @@ Inhalt:            Geräte hinzufügen
                 </td>
             </tr>
             <tr>
-                <td>Hersteller:</td><td><input type="text" name="txt_Hersteller" size="20"/></td>
+                <td>Hersteller:</td><td><input type="text" name="txt_Hersteller"/></td>
             </tr>
             <tr>
-                <td >Einkaufsdatum:</td><td><input type="text" name="txt_Datum" size="20"/></td>
+                <td >Einkaufsdatum:</td><td><input type="text" name="txt_Datum"/></td>
             </tr>
             <tr>
-                <td>Gewährleistungsbeginn:</td><td><input type="text" name="txt_Gewaehr_beginn" size="20"/></td>
+                <td>Gewährleistungsbeginn:</td><td><input type="text" name="txt_Gewaehr_beginn"/></td>
             </tr>
             <tr>
-                <td>Gewährleistungsende:</td><td><input type="text" name="txt_Gewaehr_ende" size="20"/></td>
+                <td>Gewährleistungsende:</td><td><input type="text" name="txt_Gewaehr_ende"/></td>
             </tr>
             <tr>
-                <td>Seriennummer:</td><td><input type="text" name="txt_Geraete_seriennummer" size="20"/></td>
+                <td>Seriennummer:</td><td><input type="text" name="txt_Geraete_seriennummer"/></td>
             </tr>
             <tr>
                 <td>Raum:</td>

@@ -8,10 +8,10 @@ Inhalt:             Komponenten ändern
 <form action="fro_Komponenten_aendern.php" method="post">
         <table border="1" class="formular">
             <tr>
-                <td>Name:</td><td><input type="text" name="txt_Komponentenname" size="20"/></td>
+                <td>Name:</td><td><input type="text" name="txt_Komponentenname"/></td>
             </tr>
             <tr>
-                <td >Komponentenbestand:</td><td><input type="text" name="txt_Komponentenbestand" size="20"/></td>
+                <td >Komponentenbestand:</td><td><input type="text" name="txt_Komponentenbestand"/></td>
             </tr>
             <tr>
                 <td>Komponentenart:</td>

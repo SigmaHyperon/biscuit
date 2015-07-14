@@ -11,7 +11,7 @@ Inhalt:             Suchen ein oder mehreren Räumn
                 <td colspan="2"><b>Welchen Raum suchen Sie?</b></td>
             </tr>
             <tr>
-                <td>Name:</td><td> <input type="text" name="txt_Suche_raumname" size="30"/></td>
+                <td>Name:</td><td> <input type="text" name="txt_Suche_raumname"/></td>
             </tr>
             <tr>
                 <td colspan="2" align="center"><input type="submit" name="action" value="Suchen"/><input type="reset" value="Verwerfen" /></td>
