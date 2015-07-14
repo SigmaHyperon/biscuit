@@ -45,9 +45,9 @@ function func_form_updateGeraet($int_id, $int_raum, $int_lieferant, $dat_ek_datu
 
 function func_form_updateKomponenten($int_id, $txt_komponente_name, $int_komponente_bestand, $int_komponenten_art)
 {
-    $txt_sql_statement = "UPDATE tbl_komponenten SET koponente_name = '".$txt_komponente_name."',
+    $txt_sql_statement = "UPDATE tbl_komponenten SET komponente_name = '".$txt_komponente_name."',
                                                                                 komponente_bestand = '".$int_komponente_bestand."',
-                                                                                komponente_art_fk ='".$int_komponenten_art."',
+                                                                                komponenten_art_fk ='".$int_komponenten_art."'
                                                                      WHERE komponenten_id = '".$int_id."'";
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
