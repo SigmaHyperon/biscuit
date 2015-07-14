@@ -22,8 +22,13 @@ if(isset($_SESSION["login"]))
     </div>
     <?php
     }
+    else
+    {
+    echo 'Hier sollte etwas stehen';
+    }
 }
 
+    
 
 
 
