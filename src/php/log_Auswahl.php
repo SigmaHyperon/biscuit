@@ -139,7 +139,8 @@ function func_v_add()
 	    "raeume"	=>  "fro_Raeume_hinzufuegen.php",
 	    "geraete"	=>  "fro_Geraete_hinzufuegen.php",
 	    "komponenten"	=>  "fro_Komponenten_hinzufuegen.php",
-	    "komponentenarten"	=>  "fro_Komponentenarten_hinzufuegen.php"
+	    "komponentenarten"	=>  "fro_Komponentenarten_hinzufuegen.php",
+	    "zulaessigewerte"	=>  "fro_Zulaessige_werte_hinzufuegen.php",
 	];
 	if(isset($a_table_links[$s_table]))
 	{
