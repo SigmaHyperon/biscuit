@@ -198,6 +198,11 @@ function func_a_getBenutzer()
     return $a_sql_ausgabe;
 }
 
+/**
+ * Zeigt einen einzellnen Eintrag an
+ * @param int $id Die ID des anzuzeigenden Eintrags
+ * @return int Gibt information über Erfolg der Operation
+ */
 function func_a_getRaum ($id)
 {
     $txt_sql_statement = "SELECT * FROM tbl_raeume where raum_id = '".$id."';";    
@@ -210,6 +215,11 @@ function func_a_getRaum ($id)
     return $a_Tabellen_daten;
 }
 
+/**
+ * Zeigt einen einzellnen Eintrag an
+ * @param int $id Die ID des anzuzeigenden Eintrags
+ * @return int Gibt information über Erfolg der Operation
+ */
 function func_a_getLieferant ($id)
 {
     $txt_sql_statement = "SELECT * FROM tbl_lieferanten where lieferant_id = '".$id."';";    
@@ -222,6 +232,11 @@ function func_a_getLieferant ($id)
     return $a_Tabellen_daten;
 }
 
+/**
+ * Zeigt einen einzellnen Eintrag an
+ * @param int $id Die ID des anzuzeigenden Eintrags
+ * @return int Gibt information über Erfolg der Operation
+ */
 function func_a_getGeraet ($id)
 {
     $txt_sql_statement = "SELECT * FROM tbl_geraete where geraete_id = '".$id."';";    
@@ -234,6 +249,11 @@ function func_a_getGeraet ($id)
     return $a_Tabellen_daten;
 }
 
+/**
+ * Zeigt einen einzellnen Eintrag an
+ * @param int $id Die ID des anzuzeigenden Eintrags
+ * @return int Gibt information über Erfolg der Operation
+ */
 function func_a_getKomponente($id)
 {
     $txt_sql_statement = "SELECT * FROM tbl_komponenten WHERE komponenten_id='".$id."';";
@@ -246,6 +266,11 @@ function func_a_getKomponente($id)
     return $a_Tabellen_daten;
 }
 
+/**
+ * Zeigt einen einzellnen Eintrag an
+ * @param int $id Die ID des anzuzeigenden Eintrags
+ * @return int Gibt information über Erfolg der Operation
+ */
 function func_a_getGeraeteArt($id)
 {
     $txt_sql_statement = "SELECT * FROM tbl_komponenten_arten WHERE komponenten_art_id = '".$id."'";
@@ -258,6 +283,11 @@ function func_a_getGeraeteArt($id)
     return $a_Tabellen_daten;
 }
 
+/**
+ * Zeigt einen einzellnen Eintrag an
+ * @param int $id Die ID des anzuzeigenden Eintrags
+ * @return int Gibt information über Erfolg der Operation
+ */
 function func_a_getAttribut($id)
 {
     $txt_sql_statement = "SELECT * FROM tbl_komponenten_attribute WHERE komponenten_attribut_id ='".$id."'";
@@ -270,6 +300,11 @@ function func_a_getAttribut($id)
     return $a_Tabellen_daten;
 }
 
+/**
+ * Zeigt einen einzellnen Eintrag an
+ * @param int $id Die ID des anzuzeigenden Eintrags
+ * @return int Gibt information über Erfolg der Operation
+ */
 function func_a_getKomponentenArt($id)
 {
     $txt_sql_statement = "SELECT * FROM tbl_komponenten_arten WHERE komponenten_art_id ='".$id."'";
@@ -282,6 +317,11 @@ function func_a_getKomponentenArt($id)
     return($a_Tabellen_daten);
 }
 
+/**
+ * Zeigt einen einzellnen Eintrag an
+ * @param int $id Die ID des anzuzeigenden Eintrags
+ * @return int Gibt information über Erfolg der Operation
+ */
 function func_a_getZulaessigenWert($id)
 {
     $txt_sql_statement ="SELECT * FROM tbl_zulaessige_werte WHERE zulaessiger_wert_id ='".$id."'";
@@ -294,6 +334,11 @@ function func_a_getZulaessigenWert($id)
     return($a_Tabellen_daten);
 }
 
+/**
+ * Zeigt einen einzellnen Eintrag an
+ * @param int $id Die ID des anzuzeigenden Eintrags
+ * @return int Gibt information über Erfolg der Operation
+ */
 function func_a_getNutzer($id)
 {
     $tst_sql_statement = "SELCT * FROM tbl_benutzer WHERE benutzer_id ='".$id."'";

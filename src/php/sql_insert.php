@@ -1,12 +1,12 @@
 <?php
-
+/*Test*/
 
 /**
  * 
  * @param type $txt_lieferant_firmenname - Name Firma
  * @param type $txt_lieferant_vorname - Vorname Kontaktperson
  * @param type $txt_lieferant_nachname - Nachname Kontaktperson
- * @param type $_int_lieferant_plz - PLZ
+ * @param type $int_lieferant_plz - PLZ
  * @param type $txt_lieferant_ort - Ort Lieferant
  * @param type $txt_lieferant_strasse - Straße Lieferant
  * @return Gibt zurück ob Eintragen erfolgreich (int)
