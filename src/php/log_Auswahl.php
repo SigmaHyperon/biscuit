@@ -24,9 +24,13 @@ if($s_action = \utility\forms\get("action", false))
 	    func_v_home();
 	    break;
 	default:
-	    func_v_invalid();
+	    func_v_home();
 	    break;
     }
+}
+else
+{
+    func_v_home();
 }
 
 function func_v_list()
