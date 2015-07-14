@@ -177,3 +177,10 @@ color: #000000;
 background-repeat: repeat-x;
 line-height: 50px
 }
+
+table.multi_form{
+    position: relative;
+    margin: auto;
+    top: 10px;
+    border: 1px solid black; 
+}
