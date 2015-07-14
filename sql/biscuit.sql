@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 14. Jul 2015 um 13:46
+-- Erstellungszeit: 14. Jul 2015 um 09:41
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -19,20 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `biscuit`
 --
-
--- --------------------------------------------------------
-
---
--- Tabellenstruktur für Tabelle `tbl_benutzer`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_benutzer` (
-  `benutzer_name` text,
-  `benutzer_kennwort` text,
-  `benutzer_mail` text,
-  `benutzer_rechte` int(11) DEFAULT NULL,
-`benutzer_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -240,12 +226,6 @@ CREATE TABLE IF NOT EXISTS `tbl_z_komponente_attribute` (
 --
 
 --
--- Indizes für die Tabelle `tbl_benutzer`
---
-ALTER TABLE `tbl_benutzer`
- ADD PRIMARY KEY (`benutzer_id`);
-
---
 -- Indizes für die Tabelle `tbl_geraete`
 --
 ALTER TABLE `tbl_geraete`
@@ -321,11 +301,6 @@ ALTER TABLE `tbl_z_komponente_attribute`
 -- AUTO_INCREMENT für exportierte Tabellen
 --
 
---
--- AUTO_INCREMENT für Tabelle `tbl_benutzer`
---
-ALTER TABLE `tbl_benutzer`
-MODIFY `benutzer_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_geraete`
 --

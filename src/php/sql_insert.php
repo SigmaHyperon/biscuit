@@ -124,7 +124,7 @@ function func_form_instertKomponentenArt($txt_name)
  */
 function func_form_instertAttribut($txt_name)
 {
-    $txt_sql_statement = "INSERT INTO tbl_komponenten_attribute (komponenten_attribut_name)
+    $txt_sql_statement = "INSERT INTO tbl_komponenten_attribute (koponenten_attribut_name)
                             VALUES (".$txt_name.");";
     
     $int_response = mysql_query($txt_sql_statement);
@@ -139,23 +139,10 @@ function func_form_instertAttribut($txt_name)
  */
 function func_form_instertZulaessigenWert($txt_name, $int_wert)
 {
-    $txt_sql_statement = "INSERT INTO tbl_zulaessige_werte (zulaessiger_wert_name, zulaessiger_wert) 
-                                     VALUES ('".$txt_name."',
-                                   '".$int_wert."');";                       
+    $txt_sql_statement = "INSERT INTO tbl_zulaessige_Werte (zulaessiger_wert_name, zulaessiger_wert) 
+                                     VALUES (".$txt_name."),
+                                   (".$int_wert.");";                       
+    
     $int_response = mysql_query($txt_sql_statement);
-    return($int_response);
-}
-
-/**
- * Fügt Geräte-art ein
- * @param txt  $txt_name Name der Geräteart
- * @return int Rückgabe mit info über Erfolg
- */
-function func_form_insertGeraeteArt($txt_name)
-{
-    $txt_sql_statement = "INSERT INTO tbl_geraete_art (gereaete_art_name)
-                                               VALUES (".$txt_name.");";
-                                               
-    $int_response = mysql_query($txt_sql_statement);
-    return($int_response);
+    return($response);
 }

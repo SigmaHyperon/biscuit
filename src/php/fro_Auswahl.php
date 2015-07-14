@@ -32,7 +32,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
     <div id="main" > 
 <!-- ---------------------------- Start des Bannerfeldes ------------------- -->    
         <div id="Header" >
-            <h2 align="center">Inventar</h2>
+            <marquee class="marquee" behavior="alternate">Inventar</marquee>
         </div>
  <!-- --------------------------- Start des Navigationsfeldes -------------- -->
         <div id="left">
