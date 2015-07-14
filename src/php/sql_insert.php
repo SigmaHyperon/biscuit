@@ -153,8 +153,8 @@ function func_form_instertZulaessigenWert($txt_name, $int_wert)
  */
 function func_form_insertGeraeteArt($txt_name)
 {
-    $txt_sql_statement = "INSERT INTO tbl_geraete_art (gereaete_art_name)
-                                               VALUES (".$txt_name.");";
+    $txt_sql_statement = "INSERT INTO tbl_geraete_art (geraete_art_name)
+                                               VALUES ('".$txt_name."');";
                                                
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
