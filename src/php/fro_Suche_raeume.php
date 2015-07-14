@@ -6,7 +6,7 @@ Inhalt:             Suchen ein oder mehreren Räumn
 -------------------------------------------------------------------> 
 
 <form action="fro_Suche_raeume.php" method="post">
-        <table border="1">
+        <table class="suche">
             <tr>
                 <td colspan="2"><b>Welchen Raum suchen Sie?</b></td>
             </tr>
