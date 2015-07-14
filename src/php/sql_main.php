@@ -173,6 +173,25 @@ function func_a_getKomponentenArten()
 
 /**
  * 
+ * @return Gibt alle Geraete-Arten aus
+ */
+function func_a_getGeraeteArten()
+{
+    $txt_sql_statement = "SELECT * FROM tbl_geraete_art;";
+    $a_sql_ausgabe = array();
+    
+    $a_sql_result = mysql_query($txt_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
+    
+    while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
+    {
+	$a_sql_ausgabe[] = $a_sql_cache;
+    }
+    return $a_sql_ausgabe;
+}
+
+/**
+ * 
  * @return Gibt die Benutzer ohne Kennwörter zurück
  */
 function func_a_getBenutzer()
@@ -253,13 +272,13 @@ function func_form_insertGeraet($int_raum, $int_lieferant, $dat_ek_datum, $txt_n
 {
     $txt_sql_statement = "INSERT INTO tbl_geraete (raum_fk,
                                                                         lieferant_fk,
-                                                                        geraete_ek_datum,
+                                                                        geraet_ek_datum,
                                                                         geraet_notiz,
-                                                                        geraet hersteller,
+                                                                        geraet_hersteller,
                                                                         geraet_gewaehr_beginn,
                                                                         geraet_gewaehr_ende,
-                                                                        geraet_seriennummer
-                                                                        geraet_art_fk,
+                                                                        geraete_seriennummer,
+                                                                        geraete_art_fk,
                                                                         geraet_name)
                                                        VALUES ('".$int_raum."',
                                                                     '".$int_lieferant."',
@@ -271,7 +290,7 @@ function func_form_insertGeraet($int_raum, $int_lieferant, $dat_ek_datum, $txt_n
                                                                     '".$txt_seriennummer."',
                                                                     '".$int_art."',
                                                                     '".$text_name."');";
-
+    var_dump($txt_sql_statement);
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
 }
