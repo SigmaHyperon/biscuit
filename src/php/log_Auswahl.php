@@ -1,5 +1,10 @@
 <?php
 
+function func_b_isAdmin()
+{
+    return \utility\sessions\sessionGet("login", false);
+}
+
 if($s_action = \utility\forms\get("action", false))
 {
     switch($s_action)

@@ -43,7 +43,7 @@ var_dump($_SESSION);
 	    <?php
 		if(\utility\sessions\sessionGet("benutzername", false))
 		{
-		    echo "<span class='username'>angemeldet als: ".\utility\sessions\sessionGet("benutzername", false)."</span>";
+		    echo "<span class='username'>angemeldet als: ".\utility\sessions\sessionGet("benutzername", false)."</span> <a class='logout' href='log_logout.php'><button>logout</button></a>";
 		}
 	    ?>
         </div>

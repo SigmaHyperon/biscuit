@@ -27,7 +27,7 @@ $oTabelle->start(true, "liste");
  */
 $oTabelle->startRow();
 //leere Zelle für die Spalte der Radio-buttons eintragen
-$oTabelle->addCell("");
+if(func_b_isAdmin())$oTabelle->addCell("");
 //Spaltennamen der Reihe nach eintragen
 foreach ($aErgebnis_attribute as $mAttribut) 
 {
@@ -44,11 +44,13 @@ foreach ($aErgebnisse as $aErgebnis)
 //    Zeile beginnen
     $oTabelle->startRow();
 //    Zelle mit Radio-button eintragen
-    $oTabelle->startCell();
-    reset($aErgebnis);
-    $oFormular->addInput("radio", "selektiert", $aErgebnis[key($aErgebnis)]);
-    $oTabelle->endCell();
-    
+    if(func_b_isAdmin())
+    {
+	 $oTabelle->startCell();
+	reset($aErgebnis);
+	$oFormular->addInput("radio", "selektiert", $aErgebnis[key($aErgebnis)]);
+	$oTabelle->endCell();
+    }
 //    einzelnen Lieferant anzeigen
     foreach ($aErgebnis as $sIndex => $mData)
     {

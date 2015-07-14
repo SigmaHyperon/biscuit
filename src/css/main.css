@@ -178,7 +178,11 @@ background-repeat: repeat-x;
     margin-top: 10px;
 }
 span.username {
-    display: block;
+    display: inline-block;
+}
+
+a.logout button {
+    width: 50px;
     margin-right: 10px;
 }
 
