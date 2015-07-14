@@ -135,6 +135,7 @@ table.auswahl_buttons {
     top: 20px;
 }
 
+/* Beginn des Select-Feld-Designs *********************************************/
 select{
    width: 153px;  
 }

@@ -37,6 +37,7 @@ Inhalt:            Geräte hinzufügen
     else
     {
 ?>
+<!-- -------------- Gerätehinzufügenformular ---------------------------------->
 <form action="fro_Geraete_hinzufuegen.php" method="post">
         <table  class="formular">
             <tr>
