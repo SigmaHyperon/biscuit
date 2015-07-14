@@ -122,6 +122,7 @@ function func_form_updateZulaessigeWerte($int_id, $txt_wert_name, $int_wert)
     $txt_sql_statement = "UPDATE tbl_zulaessige_werte SET zulaessiger_wert_name ='".$txt_wert_name."',
                                                                                     zulaessiger_wert = '".$int_wert."'
                                                                          WHERE zulaessiger_wert_id ='".$int_id."'";
+    var_dump($txt_sql_statement);
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
 }

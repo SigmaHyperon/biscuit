@@ -114,6 +114,7 @@ function func_v_edit()
 	    "geraete"	    =>	"fro_Geraete_aendern.php",
 	    "komponenten"	    =>	"fro_Komponenten_aendern.php",
 	    "komponentenarten"	    =>	"fro_Komponentenarten_aendern.php",
+	    "zulaessigewerte"	    =>	"fro_Zulaessige_werte_aendern.php",
 	];
 	if(isset($a_table_links[$s_table]))
 	{
