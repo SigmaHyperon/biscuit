@@ -32,7 +32,14 @@ CREATE TABLE IF NOT EXISTS `tbl_benutzer` (
   `benutzer_mail` text,
   `benutzer_rechte` int(11) DEFAULT NULL,
 `benutzer_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `tbl_benutzer`
+--
+
+INSERT INTO `tbl_benutzer` (`benutzer_name`, `benutzer_kennwort`, `benutzer_mail`, `benutzer_rechte`, `benutzer_id`) VALUES
+('test', '098f6bcd4621d373cade4e832627b4f6', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -243,6 +250,14 @@ CREATE TABLE IF NOT EXISTS `tbl_z_enthaelt` (
   `datum` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Daten für Tabelle `tbl_z_enthaelt`
+--
+
+INSERT INTO `tbl_z_enthaelt` (`geraet_fk`, `komponente_fk`, `datum`) VALUES
+(7, 1, '2015-07-14'),
+(7, 4, '2015-07-14');
+
 -- --------------------------------------------------------
 
 --
@@ -345,7 +360,7 @@ ALTER TABLE `tbl_z_komponente_attribute`
 -- AUTO_INCREMENT für Tabelle `tbl_benutzer`
 --
 ALTER TABLE `tbl_benutzer`
-MODIFY `benutzer_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `benutzer_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_geraete`
 --
