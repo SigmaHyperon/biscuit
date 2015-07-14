@@ -39,7 +39,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
             <br>
             <table border="0" align="center">
                 <tr>
-                    <td><a href="fro_Auswahl.php"><button>Home</button></a></td>
+                    <td><a href="fro_Home.php"><button>Home</button></a></td>
                 </tr>
                 <tr>
                     <td><a href="fro_Auswahl.php?action=list&table=raeume"><button>R&auml;ume</button></a></td>
