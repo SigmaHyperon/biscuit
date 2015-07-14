@@ -1,0 +1,52 @@
+SUFU.txt
+
+       ###
+    # .--  #
+  #  .       #
+  #         #
+   #      #
+    ###
+    ##
+   ##
+  ##
+
+Die Suchfunktion an sich wird nicht direkt aufgerufen.
+Die Einzellnen Funktionen Rufen die Eigentliche Suche
+mit den Nötigen zusätlichen Parametern auf!
+
+Die Rückgabe erfolgt in einem normalen Array.
+
+Die Globale Suche führt theoretisch den Query
+mit dem Schlagwort auf alle Tabellen aus
+und wird letztlich ein 2 - Dimensionales Array zurück geben.
+Dieses sieht wie folgt aus:
+
+Funde in  Benutzer: xx
+Funde in Geräte: xx
+Funde in Geräte-Arten: xx
+Funde in ...
+und so weiter.
+
+Die Darstellung auf der Ergebnissseite wäre super, wenn so erfolgen könnte:
+
+Ergebnisse zu ihrere Suche:
+
+Benutzer
+------------------
+Keine Funde
+
+Geräte
+-------------------
+Portal Gun - Aperture - ...
+
+...
+und so weiter.
+
+In den Arrays zu den Funden finden sich alle Inhalte der Row, die zum Treffer gehört.
+
+Die Suche richtet sich immer nach den Namen. Das kann aber noch einzelln angepasst werden!
+
+Grüße,
+Freddy
+
+
