@@ -1,6 +1,12 @@
 <?php
 
-
+/**
+ * Funktion zum Anpassen eines Eintrags
+ * @param int  $int_id
+ * @param txt  $s_name
+ * @param txt $s_notiz
+ * @return Gibt informationn über den Erfolg der Operation zurück
+ */
 function func_b_updateRaum ($int_id, $s_name, $s_notiz)
 {
     $txt_sql_statement = "UPDATE tbl_raeume set raum_name='".$s_name."', raum_notiz='".$s_notiz."' where raum_id='".$int_id."';";    
@@ -11,6 +17,13 @@ function func_b_updateRaum ($int_id, $s_name, $s_notiz)
     return $a_sql_result;
 }
 
+/**
+ * Funktion zum Anpassen eines Eintrags
+ * @param int  $int_id
+ * @param txt  $s_name
+ * @param txt $s_notiz
+ * @return Gibt informationn über den Erfolg der Operation zurück
+ */
 function func_b_updateLieferant ($int_id, $s_firmenname, $s_vorname, $s_nachname, $s_plz, $s_ort, $s_strasse)
 {
     $txt_sql_statement = "UPDATE tbl_lieferanten set lieferant_firmenname='".$s_firmenname."'"
@@ -26,6 +39,13 @@ function func_b_updateLieferant ($int_id, $s_firmenname, $s_vorname, $s_nachname
     return $a_sql_result;
 }
 
+/**
+ * Funktion zum Anpassen eines Eintrags
+ * @param int  $int_id
+ * @param txt  $s_name
+ * @param txt $s_notiz
+ * @return Gibt informationn über den Erfolg der Operation zurück
+ */
 function func_form_updateGeraet($int_id, $int_raum, $int_lieferant, $dat_ek_datum, $txt_notiz, $txt_hersteller, $dat_gewaehr_beginn, $dat_gewaehr_ende, $txt_seriennummer, $int_art, $text_name)
 {
     $txt_sql_statement = "UPDATE tbl_geraete SET raum_fk='".$int_raum."',
@@ -43,6 +63,13 @@ function func_form_updateGeraet($int_id, $int_raum, $int_lieferant, $dat_ek_datu
     return($int_response);
 }
 
+/**
+ * Funktion zum Anpassen eines Eintrags
+ * @param int  $int_id
+ * @param txt  $s_name
+ * @param txt $s_notiz
+ * @return Gibt informationn über den Erfolg der Operation zurück
+ */
 function func_form_updateKomponenten($int_id, $txt_komponente_name, $int_komponente_bestand, $int_komponenten_art)
 {
     $txt_sql_statement = "UPDATE tbl_komponenten SET koponente_name = '".$txt_komponente_name."',
@@ -53,6 +80,13 @@ function func_form_updateKomponenten($int_id, $txt_komponente_name, $int_kompone
     return($int_response);
 }
 
+/**
+ * Funktion zum Anpassen eines Eintrags
+ * @param int  $int_id
+ * @param txt  $s_name
+ * @param txt $s_notiz
+ * @return Gibt informationn über den Erfolg der Operation zurück
+ */
 function func_form_updateKomponentenArt($int_id, $txt_name)
 {
     $txt_sql_statement = "UPDATE tbl_komponenten_arten SET komponenten_art_name = '".$txt_name."'
@@ -61,6 +95,13 @@ function func_form_updateKomponentenArt($int_id, $txt_name)
     return($int_response);
 }
 
+/**
+ * Funktion zum Anpassen eines Eintrags
+ * @param int  $int_id
+ * @param txt  $s_name
+ * @param txt $s_notiz
+ * @return Gibt informationn über den Erfolg der Operation zurück
+ */
 function func_form_updateAttribute($int_id, $txt_name)
 {
     $txt_sql_statement = "UPDATE tbl_komponenten_Attribute SET komponenten_attribut_name ='".$txt_name."'
@@ -69,6 +110,13 @@ function func_form_updateAttribute($int_id, $txt_name)
     return($int_response);
 }
 
+/**
+ * Funktion zum Anpassen eines Eintrags
+ * @param int  $int_id
+ * @param txt  $txt_wert_name
+ * @param txt $int_wert
+ * @return Gibt informationn über den Erfolg der Operation zurück
+ */
 function func_form_updateZulaessigeWerte($int_id, $txt_wert_name, $int_wert)
 {
     $txt_sql_statement = "UPDATE tbl_zulaessige_werte SET zulaessiger_wert_name ='".$txt_wert_name."',
@@ -78,6 +126,13 @@ function func_form_updateZulaessigeWerte($int_id, $txt_wert_name, $int_wert)
     return($int_response);
 }
 
+/**
+ * Funktion zum Anpassen eines Eintrags
+ * @param int  $int_id
+ * @param txt  $s_name
+ * @param txt $s_notiz
+ * @return Gibt informationn über den Erfolg der Operation zurück
+ */
 function func_form_updateBenutzer($int_id, $txt_name)
 {
     $txt_sql_statement = "UPDATE tbl_benutzer SET benutzer_name = '".$txt_name."'
