@@ -115,6 +115,10 @@ function func_s_searchEscaped($txt_string, $txt_table, $txt_operator)
   return($a_values);
 }
 
+/**
+ * Aufruf mit Schlagwort für Globale Suche
+ * @param type $txt_string Suchbegriff
+ */
 function func_s_searchGlobal($txt_string)
 {
     $txt_search_escaped = mysql_escape_string($txt_string);
