@@ -44,6 +44,20 @@ function func_form_delGeraetByName($txt_geraet)
 
 /**
  * 
+ * @param Text $txt_art Zu löschender Eintrag
+ * @return int Information ob Query erfolgreich (0 / 1)
+ */
+function func_form_delGeraeteArtByName($txt_art)
+{
+    $txt_sql_statement = "DELETE FROM tbl_geraete_art WHERE geraete_art_name = '".$txt_art."';";
+    
+    $int_response = mysql_query($txt_sql_statement);
+    
+    return($int_response);
+}
+
+/**
+ * 
  * @param Text $txt_komponente Zu löschender Eintrag
  * @return int Information ob Query erfolgreich (0 / 1)
  */
@@ -218,6 +232,20 @@ function func_form_delKomponentenArtByID ($int_komponentenart)
 function func_form_delBenutzerByID($int_benutzer)
 {
     $txt_sql_statement = "DELETE FROM tbl_benutzer WHERE benutzer_id = ".$int_benutzer.";";
+    
+    $int_response = mysql_query($txt_sql_statement);
+    
+    return($int_response);
+}
+
+/**
+ * 
+ * @param Text $int_id Zu löschender Eintrag
+ * @return int Information ob Query erfolgreich (0 / 1)
+ */
+function func_form_delGeraeteArtByID($int_id)
+{
+    $txt_sql_statement = "DELETE FROM tbl_gereaete_art WHERE geraete_art =".$int_id.";";
     
     $int_response = mysql_query($txt_sql_statement);
     
