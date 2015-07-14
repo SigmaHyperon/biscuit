@@ -203,7 +203,7 @@ function func_form_delZulaessigenWertByID($int_wert)
  */
 function func_form_delKomponentenArtByID ($int_komponentenart)
 {
-    $txt_sql_statement = "DELETE FROM tbl_komponenten_art WHERE komponenten_art_id =".$int_komponentenart.";";
+    $txt_sql_statement = "DELETE FROM tbl_komponenten_arten WHERE komponenten_art_id =".$int_komponentenart.";";
     
     $int_response = mysql_query($txt_sql_statement);
     
