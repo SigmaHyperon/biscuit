@@ -72,6 +72,11 @@ function func_v_list()
 		"Id",
 		"Name"
 	    ],
+	    "zulaessigewerte"	=>  [
+		"Id",
+		"Name",
+		"Wert"
+	    ],
 	];
 	$a_table_links = [
 	    "lieferanten"	=>  "func_a_getLieferanten",
@@ -79,7 +84,8 @@ function func_v_list()
 	    "geraete"	=>  "func_a_getGeraete",
 	    "komponenten"	=>  "func_a_getKomponenten",
 	    "komponentenarten"	=>  "func_a_getKomponentenArten",
-	    "geraetearten"	=>  "func_a_getGeraeteArten"
+	    "geraetearten"	=>  "func_a_getGeraeteArten",
+	    "zulaessigewerte"	=>  "func_a_getZulaessigeWerte",
 	];
 	if(isset($a_table_links[$s_table]))
 	{
@@ -158,15 +164,23 @@ function func_v_delete()
 	    "lieferanten"	=>  "func_form_delLieferantByID",
 	    "raeume"	=>  "func_form_delRaumByID",
 	    "geraete"	=>  "func_form_delGeraetByID",
-	    "komponenten"	=>  "func_form_delKomponenteByID"
+	    "komponenten"	=>  "func_form_delKomponenteByID",
+	    "komponentenarten"	=>  "func_form_delKomponentenArtByID"
 	];
 	if(isset($a_table_links[$s_table]) && $int_selektiert = \utility\forms\get("selektiert", false))
 	{
-	    call_user_func($a_table_links[$s_table], $int_selektiert);
-	    try {
-		header("Location: fro_Auswahl.php?action=list&table=".$s_table);
-		die();
-	    } catch (Exception $ex) {}
+	    if(call_user_func($a_table_links[$s_table], $int_selektiert))
+	    {
+		try {
+		    header("Location: fro_Auswahl.php?action=list&table=".$s_table);
+		    die();
+		} catch (Exception $ex) {}
+	    }
+	    else 
+	    {
+		echo "An error occured!";
+	    }
+	    
 	}
 	else
 	{
