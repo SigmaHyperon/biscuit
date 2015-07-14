@@ -1,3 +1,9 @@
+<!-----------------------------------------------------------------
+Ersteller:          Fr3d.dy
+Erstell-Datum:      03.07.2015
+Änderungsdatum: 
+Inhalt:            Mainfile PHP / SQL
+-------------------------------------------------------------------> 
 <?php
 
     $txt_login="IT-Verwaltung";

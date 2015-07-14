@@ -1,3 +1,10 @@
+<!-----------------------------------------------------------------
+Ersteller:          Fr3d.dy
+Erstell-Datum:      14.07.2015 (Auslagerung)
+Änderungsdatum: 
+Inhalt:            Funktionen zum Auslesen PHP / SQL
+-------------------------------------------------------------------> 
+
 <?php
 
 

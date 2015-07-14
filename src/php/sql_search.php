@@ -1,3 +1,9 @@
+<!-----------------------------------------------------------------
+Ersteller:          Fr3d.dy
+Erstell-Datum:      14.07.2015 (Auslagerung)
+Änderungsdatum: 
+Inhalt:            Suchfunktionen PHP / SQL
+-------------------------------------------------------------------> 
 <?php
 
 /**
@@ -7,7 +13,7 @@
  */
 function func_a_searchBenutzer($txt_suche)
 {
-    $a_ergebnisse = func_s_searchEscaped($txt_suche, tbl_benutzer);
+    $a_ergebnisse = func_s_searchEscaped($txt_suche, 'tbl_benutzer', 'benutzer_name');
     return($a_ergebnisse);
 }
 
@@ -18,7 +24,7 @@ function func_a_searchBenutzer($txt_suche)
  */
 function func_a_searchGeraete($txt_suche)
 {
-    $a_ergebnisse = func_s_searchEscaped($txt_suche, tbl_geraete);
+    $a_ergebnisse = func_s_searchEscaped($txt_suche, 'tbl_geraete', 'geraet_name');
     return($a_ergebnisse);
 }
 
@@ -29,7 +35,7 @@ function func_a_searchGeraete($txt_suche)
  */
 function func_a_searchGeraeteArt($txt_suche)
 {
-    $a_ergebnisse = func_s_searchEscaped($txt_suche, tbl_geraete_art);
+    $a_ergebnisse = func_s_searchEscaped($txt_suche, 'tbl_geraete_art','geraete_art_name');
     return($a_ergebnisse);
 }
 
@@ -40,7 +46,7 @@ function func_a_searchGeraeteArt($txt_suche)
  */
 function func_a_searchKomponenten($txt_suche)
 {
-    $a_ergebnisse = func_s_searchEscaped($txt_suche, tbl_komponenten);
+    $a_ergebnisse = func_s_searchEscaped($txt_suche, 'tbl_komponenten','komponente_name');
     return($a_ergebnisse);
 }
 
@@ -51,7 +57,7 @@ function func_a_searchKomponenten($txt_suche)
  */
 function func_a_searchKomponentenArten($txt_suche)
 {
-    $a_ergebnisse = func_s_searchEscaped($txt_suche, tbl_komponenten_arten);
+    $a_ergebnisse = func_s_searchEscaped($txt_suche, 'tbl_komponenten_arten','komponenten_art_name');
     return($a_ergebnisse);
 }
 
@@ -62,7 +68,7 @@ function func_a_searchKomponentenArten($txt_suche)
  */
 function func_a_searchLieferanten($txt_suche)
 {
-    $a_ergebnisse = func_s_searchEscaped($txt_suche, tbl_lieferanten);
+    $a_ergebnisse = func_s_searchEscaped($txt_suche, 'tbl_lieferanten','lieferanten_name');
     return($a_ergebnisse);
 }
 
@@ -71,9 +77,9 @@ function func_a_searchLieferanten($txt_suche)
  * @param txt $txt_suche Schlagwort für Suche
  * @return array Suchergebnisse
  */
-function func_a_searchRaueme($txt_suche)
+function func_a_searchRaeume($txt_suche)
 {
-    $a_ergebnisse = func_s_searchEscaped($txt_suche, tbl_raueme);
+    $a_ergebnisse = func_s_searchEscaped($txt_suche, 'tbl_raeume','raum_name');
     return($a_ergebnisse);
 }
 
@@ -84,7 +90,7 @@ function func_a_searchRaueme($txt_suche)
  */
 function func_a_searchZulaessigeWaerte($txt_suche)
 {
-    $a_ergebnisse = func_s_searchEscaped($txt_suche, tbl_zulaessige_werte);
+    $a_ergebnisse = func_s_searchEscaped($txt_suche, 'tbl_zulaessige_werte','zulaessiger_wert_name');
     return($a_ergebnisse);
 }
 
@@ -95,11 +101,11 @@ function func_a_searchZulaessigeWaerte($txt_suche)
  * @param txt $txt_table Übergabe Table
  * @return array Rückgabe
  */
-function func_s_searchEscaped($txt_string, $txt_table)
+function func_s_searchEscaped($txt_string, $txt_table, $txt_operator)
 {
   $txt_escaped_search = mysql_escape_string($txt_string);
   
-  $txt_sql_statement = "SELECT * FROM ".$txt_table." WHERE benutzer_name LIKE' ".$txt_escaped_search."';";
+  $txt_sql_statement = "SELECT * FROM ".$txt_table." WHERE ".$txt_operator." LIKE '%".$txt_escaped_search."%';";
   
   $a_sql_cache = mysql_query($txt_sql_statement);
   
@@ -124,14 +130,12 @@ function func_s_searchGlobal($txt_string)
             array("Räume"),
             array("Zulässige Werte")
             );
-    $search_output[0]=func_searchBenutzer($txt_search_escaped);
-    $search_output[1]=func_searchGeraete($txt_search_escaped);
-    $search_output[2]=func_searchGeraeteArt($txt_search_escaped);
-    $search_output[3]=func_searchKomponenten($txt_search_escaped);
-    $search_output[4]=func_searchKomponentenArten($txt_search_escaped);
-    $search_output[5]=func_searchLieferanten($txt_search_escaped);
-    $search_output[6]=func_searchRaueme($txt_search_escaped);
-    $search_output[7]=func_searchZulaessigeWaerte($txt_search_escaped);
-    
-    var_dump($search_output);
+    $search_output[0]=func_a_searchBenutzer($txt_search_escaped);
+    $search_output[1]=func_a_searchGeraete($txt_search_escaped);
+    $search_output[2]=func_a_searchGeraeteArt($txt_search_escaped);
+    $search_output[3]=func_a_searchKomponenten($txt_search_escaped);
+    $search_output[4]=func_a_searchKomponentenArten($txt_search_escaped);
+    $search_output[5]=func_a_searchLieferanten($txt_search_escaped);
+    $search_output[6]=func_a_searchRaueme($txt_search_escaped);
+    $search_output[7]=func_a_searchZulaessigeWaerte($txt_search_escaped);
 }
