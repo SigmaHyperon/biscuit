@@ -7,9 +7,9 @@
  * @param txt $s_notiz
  * @return Gibt informationn über den Erfolg der Operation zurück
  */
-function func_b_updateRaum ($int_id, $s_name, $s_notiz)
+function func_b_updateRaum ($int_id, $s_name, $s_notiz, $txt_stockwerk)
 {
-    $txt_sql_statement = "UPDATE tbl_raeume set raum_name='".$s_name."', raum_notiz='".$s_notiz."' where raum_id='".$int_id."';";    
+    $txt_sql_statement = "UPDATE tbl_raeume set raum_name='".$s_name."', raum_stockwerk ='".$txt_stockwerk."', raum_notiz='".$s_notiz."' where raum_id='".$int_id."';";    
     var_dump($txt_sql_statement);
     $a_sql_result =  mysql_query($txt_sql_statement)
             or die ("Anfrage Fehlgeschlagen");
