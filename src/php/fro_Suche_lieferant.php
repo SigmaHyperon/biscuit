@@ -6,7 +6,7 @@ Inhalt:             Suchen eines oder mehrerer Lieferanten
 -------------------------------------------------------------------> 
 
     <form action="fro_Suche_lieferant.php" method="post">
-        <table border="1">
+        <table class="suche">
             <tr>
                 <td colspan="2"><b>Welchen Lieferanten suchen Sie?</b></td>
             </tr>

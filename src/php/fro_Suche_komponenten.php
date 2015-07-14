@@ -6,7 +6,7 @@ Inhalt:             Suchen ein oder mehreren Komponenten
 -------------------------------------------------------------------> 
 
 <form action="fro_Suche_komponenten.php" method="post">
-        <table border="1">
+        <table class="suche">
             <tr>
                 <td colspan="2"><b>Welche Komponente suchen Sie?</b></td>
             </tr>
