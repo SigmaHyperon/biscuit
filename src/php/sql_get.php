@@ -273,7 +273,7 @@ function func_a_getKomponente($id)
  */
 function func_a_getGeraeteArt($id)
 {
-    $txt_sql_statement = "SELECT * FROM tbl_gereaete_arten WHERE geraete_art_id = '".$id."'";
+    $txt_sql_statement = "SELECT * FROM tbl_geraete_art WHERE geraete_art_id = '".$id."'";
     
     $a_sql_result = mysql_query($txt_sql_statement)
             or die ("Anfrage Fehlgeschlagen");
