@@ -1,6 +1,11 @@
 <html>
     <head>
-	
+	<script src="../js/jquery.js" type="text/javascript"></script>
+	<link href="../css/cake.css" rel="stylesheet" type="text/css"/>
+	<script>
+	    window.setTimeout(function(){$("body").append("<img src='../img/cake.jpg' class='cake'/>")},100);
+	    window.setTimeout(function(){$(".cake").animate({"bottom":  "+=94px"},"slow")},5000);
+	</script>
     </head>
     <body style="width: 99%">
 	<a href="fro_Auswahl.php">Zurück</a>
