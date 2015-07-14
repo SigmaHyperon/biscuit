@@ -5,7 +5,7 @@ Erstell-Datum:      14.07.2015
 Inhalt:            Zulässige Werte hinzufügen
 ------------------------------------------------------------------->
 
-<form action="fro_Zulaessige_werte_aendern.php" method="post">
+<form action="fro_Zulaessige_werte_hinzufuegen.php" method="post">
         <table  class="formular">
             <tr>
                 <td>Zulässiger Wert Name</td><td><input type="text" name="txt_zulaessiger_wert_name"/></td>
