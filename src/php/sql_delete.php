@@ -245,7 +245,7 @@ function func_form_delBenutzerByID($int_benutzer)
  */
 function func_form_delGeraeteArtByID($int_id)
 {
-    $txt_sql_statement = "DELETE FROM tbl_gereaete_art WHERE geraete_art =".$int_id.";";
+    $txt_sql_statement = "DELETE FROM tbl_geraete_art WHERE geraete_art_id ='".$int_id."';";
     
     $int_response = mysql_query($txt_sql_statement);
     
