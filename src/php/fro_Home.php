@@ -20,20 +20,28 @@
 
 
 <?PHP 
-    require_once 'sql_main.php';
 
-    $benutzername = $_POST["txt_Benutzer"];
-    $passwort = $_POST["txt_Passwort"];
-    
-    if (func_form_login($benutzername, $passwort))
+    if (isset($_POST["txt_Benutzer"]))
         
     {
-        $_SESSION["benutzername"] = $benutzername;
-        $_SESSION["login"] = 1;
-        
-        echo "test";
-    }
+        require_once 'sql_main.php';
 
+        $benutzername = $_POST["txt_Benutzer"];
+        $passwort = $_POST["txt_Passwort"];
+
+       if (func_form_login($benutzername, $passwort))
+            {
+                $_SESSION["benutzername"] = $benutzername;
+                $_SESSION["login"] = 1;
+
+                echo "test";
+            }
+        else 
+            {
+                echo "Benutzername oder Passwort falsch";
+            }
+            
+    }
 
 
 ?>
