@@ -108,3 +108,30 @@ function func_s_searchEscaped($txt_string, $txt_table)
   
   return($a_values);
 }
+
+function func_s_searchGlobal($txt_string)
+{
+    $txt_search_escaped = mysql_escape_string($txt_string);
+    
+    $search_output = array
+            (
+            array("Benutzer"),
+            array("Geräte"),
+            array("Geräte_Arten"),
+            array("Komponenten"),
+            array("Komponenten Attribute"),
+            array("Lieferanten"),
+            array("Räume"),
+            array("Zulässige Werte")
+            );
+    $search_output[0]=func_searchBenutzer($txt_search_escaped);
+    $search_output[1]=func_searchGeraete($txt_search_escaped);
+    $search_output[2]=func_searchGeraeteArt($txt_search_escaped);
+    $search_output[3]=func_searchKomponenten($txt_search_escaped);
+    $search_output[4]=func_searchKomponentenArten($txt_search_escaped);
+    $search_output[5]=func_searchLieferanten($txt_search_escaped);
+    $search_output[6]=func_searchRaueme($txt_search_escaped);
+    $search_output[7]=func_searchZulaessigeWaerte($txt_search_escaped);
+    
+    var_dump($search_output);
+}
