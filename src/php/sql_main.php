@@ -7,7 +7,7 @@
     
     include 'sql_benutzer.php';
     include 'sql_delete.php';
-    include 'sql__get.php';
+    include 'sql_get.php';
     include 'sql_insert.php';
     include 'sql_update.php';
     
