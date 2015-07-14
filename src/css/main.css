@@ -17,6 +17,8 @@ body {
  height: 50px;
  margin: auto;
  border: 1px solid black;
+ border-radius: 15px;
+ box-shadow: 1px 1px 6px #292929;
  
  background: #feffff; /* Old browsers */
  background: -moz-linear-gradient(top, #feffff 0%, #ddf1f9 35%, #a0d8ef 100%); /* FF3.6+ */
@@ -41,7 +43,9 @@ body {
   float: left;
   border: 1px solid black;
   text-align: center;
-
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px #292929;
+  
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0f9ff+0,cbebff+49,a1dbff+100 */
  background: rgb(240,249,255); /* Old browsers */
  background: -moz-linear-gradient(45deg, rgba(240,249,255,1) 0%, rgba(203,235,255,1) 49%, rgba(161,219,255,1) 100%); /* FF3.6+ */
@@ -60,6 +64,8 @@ body {
   height: 100%;
   border: 1px solid black;
   float: right;
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px #292929;
   
  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a1dbff+0,cbebff+49,f0f9ff+100 */
  background: rgb(161,219,255); /* Old browsers */
@@ -129,3 +135,6 @@ table.auswahl_buttons {
     top: 20px;
 }
 
+select{
+   width: 153px;  
+}

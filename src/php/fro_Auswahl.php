@@ -36,6 +36,7 @@ Inhalt:             Hauptseite mit Auswahlmöglichkeiten
         </div>
  <!-- --------------------------- Start des Navigationsfeldes -------------- -->
         <div id="left">
+            <br>
             <table border="0" align="center">
                 <tr>
                     <td><a href="fro_Auswahl.php"><button>Home</button></a></td>
