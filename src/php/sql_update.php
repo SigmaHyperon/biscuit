@@ -90,7 +90,7 @@ function func_form_updateKomponenten($int_id, $txt_komponente_name, $int_kompone
 function func_form_updateKomponentenArt($int_id, $txt_name)
 {
     $txt_sql_statement = "UPDATE tbl_komponenten_arten SET komponenten_art_name = '".$txt_name."'
-                                                                             WHERE komponenten_id = '".$int_id."'";
+                                                                             WHERE komponenten_art_id = '".$int_id."'";
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
 }
