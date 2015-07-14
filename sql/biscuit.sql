@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 14. Jul 2015 um 09:09
+-- Erstellungszeit: 14. Jul 2015 um 09:41
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -151,16 +151,17 @@ INSERT INTO `tbl_lieferanten` (`lieferant_id`, `lieferant_firmenname`, `lieferan
 CREATE TABLE IF NOT EXISTS `tbl_raeume` (
 `raum_id` int(11) NOT NULL,
   `raum_notiz` text,
-  `raum_name` text
+  `raum_name` text,
+  `raum_stockwerk` text
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_raeume`
 --
 
-INSERT INTO `tbl_raeume` (`raum_id`, `raum_notiz`, `raum_name`) VALUES
-(1, '9 PCs', '104'),
-(2, 'sjghsd', 'test');
+INSERT INTO `tbl_raeume` (`raum_id`, `raum_notiz`, `raum_name`, `raum_stockwerk`) VALUES
+(1, '9 PCs', '104', NULL),
+(2, 'sjghsd', 'test', NULL);
 
 -- --------------------------------------------------------
 
