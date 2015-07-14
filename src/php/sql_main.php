@@ -18,6 +18,7 @@
     or die ("Datenbank nicht gefunden");
 
 
+
 /**
  * 
  * @param type $s_Tabellenname - Name d. Tabelle
