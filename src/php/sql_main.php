@@ -303,9 +303,9 @@ function func_form_insertGeraet($int_raum, $int_lieferant, $dat_ek_datum, $txt_n
 function func_form_insertKomponente($txt_name, $int_anzahl,$int_art_fk)
 {
     $txt_sql_statemnet = "INSERT INTO tbl_komponenten (komponente_name, komponente_bestand, komponenten_art_fk)
-                           VALUES (".$txt_name.",
-                                   ".$int_anzahl.","
-				    .$int_art_fk.");";
+                                    VALUES ('".$txt_name."',
+                                                 '".$int_anzahl."',
+                                                 '".$int_art_fk."');";
     
     $int_response = mysql_query($txt_sql_statemnet);
     return ($int_response);
@@ -529,12 +529,32 @@ function func_form_updateGeraet($int_id, $int_raum, $int_lieferant, $dat_ek_datu
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
 }
-/*
-function func_form_delFromTable($txt_table, $int_id)
+
+function func_form_updateKomponenten($int_id, $txt_komponente_name, $int_komponente_bestand, $int_komponenten_art)
 {
-    $txt_sql_statement = "DELETE FROM ".$txt_table." WHERE 
+    $txt_sql_statement = "UPDATE tbl_komponenten SET koponente_name = '".$txt_komponente_name."',
+                                                                                komponente_bestand = '".$int_komponente_bestand."',
+                                                                                komponente_art_fk ='".$int_komponenten_art."',
+                                                                     WHERE komponenten_id = '".$int_id."'";
+    $int_response = mysql_query($txt_sql_statement);
+    return($int_response);
 }
-*/
+
+function func_form_updateKomponentenArt($int_id, $txt_name)
+{
+    $txt_sql_statement = "UPDATE tbl_komponenten_arten SET komponenten_art_name = '".$txt_name."'
+                                                                             WHERE komponenten_id = '".$int_id."'";
+    $int_response = mysql_query($txt_sql_statement);
+    return($int_response);
+}
+
+function func_form_updateAttribute($int_id, $txt_name)
+{
+    $txt_sql_statement = "UPDATE tbl_komponenten_Attribute SET komponenten_attribut_name ='".$txt_name."'
+                                                                                  WHERE komponenten_:attribut_id ='".$int_id."'";
+    $int_response = mysql_query($txt_sql_statement);
+    return($int_response);
+}
 
 function func_form_delLieferantByName($txt_lieferant)
 {
