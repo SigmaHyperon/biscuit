@@ -4,6 +4,7 @@ require_once "../lib/manager.php";
 require_once "./sql_main.php";
 //\utility\cake_test();
 \utility\loadForms();
+\utility\loadSessions();
 if($s_action = \utility\forms\get("action", false))
 {
     switch($s_action)
@@ -19,6 +20,9 @@ if($s_action = \utility\forms\get("action", false))
 	    break;
 	case "Löschen":
 	    func_v_delete();
+	    break;
+	case "detail":
+	    func_v_detail();
 	    break;
 	case "home":
 	    func_v_home();
@@ -214,4 +218,26 @@ function func_v_invalid()
 function func_v_home()
 {
     include "./fro_Home.php";
+}
+
+function func_v_detail()
+{
+    if($s_table = \utility\forms\get("table", false))
+    {
+	$a_table_links = [
+	    "geraete-komponente"	=>  "fro_geraete-komponente.php",
+	];
+	if(isset($a_table_links[$s_table]))
+	{
+	    include $a_table_links[$s_table];
+	}
+	else
+	{
+	    func_v_invalid();
+	}
+    }
+    else
+    {
+	func_v_invalid();
+    }
 }
