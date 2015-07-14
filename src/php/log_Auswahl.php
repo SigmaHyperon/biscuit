@@ -115,6 +115,7 @@ function func_v_edit()
 	    "komponenten"	    =>	"fro_Komponenten_aendern.php",
 	    "komponentenarten"	    =>	"fro_Komponentenarten_aendern.php",
 	    "zulaessigewerte"	    =>	"fro_Zulaessige_werte_aendern.php",
+	    "geraetearten"	    =>	"fro_Geraetearten_aendern.php",
 	];
 	if(isset($a_table_links[$s_table]))
 	{
@@ -142,6 +143,7 @@ function func_v_add()
 	    "komponenten"	=>  "fro_Komponenten_hinzufuegen.php",
 	    "komponentenarten"	=>  "fro_Komponentenarten_hinzufuegen.php",
 	    "zulaessigewerte"	=>  "fro_Zulaessige_werte_hinzufuegen.php",
+	    "geraetearten"	=>  "fro_Geraetearten_hinzufuegen.php",
 	];
 	if(isset($a_table_links[$s_table]))
 	{
