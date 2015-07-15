@@ -103,16 +103,19 @@ function func_a_searchZulaessigeWaerte($txt_suche)
  */
 function func_s_searchEscaped($txt_string, $txt_table, $txt_operator)
 {
-  $txt_escaped_search = mysql_escape_string($txt_string);
+  $txt_escaped_search = mysql_real_escape_string($txt_string);
   
-  $txt_sql_statement = "SELECT * FROM ".$txt_table." WHERE ".$txt_operator." LIKE '%".$txt_escaped_search."%';";
+  $txt_sql_statement = "SELECT * FROM '".$txt_table."' WHERE '".$txt_operator."' LIKE '%".$txt_escaped_search."%';";
   
-  $a_sql_cache = mysql_query($txt_sql_statement);
+  $a_sql_result = mysql_query($txt_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
   
-  $a_values = mysql_fetch_assoc($a_sql_cache)
-          or die ("Ein Fehler ist aufgetreten." + mysql_error());
+  while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
+  {
+      $a_ausgabe = $a_sql_cache;
+  }
   
-  return($a_values);
+ return ($a_ausgabe);
 }
 
 /**
@@ -121,7 +124,7 @@ function func_s_searchEscaped($txt_string, $txt_table, $txt_operator)
  */
 function func_s_searchGlobal($txt_string)
 {
-    $txt_search_escaped = mysql_escape_string($txt_string);
+    $txt_search_escaped = mysql_real_escape_string($txt_string);
     
     $search_output = array
             (
@@ -143,5 +146,5 @@ function func_s_searchGlobal($txt_string)
     $search_output[6]=func_a_searchLieferanten($txt_search_escaped);
     $search_output[7]=func_a_searchRaueme($txt_search_escaped);
     $search_output[8]=func_a_searchZulaessigeWaerte($txt_search_escaped);
-    return true;
+    return($search_output);
 }
