@@ -90,11 +90,6 @@ function func_v_list()
 		"Id",
 		"Name"
 	    ],
-	    "zulaessigewerte"	=>  [
-		"Id",
-		"Name",
-		"Wert"
-	    ],
 	];
 	$a_table_links = [
 	    "lieferanten"	=>  "func_a_getLieferanten",
@@ -103,7 +98,6 @@ function func_v_list()
 	    "komponenten"	=>  "func_a_getKomponenten",
 	    "komponentenarten"	=>  "func_a_getKomponentenArten",
 	    "geraetearten"	=>  "func_a_getGeraeteArten",
-	    "zulaessigewerte"	=>  "func_a_getZulaessigeWerte",
 	];
 	$a_table_title = [
 	    "lieferanten"	=>  "Lieferanten",
@@ -112,7 +106,6 @@ function func_v_list()
 	    "komponenten"	=>  "Komponeten",
 	    "komponentenarten"	=>  "Komponentenarten",
 	    "geraetearten"	=>  "Gerätearten",
-	    "zulaessigewerte"	=>  "Zulässige Werte",
 	];
 	if(isset($a_table_links[$s_table]))
 	{
@@ -142,7 +135,6 @@ function func_v_edit()
 	    "geraete"	    =>	"fro_Geraete_aendern.php",
 	    "komponenten"	    =>	"fro_Komponenten_aendern.php",
 	    "komponentenarten"	    =>	"fro_Komponentenarten_aendern.php",
-	    "zulaessigewerte"	    =>	"fro_Zulaessige_werte_aendern.php",
 	    "geraetearten"	    =>	"fro_Geraetearten_aendern.php",
 	];
 	if(isset($a_table_links[$s_table]))
@@ -170,7 +162,6 @@ function func_v_add()
 	    "geraete"	=>  "fro_Geraete_hinzufuegen.php",
 	    "komponenten"	=>  "fro_Komponenten_hinzufuegen.php",
 	    "komponentenarten"	=>  "fro_Komponentenarten_hinzufuegen.php",
-	    "zulaessigewerte"	=>  "fro_Zulaessige_werte_hinzufuegen.php",
 	    "geraetearten"	=>  "fro_Geraetearten_hinzufuegen.php",
 	];
 	if(isset($a_table_links[$s_table]))
