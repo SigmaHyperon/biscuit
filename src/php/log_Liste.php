@@ -22,7 +22,7 @@ $oFormular->start("", "get");
 
 //Tabelle beginnen
 $oTabelle = new \utility\tables\table();
-$oTabelle->start(true, "liste");
+$oTabelle->start(false, "liste");
 
 /**
  * Zeile mit Spaltennamen in die Tabelle eintragen
