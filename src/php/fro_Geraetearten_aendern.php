@@ -26,6 +26,7 @@
 	    $aGeraetearten_daten = func_a_getGeraeteArt($int_selektiert);
 //	    var_dump($aGeraetearten_daten);
 ?>
+<h2 align="center">Gerätearten</h2>
 <form action="fro_Geraetearten_aendern.php" method="post">
     <input type="hidden" name="int_id" value="<?php echo $aGeraetearten_daten["geraete_art_id"];?>"/>
         <table  class="formular">
