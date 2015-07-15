@@ -1,18 +1,19 @@
 <?php
-    $iGeraete_id = 7;    
-    if(isset($_POST["ac_selected"]))
+    if($iGeraete_id = \utility\forms\get("selektiert", false));    
     {
-	if ($s_Selected = $_POST["ac_selected"])
+	if(isset($_POST["ac_selected"]))
 	{
-	    $a_Selected = json_decode($s_Selected);
-	    func_form_delGeraet_komponeten($iGeraete_id);
-	    foreach ($a_Selected as $value)
+	    if ($s_Selected = $_POST["ac_selected"])
 	    {
-		func_form_insertGeraet_komponete($iGeraete_id, $value);
+		$a_Selected = json_decode($s_Selected);
+		func_form_delGeraet_komponeten($iGeraete_id);
+		foreach ($a_Selected as $value)
+		{
+		    func_form_insertGeraet_komponete($iGeraete_id, $value);
+		}
 	    }
+
 	}
-	
-    }
 ?>
 <script>
     
@@ -126,6 +127,8 @@
 	    </td>
 	</tr>
     </table>
-	
+	<?php
+    }
+    ?>
 </div>
 

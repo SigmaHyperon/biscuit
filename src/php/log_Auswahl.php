@@ -24,6 +24,9 @@ if($s_action = \utility\forms\get("action", false))
 	case "detail":
 	    func_v_detail();
 	    break;
+	case "Details":
+	    func_v_detail();
+	    break;
 	case "home":
 	    func_v_home();
 	    break;
@@ -233,7 +236,7 @@ function func_v_detail()
     if($s_table = \utility\forms\get("table", false))
     {
 	$a_table_links = [
-	    "geraete_komponente"	=>  "fro_Zuordnung_geraete_komponenten.php",
+	    "geraete"	=>  "fro_Zuordnung_geraete_komponenten.php",
 	];
 	if(isset($a_table_links[$s_table]))
 	{
