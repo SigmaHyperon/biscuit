@@ -40,7 +40,7 @@ require_once '../lib/manager.php';
     <div id="main" > 
 <!-- ---------------------------- Start des Bannerfeldes ------------------- -->    
         <div id="Header" >
-            <h1 class="h1">Inventar</h1>
+            <h2>Inventar</h2>
 	    <?php
 		if(\utility\sessions\sessionGet("benutzername", false))
 		{
