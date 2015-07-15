@@ -10,7 +10,7 @@ require_once './sql_main.php';
 require_once '../lib/manager.php';
 \utility\loadForms();
 \utility\loadSessions();
-//var_dump($_SESSION);
+var_dump($_SESSION);
 ?>
 <!DOCTYPE>
 <html >
