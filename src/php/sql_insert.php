@@ -131,8 +131,8 @@ function func_form_instertKomponentenArt($txt_name)
  */
 function func_form_instertAttribut($txt_name)
 {
-    $txt_sql_statement = "INSERT INTO tbl_komponenten_attribute (koponenten_attribut_name)
-                            VALUES (".$txt_name.");";
+    $txt_sql_statement = "INSERT INTO tbl_komponenten_attribute (komponenten_attribut_name)
+                            VALUES ('".$txt_name."');";
     
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
