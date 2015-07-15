@@ -42,7 +42,7 @@ body {
 #left{
   position: relative;
   top: 20px;
-  width: 145px; 
+  width: 165px; 
   float: left;
   border: 1px solid black;
   text-align: center;
@@ -63,7 +63,7 @@ body {
 #right{
   position: relative;
   top: 20px;
-  width: 920px;
+  width: 900px;
   height: 100%;
   border: 1px solid black;
   float: right;
@@ -107,7 +107,7 @@ table.login td{
 
 /* Button Design ***************************************************************/
 button, input[type="submit"], input[type="reset"]{
-   width: 135px;    
+   width: 152px;    
 }
 /* Beginn des Formular-Table-Designs *******************************************/
 table.formular{
