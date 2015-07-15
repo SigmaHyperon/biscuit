@@ -176,8 +176,7 @@ select{
 
 span.username {
    
-    display: inline-block;
-    margin-left: 280px;    
+    display: inline-block; 
 }
 
 a.logout button {
@@ -190,4 +189,9 @@ table.multi_form{
     margin: auto;
     top: 10px;
     border: 1px solid black; 
+}
+
+div.logonname {
+    float: right;
+    margin-top: 30px;
 }

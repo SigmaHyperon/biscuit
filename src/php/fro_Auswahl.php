@@ -44,7 +44,7 @@ require_once '../lib/manager.php';
 	    <?php
 		if(\utility\sessions\sessionGet("benutzername", false))
 		{
-		    echo "<span class='username'>angemeldet als: ".\utility\sessions\sessionGet("benutzername", false)."</span> <a class='logout' href='log_logout.php'><button>logout</button></a>";
+		    echo "<div class='logonname'><span class='username'>angemeldet als: ".\utility\sessions\sessionGet("benutzername", false)."</span> <a class='logout' href='log_logout.php'><button>logout</button></a></div>";
 		}
 	    ?>
         </div>
