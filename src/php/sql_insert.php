@@ -139,23 +139,6 @@ function func_form_instertAttribut($txt_name)
 }
 
 /**
- * 
- * @param type $txt_name - Name des Wertes
- * @param type $int_wert - Der eigentliche Wert
- * @return Gibt Information über Erfolg d. Eintragens (Int)
- */
-function func_form_instertZulaessigenWert($txt_name, $int_wert)
-{
-    $txt_sql_statement = "INSERT INTO tbl_zulaessige_Werte (zulaessiger_wert_name, zulaessiger_wert) 
-                                     VALUES (".$txt_name."),
-                                   (".$int_wert.");";                       
-    
-    $int_response = mysql_query($txt_sql_statement);
-    return($int_response);
-}
-
-
-/**
  * Fügt Geräte-art ein
  * @param txt  $txt_name Name der Geräteart
  * @return int Rückgabe mit info über Erfolg

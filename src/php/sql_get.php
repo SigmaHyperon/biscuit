@@ -131,25 +131,6 @@ function func_a_getAttribute ()
 
 /**
  * 
- * @return Gibt alle Zusässigen Werte aus
- */
-function func_a_getZulaessigeWerte()
-{
-    $txt_sql_statement = "SELECT * FROM tbl_zulaessige_werte;";
-    $a_sql_ausgabe = array();
-    
-    $a_sql_result = mysql_query($txt_sql_statement)
-            or die ("Anfrage Fehlgeschlagen");
-    
-    while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
-    {
-	$a_sql_ausgabe[] = $a_sql_cache;
-    }
-    return $a_sql_ausgabe;
-}
-
-/**
- * 
  * @return Gibt alle Komponenten-Arten aus
  */
 function func_a_getKomponentenArten()
@@ -315,23 +296,6 @@ function func_a_getAttribut($id)
 function func_a_getKomponentenArt($id)
 {
     $txt_sql_statement = "SELECT * FROM tbl_komponenten_arten WHERE komponenten_art_id ='".$id."'";
-    
-    $a_sql_result = mysql_query($txt_sql_statement)
-            or die ("Anfrage Fehlgeschlagen");
-    
-    $a_Tabellen_daten = mysql_fetch_assoc($a_sql_result);
-    
-    return($a_Tabellen_daten);
-}
-
-/**
- * Zeigt einen einzellnen Eintrag an
- * @param int $id Die ID des anzuzeigenden Eintrags
- * @return int Gibt information über Erfolg der Operation
- */
-function func_a_getZulaessigenWert($id)
-{
-    $txt_sql_statement ="SELECT * FROM tbl_zulaessige_werte WHERE zulaessiger_wert_id ='".$id."'";
     
     $a_sql_result = mysql_query($txt_sql_statement)
             or die ("Anfrage Fehlgeschlagen");

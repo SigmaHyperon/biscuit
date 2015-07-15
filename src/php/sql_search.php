@@ -95,7 +95,7 @@ function func_s_searchEscaped($txt_string, $txt_table, $txt_operator)
   $txt_escaped_search = mysql_real_escape_string($txt_string);
   $a_return=array();
   
-  $txt_sql_statement = "SELECT * FROM ".$txt_table." WHERE '".$txt_operator."' LIKE '%".$txt_escaped_search."%';";
+  $txt_sql_statement = "SELECT * FROM ".$txt_table." WHERE ".$txt_operator." LIKE '%".$txt_escaped_search."%';";
   
   $a_sql_result = mysql_query($txt_sql_statement)
             or die ($txt_table);
