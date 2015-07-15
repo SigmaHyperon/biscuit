@@ -55,6 +55,7 @@ function func_v_list()
 		"Id",
 		"Notiz",
 		"Name",
+		"Stockwerk",
 	    ],
 	    "geraete"	=>  [
 		"Id",
