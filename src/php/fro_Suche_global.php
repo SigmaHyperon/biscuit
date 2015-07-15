@@ -4,7 +4,7 @@ Erstell-Datum:      13.07.2015
 Änderungsdatum: 
 Inhalt:             Suchen ein oder mehreren Komponenten
 -------------------------------------------------------------------> 
-
+<h2 align="center">Suche</h2>
 <form action="fro_Auswahl.php?action=suche" method="post">
         <table class="suche">
             <tr>

@@ -50,8 +50,8 @@ require_once '../lib/manager.php';
         </div>
  <!-- --------------------------- Start des Navigationsfeldes -------------- -->
         <div id="left">
-            <br>
-            <table border="0" align="center">
+            
+            <table class="navi_buttons">
                 <tr>
                     <td><a href="fro_Auswahl.php?action=home"><button>Home</button></a></td>
                 </tr>
