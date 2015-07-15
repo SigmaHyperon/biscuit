@@ -30,6 +30,9 @@ if($s_action = \utility\forms\get("action", false))
 	case "home":
 	    func_v_home();
 	    break;
+	case "suche":
+	    func_v_search();
+	    break;
 	default:
 	    func_v_home();
 	    break;
@@ -252,4 +255,9 @@ function func_v_detail()
     {
 	func_v_invalid();
     }
+}
+
+function func_v_search()
+{
+    include "./fro_Suche_global.php";
 }
