@@ -27,6 +27,8 @@ Inhalt:            Zulässige Werte hinzufügen
     else
     {
 ?>
+
+<h2 align="center">Zulässige Werte hinzufügen</h2>
 <form action="fro_Zulaessige_werte_hinzufuegen.php" method="post">
         <table  class="formular">
             <tr>

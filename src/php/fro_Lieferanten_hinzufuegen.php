@@ -31,6 +31,8 @@ Inhalt:             Lieferanten_Formular
     else
     {
 	?>
+
+<h2 align="center">Lieferant hinzufügen</h2>
     <form action="fro_Lieferanten_hinzufuegen.php" method="post">
         
         <table cellspacing="10px" class="formular">

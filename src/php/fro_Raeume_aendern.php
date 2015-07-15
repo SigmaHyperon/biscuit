@@ -31,6 +31,7 @@ Inhalt:             Räume hinzufügen
 	{
 	    $aRaum_daten = func_a_getRaum($int_selektiert);
 ?>
+<h2 align="center">Raum ändern</h2>
 <form action="fro_Raeume_aendern.php" method="post">
     <input type="hidden" name="int_id" value="<?php echo $aRaum_daten["raum_id"];?>"/>
         <table border="1" class="formular">

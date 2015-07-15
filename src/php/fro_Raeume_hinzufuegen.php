@@ -28,6 +28,7 @@ Inhalt:             Räume hinzufügen
     else
     {
 ?>
+<h2 align="center">Raum hinzufügen</h2>
 <form action="fro_Raeume_hinzufuegen.php" method="post">
         <table class="formular">
             <tr>

@@ -29,6 +29,8 @@ Inhalt:             Komponenten hinzufügen
     else
     {
 ?>
+
+<h2 align="center">Komponente hinzufügen</h2>
 <form action="fro_Komponenten_hinzufuegen.php" method="post">
         <table  class="formular">
             <tr>

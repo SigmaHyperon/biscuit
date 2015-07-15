@@ -38,7 +38,7 @@ Inhalt:            Geräte hinzufügen
     {
 ?>
 <!-- -------------- Gerätehinzufügenformular ---------------------------------->
-<h2 align="center">Geräte</h2>
+<h2 align="center">Gerät hinzufügen</h2>
 <form action="fro_Geraete_hinzufuegen.php" method="post">
         <table  class="formular">
             <tr>

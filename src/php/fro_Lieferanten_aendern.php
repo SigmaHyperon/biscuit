@@ -35,6 +35,8 @@ Inhalt:             Lieferanten_Formular
 	{
 	    $aLieferant_daten = func_a_getLieferant($int_selektiert);
 	?>
+
+<h2 align="center">Lieferant ändern</h2>
     <form action="fro_Lieferanten_aendern.php" method="post">
 	<input type="hidden" name="int_id" value="<?php echo $aLieferant_daten["lieferant_id"];?>"/>
         <table border="1" class="formular">

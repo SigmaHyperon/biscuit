@@ -32,6 +32,8 @@ Inhalt:             Komponentenarten ändern
 	{
 	    $aKomponentenarten_daten = func_a_getKomponentenArt($int_selektiert);
 ?>
+
+<h2 align="center">Komponentenart ändern</h2>
 <form action="fro_Komponentenarten_aendern.php" method="post">
     <input type="hidden" name="int_id" value="<?php echo $aKomponentenarten_daten["komponenten_art_id"];?>"/>
         <table  class="formular">

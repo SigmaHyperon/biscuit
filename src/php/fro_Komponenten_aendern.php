@@ -33,6 +33,8 @@ Inhalt:             Komponenten ändern
 	{
 	    $aKomponenten_daten = func_a_getKomponente($int_selektiert);
 ?>
+
+<h2 align="center">Komponente ändern</h2>
 <form action="fro_Komponenten_aendern.php" method="post">
     <input type="hidden" name="int_id" value="<?php echo $aKomponenten_daten["komponenten_id"];?>"/>
 

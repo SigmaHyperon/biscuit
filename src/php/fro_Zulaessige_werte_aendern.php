@@ -32,6 +32,8 @@ Inhalt:            Zulässige Werte ändern
 	{
 	    $aZWert_daten = func_a_getZulaessigenWert($int_selektiert);
 ?>
+
+<h2 align="center">Zulässige Werte ändern</h2>
 <form action="fro_Zulaessige_werte_aendern.php" method="post">
     <input type="hidden" name="int_id" value="<?php echo $aZWert_daten["zulaessiger_wert_id"];?>"/>
         <table  class="formular">
