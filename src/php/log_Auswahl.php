@@ -217,7 +217,14 @@ function func_v_invalid()
 
 function func_v_home()
 {
-    include "./fro_Home.php";
+    if(func_b_isAdmin())
+    {
+	include "./fro_Home_loggedin.php";
+    }
+    else
+    {
+	include "./fro_Home.php";
+    }
 }
 
 function func_v_detail()
