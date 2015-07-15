@@ -11,7 +11,6 @@ Inhalt:            Mainfile PHP / SQL
     $txt_adresse="localhost";
     $txt_datenbank="biscuit";
     
-    
     include 'sql_benutzer.php';
     include 'sql_delete.php';
     include 'sql_get.php';
