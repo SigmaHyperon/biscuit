@@ -177,7 +177,7 @@ select{
 span.username {
    
     display: inline-block;
-    margin-left: 280px;    
+    float: right;    
 }
 
 a.logout button {
