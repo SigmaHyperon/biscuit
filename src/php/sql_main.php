@@ -11,11 +11,13 @@ Inhalt:            Mainfile PHP / SQL
     $txt_adresse="localhost";
     $txt_datenbank="biscuit";
     
+    
     include 'sql_benutzer.php';
     include 'sql_delete.php';
     include 'sql_get.php';
     include 'sql_insert.php';
     include 'sql_update.php';
+    include 'sql_search.php';
     
     mysql_connect($txt_adresse, $txt_login, $txt_kennwort)
     or die ("Keine Verbindung möglich");
