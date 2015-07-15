@@ -1,7 +1,7 @@
 <!-----------------------------------------------------------------
-Ersteller:          Fr3d.dy
-Erstell-Datum:      03.07.2015
-Änderungsdatum: 
+Ersteller:          Fr3d.dy                             
+Erstell-Datum:      03.07.2015          
+Änderungsdatum:                             
 Inhalt:            Mainfile PHP / SQL
 -------------------------------------------------------------------> 
 <?php
