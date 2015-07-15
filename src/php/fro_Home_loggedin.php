@@ -1,4 +1,3 @@
-
 <table align="center"> 
     <tr>
     <th><h1>Benutzer hinzufügen</h1></th>
@@ -6,7 +5,7 @@
 <tr>
     <td>
 	    <form action="fro_home_loggedin.php" method="post">
-		<table class="formular">
+                <table class="formular">
 		    <tr>
 			<td>Benutzername:</td><td><input type="text" name="txt_Benutzer_add"/></td>
 		    </tr>
@@ -60,8 +59,7 @@
 		    </tr>              
 		</table>        
 	    </form>
-	    
-
+	   
 
 
 <?PHP
