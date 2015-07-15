@@ -182,7 +182,8 @@ INSERT INTO `tbl_lieferanten` (`lieferant_id`, `lieferant_firmenname`, `lieferan
 CREATE TABLE IF NOT EXISTS `tbl_raeume` (
 `raum_id` int(11) NOT NULL,
   `raum_notiz` text,
-  `raum_name` text
+  `raum_name` text,
+  `raum_stockwerk` text
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
