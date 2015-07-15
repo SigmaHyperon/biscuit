@@ -6,10 +6,11 @@
 	    if ($s_Selected = $_POST["ac_selected"])
 	    {
 		$a_Selected = json_decode($s_Selected);
+		var_dump($a_Selected);
 		func_form_delAttribut_art($iAttribut_id);
 		foreach ($a_Selected as $value)
 		{
-		    func_form_insertAttribut_art($iAttribut_id, $value);
+		    var_dump(func_form_insertAttribut_art($iAttribut_id, $value));
 		}
 	    }
 

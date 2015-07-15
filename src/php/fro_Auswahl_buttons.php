@@ -6,7 +6,7 @@ Inhalt:             Buttons Hinzufügen, Ändern und Löschen
 ------------------------------------------------------------------->   
 
 <?php
-$detail_pages = ["geraete", "komponenten"];
+$detail_pages = ["geraete", "komponenten","komponenten"];
 $sTable = \utility\forms\get("table", false);
 if(func_b_isAdmin())
 {
