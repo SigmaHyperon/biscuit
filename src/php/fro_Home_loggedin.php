@@ -41,7 +41,7 @@
 
          require_once 'sql_main.php';
 	
-
+/*Benutzer hinzufügen */
     if (isset($_POST["txt_Benutzer_add"]))
         
     {
@@ -53,9 +53,9 @@
        
        if ($PW == $PW_WH)
        {
-           $errorcode = func_form_insertBenutzer($benutzername, $PW, $email);
+           $returnwert = func_form_insertBenutzer($benutzername, $PW, $email);
            
-           if ($errorcode== 1)
+           if ($returnwert == 1)
            {
                echo "Benutzer erfolgreich hinzugefügt";
            }
@@ -71,10 +71,15 @@
            echo "Passwörter stimmen nicht überein";
        }
     }
-    
-    elseif (isset($_Post["txt_Benutzer_del"])) 
+
+    /*Benutzer löschen*/
+    if (isset($_POST["txt_Benutzer_del"]))
     {
+        
         session_start();
+        $benutzername = $_POST["txt_Benutzer_del"];
+        $returnwert = func_form_delRaumByName($benutzername);
+        
     }
 
 
