@@ -64,7 +64,7 @@ Inhalt:             Komponenten ändern
                 </td>
             </tr> 
             <tr>
-                <td colspan="2" align="center"> <input type="submit" value="Eintragen" /><input type="reset" value="Verwerfen" /></td>
+                <td colspan="2" align="center"> <input type="submit" value="Ändern" /><input type="reset" value="Verwerfen" /></td>
             </tr>              
         </table>        
 </form>

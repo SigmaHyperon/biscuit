@@ -34,7 +34,7 @@
                 <td>Gerätearten Name</td><td><input type="text" name="txt_geraete_art_name" value="<?php echo $aGeraetearten_daten["geraete_art_name"];?>"/></td>
             </tr>
              <tr>
-                <td colspan="2" align="center"> <input type="submit" value="Eintragen" /><input type="reset" value="Verwerfen" /></td>
+                <td colspan="2" align="center"> <input type="submit" value="Ändern" /><input type="reset" value="Verwerfen" /></td>
             </tr> 
         </table>        
 </form>

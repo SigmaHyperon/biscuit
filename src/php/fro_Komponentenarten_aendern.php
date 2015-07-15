@@ -41,7 +41,7 @@ Inhalt:             Komponentenarten ändern
                 <td>Komponentenarten:</td><td><input type="text" name="txt_Komponenten_art_name" value="<?php echo $aKomponentenarten_daten["komponenten_art_name"];?>"/></td>
             </tr>
              <tr>
-                <td colspan="2" align="center"> <input type="submit" value="Eintragen" /><input type="reset" value="Verwerfen" /></td>
+                <td colspan="2" align="center"> <input type="submit" value="Ändern" /><input type="reset" value="Verwerfen" /></td>
             </tr> 
         </table>        
 </form>
