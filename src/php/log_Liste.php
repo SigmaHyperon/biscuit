@@ -1,6 +1,6 @@
 <script>
     $(function(){
-	$("#right form").on("submit", function(e){
+	$("#right form input[value='Ändern'], #right form input[value='Details'], #right form input[value='Löschen']").on("click", function(e){
 	    if($("#right form input[type='radio']:checked").length == 0)
 	    {
 		alert("kein Element ausgewäht!");
