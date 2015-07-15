@@ -39,7 +39,7 @@
 			<td>neues Passwort:</td><td><input type="password" name="txt_Passwort_neu"/></td>
                     </tr>
 		    <tr>
-                        <td>Passwort wiederholen</td><td><input type="password" name="Passwort_neu_wh"/></td>
+                        <td>Passwort wiederholen</td><td><input type="password" name="txt_Passwort_neu_wh"/></td>
 		    </tr>
 		    <tr>
 			<td colspan="2" align="center"> <input type="submit" value="Ändern" /><input type="reset" value="Verwerfen" /></td>
@@ -71,7 +71,7 @@
     if (isset($_POST["txt_Benutzer_add"]))
         
     {
-       session_start();
+       /*session_start();*/
        $benutzername = $_POST["txt_Benutzer_add"];
        $PW = $_POST["txt_Passwort"];
        $PW_WH = $_POST["txt_Passwort_wh"];
@@ -102,7 +102,7 @@
     if (isset($_POST["txt_Benutzer_del"]))
     {
         
-        session_start();
+        /*session_start();*/
         $benutzername = $_POST["txt_Benutzer_del"];
         $returnwert = func_form_delBenutzerByName($benutzername);
         
@@ -121,7 +121,19 @@
     if (isset($_POST["txt_Benutzer_pw_edit"]))
     
     {
-        session_start();
+        /*session_start();*/
+        $benutzername = $_POST["txt_Benutzer_pw_edit"];
+        $passwort_alt = $_POST["txt_Passwort_alt"];
+        $passwort_neu = $_POST["txt_Passwort_neu"];
+        $passwort_neu_wh = $_POST["txt_Passwort_neu_wh"];
+        
+        if($passwort_neu == $passwort_neu_wh)
+        {
+            $returnwert = funct_form_KennwortAendern($benutzername, $passwort_alt, $passwort_neu);
+            var_dump($returnwert);
+        }
+                
+        
         
     }
 
