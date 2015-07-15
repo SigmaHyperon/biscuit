@@ -78,7 +78,17 @@
         
         session_start();
         $benutzername = $_POST["txt_Benutzer_del"];
-        $returnwert = func_form_delRaumByName($benutzername);
+        $returnwert = func_form_delBenutzerByName($benutzername);
+        var_dump($returnwert);
+        
+        if ($returnwert == 1)
+        {
+            echo "Benutzer erfolgreich gelöscht";
+        }
+        else
+        {
+            echo "Benutzer konnte nicht gelöscht werden";
+        }
         
     }
 
