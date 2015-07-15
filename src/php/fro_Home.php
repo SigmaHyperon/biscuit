@@ -1,6 +1,6 @@
 
 <?PHP 
-if(isset($_SESSION["login"]))
+if(isset($_SESSION))
 {
     if ($_SESSION["login"] != 1)
     {
