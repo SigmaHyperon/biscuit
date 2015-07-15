@@ -204,10 +204,7 @@ function func_v_delete()
 	{
 	    if(call_user_func($a_table_links[$s_table], $int_selektiert))
 	    {
-		try {
-		    header("Location: fro_Auswahl.php?action=list&table=".$s_table);
-		    die();
-		} catch (Exception $ex) {}
+		func_v_list();
 	    }
 	    else 
 	    {
