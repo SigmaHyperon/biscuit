@@ -194,5 +194,6 @@ table.multi_form{
 
 div.logonname {
     float: right;
-    margin-top: 30px;
+    margin-top: 15px;
+    margin-right: 15px;
 }
