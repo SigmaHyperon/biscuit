@@ -13,7 +13,8 @@ Inhalt:             Räume hinzufügen
     {
 	$iRaum_id = \utility\forms\post("int_id", false);
 	$sRaum_notiz = \utility\forms\post("txt_Raumnotiz", false);
-	if(func_b_updateRaum($iRaum_id, $sRaum_name, $sRaum_notiz))
+	$sRaum_stockwerk = \utility\forms\post("txt_Stockwerk", false);
+	if(func_b_updateRaum($iRaum_id, $sRaum_name, $sRaum_notiz, $sRaum_stockwerk))
 	{
 	    try {
 		header("Location: fro_Auswahl.php?action=list&table=raeume");
