@@ -40,7 +40,7 @@ require_once '../lib/manager.php';
     <div id="main" > 
 <!-- ---------------------------- Start des Bannerfeldes ------------------- -->    
         <div id="Header" >
-            <marquee class="marquee" behavior="alternate">Inventar</marquee>
+            <h1 class="h1">Inventar</h1>
 	    <?php
 		if(\utility\sessions\sessionGet("benutzername", false))
 		{
@@ -54,6 +54,9 @@ require_once '../lib/manager.php';
             <table border="0" align="center">
                 <tr>
                     <td><a href="fro_Auswahl.php?action=home"><button>Home</button></a></td>
+                </tr>
+                <tr>
+                    <td><a href="fro_Auswahl.php?action=suche"><button>Suche</button></a></td>
                 </tr>
                 <tr>
                     <td><a href="fro_Auswahl.php?action=list&table=raeume"><button>R&auml;ume</button></a></td>
@@ -84,9 +87,9 @@ require_once '../lib/manager.php';
         </div>
 <!-- --------------------- Start des Interaktionsfeldes -------------------- -->    
         <div id="right">
-        <?php
-	require_once './log_Auswahl.php';
-        ?>
+            <?php
+                 require_once './log_Auswahl.php';
+            ?>
         </div>
 
     </div>  

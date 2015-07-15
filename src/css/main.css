@@ -171,13 +171,14 @@ select{
    width: 153px;  
 }
 
-.marquee
+.h1
 {
-color: #000000;
-background-repeat: repeat-x;
-    margin-top: 10px;
+position: relative;    
+margin: auto
+
 }
 span.username {
+    
     display: inline-block;
 }
 
