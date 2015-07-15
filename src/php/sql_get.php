@@ -192,7 +192,7 @@ function func_a_getGeraeteArten()
  */
 function func_a_getBenutzer()
 {
-    $txt_sql_statement = "SELECT benutzer_name FROM tbl_benutzer;";
+    $txt_sql_statement = "SELECT benutzer_name, benutzer_rechte, benutzer_mail FROM tbl_benutzer;";
     $a_sql_ausgabe = array();
     
     $a_sql_result = mysql_query($txt_sql_statement)
