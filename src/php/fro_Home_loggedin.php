@@ -44,7 +44,8 @@
 		    <tr>
 			<td colspan="2" align="center"> <input type="submit" value="Ändern" /><input type="reset" value="Verwerfen" /></td>
 		    </tr>              
-		</table>        
+		</table>
+            
 	    </form>
     </td>
 </tr>
@@ -125,12 +126,20 @@
         $benutzername = $_POST["txt_Benutzer_pw_edit"];
         $passwort_alt = $_POST["txt_Passwort_alt"];
         $passwort_neu = $_POST["txt_Passwort_neu"];
-        $passwort_neu_wh = $_POST["txt_Passwort_neu_wh"];
+        $passwort_neu_wh = $_POST["txt_Passwort_neu_wh"]; 
         
         if($passwort_neu == $passwort_neu_wh)
         {
             $returnwert = funct_form_KennwortAendern($benutzername, $passwort_alt, $passwort_neu);
-            var_dump($returnwert);
+            
+            if ($returnwert == 1)
+            {
+                echo "Passwort erfolgreich geändert";
+            }
+            else
+            {
+                echo "Passwort konnte nicht geändert werden";
+            }
         }
                 
         
