@@ -105,17 +105,17 @@ function func_s_searchEscaped($txt_string, $txt_table, $txt_operator)
 {
   $txt_escaped_search = mysql_real_escape_string($txt_string);
   
-  $txt_sql_statement = "SELECT * FROM ".$txt_table." WHERE ".$txt_operator." LIKE '%".$txt_escaped_search."%';";
+  $txt_sql_statement = "SELECT * FROM '".$txt_table."' WHERE '".$txt_operator."' LIKE '%".$txt_escaped_search."%';";
   
-  $a_sql_cache = mysql_query($txt_sql_statement);
+  $a_sql_result = mysql_query($txt_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
   
-      while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
-    {
-	$a_sql_ausgabe[] = $a_sql_cache;
-    }
-    return $a_sql_ausgabe;
+  while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
+  {
+      $a_ausgabe = $a_sql_cache;
+  }
   
-  return($a_sql_ausgabe);
+ return ($a_ausgabe);
 }
 
 /**
