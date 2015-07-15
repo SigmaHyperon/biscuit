@@ -84,7 +84,7 @@ body {
 #logindiv{
   position: relative;
   top: 100px;
-  width: 320px;
+  width: 350px;
   height: 100px;
   border: 1px solid black;
   border-radius: 15px;
@@ -102,7 +102,7 @@ table.login tr{
 }
 
 table.login td{
-   width: 120px;
+   width: 152px;
 }
 
 /* Button Design ***************************************************************/
