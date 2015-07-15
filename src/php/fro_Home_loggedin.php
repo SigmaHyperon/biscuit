@@ -35,6 +35,27 @@
 	    </form>
 
 
+<h1>Passwort ändern</h1>
+	    <form action="fro_home_loggedin.php" method="post">
+		<table class="formular">
+		    <tr>
+			<td>Benutzername:</td><td><input type="text" name="txt_Benutzer_pw_edit"/></td>
+		    </tr>
+		    <tr>
+			<td>altes Passwort:</td><td><input type="password" name="txt_Passwort_alt"/></td>
+                    </tr>
+                    <tr>
+			<td>neues Passwort:</td><td><input type="password" name="txt_Passwort_neu"/></td>
+                    </tr>
+		    <tr>
+                        <td>Passwort wiederholen</td><td><input type="password" name="Passwort_neu_wh"/></td>
+		    </tr>
+		    <tr>
+			<td colspan="2" align="center"> <input type="submit" value="Ändern" /><input type="reset" value="Verwerfen" /></td>
+		    </tr>              
+		</table>        
+	    </form>
+
 
 
 <?PHP
@@ -92,7 +113,11 @@
     }
     
     /*Passwort ändern */
+    if (isset($_POST["txt_Benutzer_pw_edit"]))
     
-    
+    {
+        session_start();
+        
+    }
 
 ?>
