@@ -116,7 +116,7 @@ function func_a_getKomponenten()
  */
 function func_a_getAttribute ()
 {
-    $txt_sql_statement = "SELECT * FROM tbl_komponenten;";
+    $txt_sql_statement = "SELECT * FROM tbl_komponenten_attribute;";
     $a_sql_ausgabe = array();
     
     $a_sql_result = mysql_query($txt_sql_statement)
@@ -358,7 +358,7 @@ function func_a_getKomponente_geraete($id)
 }
 function func_a_getAttribut_art($id)
 {
-    $tst_sql_statement = "SELECT * FROM tbl_z_enthaelt left join tbl_geraete on tbl_z_enthaelt.geraet_fk=tbl_geraete.geraete_id WHERE komponente_fk ='".$id."'";
+    $tst_sql_statement = "SELECT * FROM tbl_z_attribut_art left join tbl_komponenten_arten on tbl_z_attribut_art.komponenten_art_fk=tbl_komponenten_arten.komponenten_art_id WHERE komponenten_attribut_fk ='".$id."'";
     var_dump($tst_sql_statement);
     $a_sql_ausgabe = array();
     

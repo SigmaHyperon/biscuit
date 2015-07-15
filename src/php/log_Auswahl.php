@@ -90,6 +90,10 @@ function func_v_list()
 		"Id",
 		"Name"
 	    ],
+	    "komponentenattribute"	=>  [
+		"Id",
+		"Name"
+	    ],
 	];
 	$a_table_links = [
 	    "lieferanten"	=>  "func_a_getLieferanten",
@@ -98,6 +102,7 @@ function func_v_list()
 	    "komponenten"	=>  "func_a_getKomponenten",
 	    "komponentenarten"	=>  "func_a_getKomponentenArten",
 	    "geraetearten"	=>  "func_a_getGeraeteArten",
+	    "komponentenattribute"	=>  "func_a_getAttribute",
 	];
 	$a_table_title = [
 	    "lieferanten"	=>  "Lieferanten",
@@ -106,6 +111,7 @@ function func_v_list()
 	    "komponenten"	=>  "Komponeten",
 	    "komponentenarten"	=>  "Komponentenarten",
 	    "geraetearten"	=>  "Gerätearten",
+	    "komponentenattribute"	=>  "Gerätearten",
 	];
 	if(isset($a_table_links[$s_table]))
 	{
@@ -136,6 +142,7 @@ function func_v_edit()
 	    "komponenten"	    =>	"fro_Komponenten_aendern.php",
 	    "komponentenarten"	    =>	"fro_Komponentenarten_aendern.php",
 	    "geraetearten"	    =>	"fro_Geraetearten_aendern.php",
+	    "komponentenattribute"	    =>	"fro_Komponentenattribute_aendern.php",
 	];
 	if(isset($a_table_links[$s_table]))
 	{
@@ -163,6 +170,7 @@ function func_v_add()
 	    "komponenten"	=>  "fro_Komponenten_hinzufuegen.php",
 	    "komponentenarten"	=>  "fro_Komponentenarten_hinzufuegen.php",
 	    "geraetearten"	=>  "fro_Geraetearten_hinzufuegen.php",
+	    "komponentenattribute"	=>  "fro_Komponentenattribute_hinzufuegen.php",
 	];
 	if(isset($a_table_links[$s_table]))
 	{
@@ -190,6 +198,7 @@ function func_v_delete()
 	    "komponenten"	=>  "func_form_delKomponenteByID",
 	    "komponentenarten"	=>  "func_form_delKomponentenArtByID",
 	    "geraetearten"	=>  "func_form_delGeraeteArtByID",
+	    "komponentenattribute"	=>  "func_form_delAttributByID",
 	];
 	if(isset($a_table_links[$s_table]) && $int_selektiert = \utility\forms\get("selektiert", false))
 	{

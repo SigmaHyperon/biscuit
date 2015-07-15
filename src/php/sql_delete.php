@@ -181,7 +181,7 @@ function func_form_delKomponenteByID($int_komponente)
  */
 function func_form_delAttributByID($int_attribut)
 {
-    $txt_sql_statement = "DELETE FROM tbl_attribute WHERE attribut_id ='".$int_attribut."';";
+    $txt_sql_statement = "DELETE FROM tbl_komponenten_attribute WHERE komponenten_attribut_id ='".$int_attribut."';";
     
     $int_response = mysql_query($txt_sql_statement);
     
