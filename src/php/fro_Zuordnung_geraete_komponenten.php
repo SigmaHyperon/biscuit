@@ -116,14 +116,8 @@
 	    </td>
 	</tr>
 	<tr>
-	    <td>
-		
-	    </td>
-	    <td>
-		<input type="submit"/>
-	    </td>
-	    <td>
-		<input type="reset"/>
+            <td colspan="3" align="center">
+                <input type="submit" value="Speichern"/><input type="reset" value="Zurücksetzen"/>
 	    </td>
 	</tr>
     </table>

@@ -125,7 +125,7 @@ table.formular td{
    width: 150px;
 }
 
-input[type="text"],[type="password"]{
+input[type="text"],[type="password"],[type="email"]{
  
  width:153px;
 }
