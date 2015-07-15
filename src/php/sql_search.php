@@ -68,7 +68,7 @@ function func_a_searchKomponentenArten($txt_suche)
  */
 function func_a_searchLieferanten($txt_suche)
 {
-    $a_ergebnisse = func_s_searchEscaped($txt_suche, 'tbl_lieferanten','lieferanten_name');
+    $a_ergebnisse = func_s_searchEscaped($txt_suche, 'tbl_lieferanten','lieferant_firmenname');
     return($a_ergebnisse);
 }
 
@@ -92,19 +92,25 @@ function func_a_searchRaeume($txt_suche)
  */
 function func_s_searchEscaped($txt_string, $txt_table, $txt_operator)
 {
-  $txt_escaped_search = mysql_real_escape_string($txt_string);
-  $a_return=array();
+    $txt_escaped_search = mysql_real_escape_string($txt_string);
+    $a_return=array();
+
+    $txt_sql_statement = "SELECT * FROM ".$txt_table." WHERE ".$txt_operator." LIKE '%".$txt_escaped_search."%';";
+
+    $a_sql_result = mysql_query($txt_sql_statement);
+    if($a_sql_result != false)
+    {
+	while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
+	{
+	    $a_return[] = $a_sql_cache;
+	}
+	return ($a_return);
+    }
+    else
+    {
+	return false;
+    }
   
-  $txt_sql_statement = "SELECT * FROM ".$txt_table." WHERE ".$txt_operator." LIKE '%".$txt_escaped_search."%';";
-  
-  $a_sql_result = mysql_query($txt_sql_statement)
-            or die ($txt_table);
-  
-  while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
-  {
-      $a_return[] = $a_sql_cache;
-  }
- return ($a_return);
 }
 
 /**
