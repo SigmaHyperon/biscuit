@@ -1,3 +1,18 @@
+<script>
+    $(function(){
+	$("#right form").on("submit", function(e){
+	    if($("#right form input[type='radio']:checked").length == 0)
+	    {
+		alert("kein Element ausgewäht!");
+		return false;
+	    }
+	    else
+	    {
+		return true;
+	    }
+	});
+    });
+</script>
 <?php
 //sql modul und library einbinden
 require_once "sql_main.php";
