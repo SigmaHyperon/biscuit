@@ -110,8 +110,8 @@ function func_form_updateKomponentenArt($int_id, $txt_name)
  */
 function func_form_updateAttribute($int_id, $txt_name)
 {
-    $txt_sql_statement = "UPDATE tbl_komponenten_Attribute SET komponenten_attribut_name ='".$txt_name."'
-                                                                                  WHERE komponenten_:attribut_id ='".$int_id."'";
+    $txt_sql_statement = "UPDATE tbl_komponenten_attribute SET komponenten_attribut_name ='".$txt_name."'
+                                                                                  WHERE komponenten_attribut_id ='".$int_id."'";
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
 }
