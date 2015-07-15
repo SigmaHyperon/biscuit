@@ -1,6 +1,10 @@
 
-
-<h1>Benutzer hinzufügen</h1>
+<table align="center"> 
+    <tr>
+    <th><h1>Benutzer hinzufügen</h1></th>
+    <th><h1>Passwort ändern</h1><th>
+<tr>
+    <td>
 	    <form action="fro_home_loggedin.php" method="post">
 		<table class="formular">
 		    <tr>
@@ -21,22 +25,9 @@
 		</table>        
 	    </form>
          
-
-<h1>Benutzer löschen</h1>
-
-	    <form action="fro_home_loggedin.php" method="post">
-		<table class="formular">
-		    <tr>
-			<td>Benutzername:</td><td><input type="text" name="txt_Benutzer_del"/></td>
-                    </tr>
-			<td colspan="2" align="center"> <input type="submit" value="Löschen" /><input type="reset" value="Verwerfen" /></td>
-		    </tr>              
-		</table>        
-	    </form>
-
-
-<h1>Passwort ändern</h1>
-	    <form action="fro_home_loggedin.php" method="post">
+    </td>
+    <td>
+	<form action="fro_home_loggedin.php" method="post">
 		<table class="formular">
 		    <tr>
 			<td>Benutzername:</td><td><input type="text" name="txt_Benutzer_pw_edit"/></td>
@@ -55,6 +46,20 @@
 		    </tr>              
 		</table>        
 	    </form>
+    </td>
+</tr>
+</table>
+<h1 align="center">Benutzer löschen</h1>
+    <form action="fro_home_loggedin.php" method="post">
+		<table class="formular">
+		    <tr>
+			<td>Benutzername:</td><td><input type="text" name="txt_Benutzer_del"/></td>
+                    </tr>
+			<td colspan="2" align="center"> <input type="submit" value="Löschen" /><input type="reset" value="Verwerfen" /></td>
+		    </tr>              
+		</table>        
+	    </form>
+	    
 
 
 
