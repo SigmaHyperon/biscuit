@@ -16,6 +16,7 @@ Inhalt:            Mainfile PHP / SQL
     include 'sql_get.php';
     include 'sql_insert.php';
     include 'sql_update.php';
+    include 'sql_search.php';
     
     mysql_connect($txt_adresse, $txt_login, $txt_kennwort)
     or die ("Keine Verbindung möglich");

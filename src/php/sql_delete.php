@@ -125,7 +125,7 @@ function func_form_delKomponentenArtByName ($txt_komponentenart)
  */
 function func_form_delBenutzerByName($txt_benutzer)
 {
-    $txt_sql_statement = "DELETE FROM tbl_benutzer WHERE benutzer_name ='".$txt_benutzer."';";
+    $txt_sql_statement = "DELETE FROM tbl_benutzer WHERE benutzer_name='".$txt_benutzer."';";
     
     $int_response = mysql_query($txt_sql_statement);
     
