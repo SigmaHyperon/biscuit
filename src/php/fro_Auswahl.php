@@ -79,9 +79,6 @@ require_once '../lib/manager.php';
                 <tr>
                     <td><a href="fro_Auswahl.php?action=list&table=zulaessigewerte"><button>Zulässige Werte</button></a></td>
                 </tr> 
-                <tr>
-                    <td><a href="fro_Auswahl.php?action=detail&table=geraete_komponente"><button>Zuordnung Geräte Komponente</button></a></td>
-                </tr> 
                 
             </table>
         </div>
