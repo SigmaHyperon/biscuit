@@ -92,20 +92,6 @@ function func_form_delAttributByName($txt_attribut)
 
 /**
  * 
- * @param Text $txt_wert Zu löschender Eintrag
- * @return int Information ob Query erfolgreich (0 / 1)
- */
-function func_form_delZulaessigenWertByName($txt_wert)
-{
-    $txt_sql_statement = "DELETE FROM tbl_zulaessigeWerte WHERE wert_name ='".$txt_wert."';";
-    
-    $int_response = mysql_query($txt_sql_statement);
-    
-    return($int_response);
-}
-
-/**
- * 
  * @param Text $txt_komponentenart Zu löschender Eintrag
  * @return int Information ob Query erfolgreich (0 / 1)
  */
@@ -202,19 +188,6 @@ function func_form_delAttributByID($int_attribut)
     return($int_response);
 }
 
-/**
- * 
- * @param Text $int_wert Zu löschender Eintrag
- * @return int Information ob Query erfolgreich (0 / 1)
- */
-function func_form_delZulaessigenWertByID($int_wert)
-{
-    $txt_sql_statement = "DELETE FROM tbl_zulaessigeWerte WHERE wert_id ='".$int_wert."';";
-    
-    $int_response = mysql_query($txt_sql_statement);
-    
-    return($int_response);
-}
 
 /**
  * 
