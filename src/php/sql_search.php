@@ -121,7 +121,7 @@ function func_s_searchGlobal($txt_string)
 {   
     $search_output = array
             (
-            array("Definitionen","Benutzer","Geräte","Geräte_Arten","Komponenten","Komponenten_Attribute","Lieferanten","Räume" ),
+            array("Benutzer","Geräte","Gerätearten","Komponenten","Komponentenarten","Lieferanten","Räume" ),
             array("Benutzer"),
             array("Geräte"),
             array("Geräte_Arten"),
