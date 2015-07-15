@@ -98,17 +98,27 @@ function func_v_list()
 	];
 	$a_table_links = [
 	    "lieferanten"	=>  "func_a_getLieferanten",
-	    "raeume"	=>  "func_a_getRaeume",
-	    "geraete"	=>  "func_a_getGeraete",
+	    "raeume"		=>  "func_a_getRaeume",
+	    "geraete"		=>  "func_a_getGeraete",
 	    "komponenten"	=>  "func_a_getKomponenten",
 	    "komponentenarten"	=>  "func_a_getKomponentenArten",
 	    "geraetearten"	=>  "func_a_getGeraeteArten",
 	    "zulaessigewerte"	=>  "func_a_getZulaessigeWerte",
 	];
+	$a_table_title = [
+	    "lieferanten"	=>  "Lieferanten",
+	    "raeume"		=>  "Räume",
+	    "geraete"		=>  "Geräte",
+	    "komponenten"	=>  "Komponeten",
+	    "komponentenarten"	=>  "Komponentenarten",
+	    "geraetearten"	=>  "Gerätearten",
+	    "zulaessigewerte"	=>  "Zulässige Werte",
+	];
 	if(isset($a_table_links[$s_table]))
 	{
 	    $aErgebnisse = call_user_func($a_table_links[$s_table]);
 	    $aErgebnis_attribute = $a_table_attributes[$s_table];
+	    $sTitel = $a_table_title[$s_table];
 	    include "log_Liste.php";
 	}
 	else
@@ -259,5 +269,12 @@ function func_v_detail()
 
 function func_v_search()
 {
-    include "./fro_Suche_global.php";
+    if(\utility\forms\post("txt_Suche_global", false))
+    {
+	include './log_search.php';
+    }
+    else
+    {
+	include "./fro_Suche_global.php";
+    }
 }

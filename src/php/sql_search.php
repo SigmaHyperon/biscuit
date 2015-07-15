@@ -143,4 +143,5 @@ function func_s_searchGlobal($txt_string)
     $search_output[6]=func_a_searchLieferanten($txt_search_escaped);
     $search_output[7]=func_a_searchRaueme($txt_search_escaped);
     $search_output[8]=func_a_searchZulaessigeWaerte($txt_search_escaped);
+    return true;
 }
