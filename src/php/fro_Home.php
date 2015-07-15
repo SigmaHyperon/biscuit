@@ -28,10 +28,6 @@ if(isset($_SESSION))
 	{
 	    showLogin();
 	}
-	else
-	{
-	    echo 'Hier sollte etwas stehen';
-	}
     }
     else
     {
@@ -57,7 +53,7 @@ if(isset($_SESSION))
        if (func_form_login($benutzername, $passwort))
             {
                 $_SESSION["benutzername"] = $benutzername;
-                $_SESSION["login"] = 1;
+                $_SESSION["login"] = 1 ;
 
                 try {
 		    header("Location: fro_Auswahl.php");

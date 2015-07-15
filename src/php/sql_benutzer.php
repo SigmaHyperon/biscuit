@@ -18,9 +18,9 @@ function func_form_insertBenutzer($txt_name, $txt_kennwort, $txt_mail)
     $txt_kennwort_md5 = MD5 ($txt_kennwort);
     
     $txt_sql_statement = "INSERT INTO tbl_benutzer (benutzer_name, benutzer_kennwort, benutzer_mail)
-                                    VALUES(".$txt_name.",
-                                                ".$txt_kennwort_md5.",
-                                                ".$txt_mail.");";
+                                    VALUES('".$txt_name."',
+                                                '".$txt_kennwort_md5."',
+                                                '".$txt_mail."');";
     
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);

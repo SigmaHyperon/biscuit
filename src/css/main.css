@@ -19,7 +19,7 @@ body {
  border: 1px solid black;
  border-radius: 15px;
  box-shadow: 1px 1px 6px #292929;
- text-align: right;
+ /*text-align: right;*/
  background: #feffff; /* Old browsers */
  background: -moz-linear-gradient(top, #feffff 0%, #ddf1f9 35%, #a0d8ef 100%); /* FF3.6+ */
  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(35%,#ddf1f9), color-stop(100%,#a0d8ef)); /* Chrome,Safari4+ */
@@ -30,13 +30,12 @@ body {
  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#a0d8ef',GradientType=0 ); /* IE6-9 */
 }
 
-#Header h1{
-    display: inline-block;
-}
 /*Design der Schrift im Banner**************************************************/
 #Header h2 {
     position: relative;
     top: -7px;
+    margin-left: 500px;
+    display: inline-block;
 }
 
 /* Design des Navigationsbereiches**********************************************/
@@ -175,20 +174,15 @@ select{
    width: 153px;  
 }
 
-.h1
-{
-position: relative;    
-margin: auto
-
-}
 span.username {
-    
+   
     display: inline-block;
+    margin-left: 280px;    
 }
 
 a.logout button {
-    width: 50px;
-    margin-right: 10px;
+    width: 60px;
+    
 }
 
 table.multi_form{
