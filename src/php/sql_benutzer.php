@@ -58,15 +58,15 @@ function func_form_login($txt_benutzer, $txt_kennwort)
 
 /**
  * 
- * @param type $txt_benutzer - Der Benutzer der Kennwort ändern möchte
+ * @param type $txt_benutzer_id - Der Benutzer der Kennwort ändern möchte
  * @param type $txt_kennwort - Das alte Kennwort
  * @param type $txt_kennwort_neu - Das neue Kennwort
  * @return int - Gibt wert zurück ob Erfolgreich (int)
  */
-function funct_form_KennwortAendern($txt_benutzer, $txt_kennwort, $txt_kennwort_neu)
+function funct_form_KennwortAendern($txt_benutzer_id, $txt_kennwort, $txt_kennwort_neu)
 {
     $txt_kennwort_md5 = MD5($txt_kennwort);
-    $txt_sql_statement = "SELECT benutzer_kennwort FROM tbl_benutzer WHERE benutzer_name = '".$txt_benutzer."';";
+    $txt_sql_statement = "SELECT benutzer_kennwort FROM tbl_benutzer WHERE benutzer_id = '".$txt_benutzer_id."';";
     $txt_kennwort_cache = mysql_query($txt_sql_statement);
     
     $txt_kennwort_alt = mysql_fetch_assoc($txt_kennwort_cache);
@@ -76,7 +76,7 @@ function funct_form_KennwortAendern($txt_benutzer, $txt_kennwort, $txt_kennwort_
         $txt_kennwort_neu_md5 = MD5($txt_kennwort_neu);
                 
         $txt_sql_statement = "UPDATE tbl_benutzer SET benutzer_kennwort = '".$txt_kennwort_neu_md5."'
-                                        WHERE benutzer_kennwort = '".$txt_kennwort_alt['benutzer_kennwort']."';";
+                                        WHERE benutzer_id = '".$txt_benutzer_id."';";
         
         $int_response = mysql_query($txt_sql_statement);
         
