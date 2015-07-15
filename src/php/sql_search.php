@@ -84,17 +84,6 @@ function func_a_searchRaeume($txt_suche)
 }
 
 /**
- * Funktion Suche für Zulässige Werte
- * @param txt $txt_suche Schlagwort für Suche
- * @return array Suchergebnisse
- */
-function func_a_searchZulaessigeWaerte($txt_suche)
-{
-    $a_ergebnisse = func_s_searchEscaped($txt_suche, 'tbl_zulaessige_werte','zulaessiger_wert_name');
-    return($a_ergebnisse);
-}
-
-/**
  * Eigentliche Suchfunktion, wird NICHT direkt aufgerufen.
  * Aufruf erfolgt über oben gestellte Funktionen.
  * @param txt $txt_string Übergabe Schlagwort
@@ -104,18 +93,18 @@ function func_a_searchZulaessigeWaerte($txt_suche)
 function func_s_searchEscaped($txt_string, $txt_table, $txt_operator)
 {
   $txt_escaped_search = mysql_real_escape_string($txt_string);
+  $a_return=array();
   
-  $txt_sql_statement = "SELECT * FROM '".$txt_table."' WHERE '".$txt_operator."' LIKE '%".$txt_escaped_search."%';";
+  $txt_sql_statement = "SELECT * FROM ".$txt_table." WHERE '".$txt_operator."' LIKE '%".$txt_escaped_search."%';";
   
   $a_sql_result = mysql_query($txt_sql_statement)
-            or die ("Anfrage Fehlgeschlagen");
+            or die ($txt_table);
   
   while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
   {
-      $a_ausgabe = $a_sql_cache;
+      $a_return[] = $a_sql_cache;
   }
-  
- return ($a_ausgabe);
+ return ($a_return);
 }
 
 /**
@@ -123,12 +112,10 @@ function func_s_searchEscaped($txt_string, $txt_table, $txt_operator)
  * @param type $txt_string Suchbegriff
  */
 function func_s_searchGlobal($txt_string)
-{
-    $txt_search_escaped = mysql_real_escape_string($txt_string);
-    
+{   
     $search_output = array
             (
-            array("Definitionen","Benutzer","Geräte","Geräte_Arten","Komponenten","Komponenten_Attribute","Lieferanten","Räume","ZulässigeWerte"),
+            array("Definitionen","Benutzer","Geräte","Geräte_Arten","Komponenten","Komponenten_Attribute","Lieferanten","Räume" ),
             array("Benutzer"),
             array("Geräte"),
             array("Geräte_Arten"),
@@ -136,15 +123,13 @@ function func_s_searchGlobal($txt_string)
             array("Komponenten Attribute"),
             array("Lieferanten"),
             array("Räume"),
-            array("Zulässige Werte")
             );
-    $search_output[1]=func_a_searchBenutzer($txt_search_escaped);
-    $search_output[2]=func_a_searchGeraete($txt_search_escaped);
-    $search_output[3]=func_a_searchGeraeteArt($txt_search_escaped);
-    $search_output[4]=func_a_searchKomponenten($txt_search_escaped);
-    $search_output[5]=func_a_searchKomponentenArten($txt_search_escaped);
-    $search_output[6]=func_a_searchLieferanten($txt_search_escaped);
-    $search_output[7]=func_a_searchRaueme($txt_search_escaped);
-    $search_output[8]=func_a_searchZulaessigeWaerte($txt_search_escaped);
+    $search_output[1]=func_a_searchBenutzer($txt_string);
+    $search_output[2]=func_a_searchGeraete($txt_string);
+    $search_output[3]=func_a_searchGeraeteArt($txt_string);
+    $search_output[4]=func_a_searchKomponenten($txt_string);
+    $search_output[5]=func_a_searchKomponentenArten($txt_string);
+    $search_output[6]=func_a_searchLieferanten($txt_string);
+    $search_output[7]=func_a_searchRaeume($txt_string);
     return($search_output);
 }
