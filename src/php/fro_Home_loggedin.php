@@ -79,7 +79,6 @@
         session_start();
         $benutzername = $_POST["txt_Benutzer_del"];
         $returnwert = func_form_delBenutzerByName($benutzername);
-        var_dump($returnwert);
         
         if ($returnwert == 1)
         {
@@ -91,6 +90,9 @@
         }
         
     }
-
+    
+    /*Passwort ändern */
+    
+    
 
 ?>
