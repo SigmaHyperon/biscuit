@@ -6,6 +6,8 @@ Inhalt:             Buttons Hinzufügen, Ändern und Löschen
 ------------------------------------------------------------------->   
 
 <?php
+$detail_pages = ["geraete", "komponenten"];
+$sTable = \utility\forms\get("table", false);
 if(func_b_isAdmin())
 {
 ?>
@@ -14,7 +16,7 @@ if(func_b_isAdmin())
             <td><input type="submit" name="action" value="Hinzuf&uuml;gen"/></td>
             <td><input type="submit" name="action" value="&Auml;ndern"/></td>   
 	    <?php
-	    if(\utility\forms\get("table", false) == "geraete")
+	    if(in_array($sTable, $detail_pages))
 	    {
 	    ?>
 	    <td><input type="submit" name="action" value="Details"/></td>

@@ -375,3 +375,20 @@ function func_a_getGeraete_komponenten($id)
     
     return($a_sql_ausgabe);
 }
+
+function func_a_getKomponente_geraete($id)
+{
+    $tst_sql_statement = "SELECT * FROM tbl_z_enthaelt left join tbl_geraete on tbl_z_enthaelt.geraet_fk=tbl_geraete.geraete_id WHERE komponente_fk ='".$id."'";
+    var_dump($tst_sql_statement);
+    $a_sql_ausgabe = array();
+    
+    $a_sql_result = mysql_query($tst_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
+    
+    while($a_sql_cache = mysql_fetch_assoc($a_sql_result))
+    {
+	$a_sql_ausgabe[] = $a_sql_cache;
+    }
+    
+    return($a_sql_ausgabe);
+}

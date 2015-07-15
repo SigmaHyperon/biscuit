@@ -266,3 +266,11 @@ function func_form_delGeraet_komponeten($id)
     
     return($int_response);
 }
+function func_form_delKomponente_geraete($id)
+{
+    $txt_sql_statement = "DELETE FROM tbl_z_enthaelt WHERE komponente_fk ='".$id."';";
+    
+    $int_response = mysql_query($txt_sql_statement);
+    
+    return($int_response);
+}
