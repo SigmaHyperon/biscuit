@@ -177,5 +177,13 @@ function func_form_insertGeraet_komponete($iGeraet_id,$Komponeten_id)
     $int_response = mysql_query($txt_sql_statement); 
     return($int_response);
 }
+function func_form_insertAttribut_art($iAttribut,$iArt)
+{
+    $txt_sql_statement = "INSERT INTO tbl_z_attribut_art (komponenten_art_fk,komponenten_attribut_fk)
+                                               VALUES ('".$iAttribut."','".$iArt."');";
+                                               
+    $int_response = mysql_query($txt_sql_statement); 
+    return($int_response);
+}
 
 

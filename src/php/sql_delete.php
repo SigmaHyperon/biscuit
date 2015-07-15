@@ -274,3 +274,11 @@ function func_form_delKomponente_geraete($id)
     
     return($int_response);
 }
+function func_form_delAttribut_art($id)
+{
+    $txt_sql_statement = "DELETE FROM tbl_z_attribut_art WHERE komponenten_art_fk ='".$id."';";
+    
+    $int_response = mysql_query($txt_sql_statement);
+    
+    return($int_response);
+}
