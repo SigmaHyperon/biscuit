@@ -15,6 +15,8 @@ require_once "../lib/manager.php";
  * Methode:	get
  * Ziel:	TODO
  */
+echo "<h2 align='center'>".$sTitel."</h2>";
+
 $oFormular = new \utility\forms\form();
 $oFormular->start("", "get");
 

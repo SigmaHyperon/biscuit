@@ -5,7 +5,7 @@ Erstell-Datum:      13.07.2015
 Inhalt:             Suchen ein oder mehreren Komponenten
 -------------------------------------------------------------------> 
 
-<form action="fro_Suche_global.php" method="post">
+<form action="fro_Auswahl.php?action=suche" method="post">
         <table class="suche">
             <tr>
                 <td colspan="2"><b>Was suchen Sie?</b></td>
