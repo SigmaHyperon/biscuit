@@ -46,7 +46,7 @@ function func_form_insertLieferant($txt_lieferant_firmenname, $txt_lieferant_vor
 function func_form_insertRaum($txt_raum_name, $txt_raum_notiz, $txt_stockwerk)
 {
     $txt_sql_statement = "INSERT INTO tbl_raeume (raum_name, raum_notiz, raum_stockwerk)
-                            VALUES ('".$txt_raum_name."','".$txt_raum_notiz."','".$txt_stockwerk.");";
+                            VALUES ('".$txt_raum_name."','".$txt_raum_notiz."','".$txt_stockwerk."');";
     
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
