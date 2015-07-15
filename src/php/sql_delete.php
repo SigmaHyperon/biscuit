@@ -153,7 +153,7 @@ function func_form_delRaumByID($int_raum)
  */
 function func_form_delGeraetByID($int_geraet)
 {
-    $txt_sql_statement = "DELETE FROM tbl_geraete WHERE geraet_id =' ".$int_geraet."';";
+    $txt_sql_statement = "DELETE FROM tbl_geraete WHERE geraete_id =' ".$int_geraet."';";
     
     $int_response = mysql_query($txt_sql_statement);
     
