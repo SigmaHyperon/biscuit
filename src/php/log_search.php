@@ -12,16 +12,24 @@ foreach ($results[0] as $title)
 {
     if($results[$counter] != array())
     {
-	echo "<h2>".$title."</h2>";
-	foreach ($results[$counter] as $eintrag)
+	if(!(func_b_isAdmin()) && ($counter == 1))
 	{
-	    echo "<p>";
-//	    foreach ($eintrag as $zelle)
-//	    {
-		echo $eintrag[$names[$counter]];
-//	    }
-	    echo "</p>";
+	    
 	}
+	else
+	{
+	    echo "<h2>".$title."</h2>";
+	    foreach ($results[$counter] as $eintrag)
+	    {
+		echo "<p>";
+    //	    foreach ($eintrag as $zelle)
+    //	    {
+		    echo $eintrag[$names[$counter]];
+    //	    }
+		echo "</p>";
+	    }
+	}
+	
     }
     $counter++;
 }
