@@ -7,7 +7,7 @@ Inhalt:            Funktionen zum Löschen PHP / SQL
 <?php
 
 /**
- * 
+ * Funktion zum löschen von einem Lieferanteneintrag via Name
  * @param Text $txt_lieferant Zu löschender Eintrag
  * @return int Information ob Query erfolgreich (0 / 1)
  */
@@ -21,7 +21,7 @@ function func_form_delLieferantByName($txt_lieferant)
 }
 
 /**
- * 
+ * Funktion zum löschen von einem Raumeintrag via Name
  * @param Text $txt_raum Zu löschender Eintrag
  * @return int Information ob Query erfolgreich (0 / 1)
  */
@@ -35,7 +35,7 @@ function func_form_delRaumByName($txt_raum)
 }
 
 /**
- * 
+ * Funktion zum löschen von einem Geräteeintrag via Name
  * @param Text $txt_geraet Zu löschender Eintrag
  * @return int Information ob Query erfolgreich (0 / 1)
  */
@@ -63,7 +63,7 @@ function func_form_delGeraeteArtByName($txt_art)
 }
 
 /**
- * 
+ * Funktion zum löschen von einem Komponenteneintrag via Name
  * @param Text $txt_komponente Zu löschender Eintrag
  * @return int Information ob Query erfolgreich (0 / 1)
  */
@@ -77,7 +77,7 @@ function func_form_delKomponenteByName($txt_komponente)
 }
 
 /**
- * 
+ * Funktion zum löschen von einem Attributeintrag via Name
  * @param Text $txt_attribut Zu löschender Eintrag
  * @return int Information ob Query erfolgreich (0 / 1)
  */
@@ -91,7 +91,7 @@ function func_form_delAttributByName($txt_attribut)
 }
 
 /**
- * 
+ * Funktion zum löschen von einem Komponenten-Eintrag via Name
  * @param Text $txt_komponentenart Zu löschender Eintrag
  * @return int Information ob Query erfolgreich (0 / 1)
  */
@@ -105,7 +105,7 @@ function func_form_delKomponentenArtByName ($txt_komponentenart)
 }
 
 /**
- * 
+ * Funktion zum löschen von einem Benutzereintrag via Name
  * @param Text $txt_benutzer Zu löschender Eintrag
  * @return int Information ob Query erfolgreich (0 / 1)
  */
@@ -119,7 +119,7 @@ function func_form_delBenutzerByName($txt_benutzer)
 }
 
 /**
- * 
+ * Funktion zum löschen von einem Lieferanteneintrag via ID
  * @param Text $int_lieferant Zu löschender Eintrag
  * @return int Information ob Query erfolgreich (0 / 1)
  */
@@ -133,7 +133,7 @@ function func_form_delLieferantByID($int_lieferant)
 }
 
 /**
- * 
+ * Funktion zum löschen von einem Raumeintrag via ID
  * @param Text $int_raum Zu löschender Eintrag
  * @return int Information ob Query erfolgreich (0 / 1)
  */
@@ -147,7 +147,7 @@ function func_form_delRaumByID($int_raum)
 }
 
 /**
- * 
+ * Funktion zum löschen von einem Geräteeintrag via ID
  * @param Text $int_geraet Zu löschender Eintrag
  * @return int Information ob Query erfolgreich (0 / 1)
  */
@@ -161,7 +161,7 @@ function func_form_delGeraetByID($int_geraet)
 }
 
 /**
- * 
+ * Funktion zum löschen von einem Komponenteneintrag via ID
  * @param Text $int_komponente Zu löschender Eintrag
  * @return int Information ob Query erfolgreich (0 / 1)
  */
@@ -175,7 +175,7 @@ function func_form_delKomponenteByID($int_komponente)
 }
 
 /**
- * 
+ * Funktion zum löschen von einem Attribute-Eintrag via ID
  * @param Text $int_attribut Zu löschender Eintrag
  * @return int Information ob Query erfolgreich (0 / 1)
  */
@@ -190,7 +190,7 @@ function func_form_delAttributByID($int_attribut)
 
 
 /**
- * 
+ * Funktion zum löschen von einem Komponenten-Art Eintrag via ID
  * @param Text $int_komponentenart Zu löschender Eintrag
  * @return int Information ob Query erfolgreich (0 / 1)
  */
@@ -204,7 +204,7 @@ function func_form_delKomponentenArtByID ($int_komponentenart)
 }
 
 /**
- * 
+ * Funktion zum löschen von einem Benutzereintrag via ID
  * @param Text $int_benutzer Zu löschender Eintrag
  * @return int Information ob Query erfolgreich (0 / 1)
  */
@@ -218,7 +218,7 @@ function func_form_delBenutzerByID($int_benutzer)
 }
 
 /**
- * 
+ * Funktion zum löschen von einem Geräteeintrag via ID
  * @param Text $int_id Zu löschender Eintrag
  * @return int Information ob Query erfolgreich (0 / 1)
  */
@@ -231,6 +231,11 @@ function func_form_delGeraeteArtByID($int_id)
     return($int_response);
 }
 
+/**
+ * Funktion zum löschen von einem Zuordnungseintrag zwischen Geräte und Komponenten via ID
+ * @param int $id
+ * @return int Rückgabe ob Operation Erfolgreich
+ */
 function func_form_delGeraet_komponenten($id)
 {
     $txt_sql_statement = "DELETE FROM tbl_z_enthaelt WHERE geraet_fk ='".$id."';";
@@ -239,6 +244,12 @@ function func_form_delGeraet_komponenten($id)
     
     return($int_response);
 }
+
+/**
+ * Funktion zum löschen von einem Zuordnungseintrag zwischen Geräte und Komponenten via ID
+ * @param int $id
+ * @return int Rückgabe ob Operation Erfolgreich
+ */
 function func_form_delKomponente_geraete($id)
 {
     $txt_sql_statement = "DELETE FROM tbl_z_enthaelt WHERE komponente_fk ='".$id."';";
@@ -247,6 +258,12 @@ function func_form_delKomponente_geraete($id)
     
     return($int_response);
 }
+
+/**
+ * Funktion zum löschen von einem Zuordnungseintrag zwischen Attribute und Gerätearten via ID
+ * @param int $id
+ * @return int Rückgabe ob Operation Erfolgreich
+ */
 function func_form_delAttribut_art($id)
 {
     $txt_sql_statement = "DELETE FROM tbl_z_attribut_art WHERE komponenten_art_fk ='".$id."';";
@@ -255,6 +272,12 @@ function func_form_delAttribut_art($id)
     
     return($int_response);
 }
+
+/**
+ * Funktion zum löschen von einem Zuordnungseintrag zwischen Komponente und Attribut via ID
+ * @param int $id
+ * @return int Rückgabe ob Operation Erfolgreich
+ */
 function func_form_delKomponente_attribute($id)
 {
     $txt_sql_statement = "DELETE FROM tbl_z_komponente_attribute WHERE komponenten_fk ='".$id."';";

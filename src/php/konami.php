@@ -6,7 +6,7 @@
 	    window.setTimeout(function(){$("body").append("<img src='../img/cake.jpg' class='cake'/>")},100);
 	    window.setTimeout(function(){$(".cake").animate({"bottom":  "+=94px"},"slow")},5000);
 	</script>
-        <title> The Cake is a lie! </title>
+        <title> The cake is a lie! </title>
             <link rel="icon" 
             accesskey=""type="image/png" 
             href="../ico/Portal_Cake_icon.ico">
