@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `tbl_geraete` (
   `geraet_gewaehr_ende` date DEFAULT NULL,
   `geraete_seriennummer` text,
   `geraete_art_fk` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_geraete`
@@ -75,6 +75,41 @@ INSERT INTO `tbl_geraete` (`geraete_id`, `raum_fk`, `lieferant_fk`, `geraet_name
 (7, 1, 2, 'physics gun', '2015-07-23', 'dfjjb', 'black mesa', '2015-07-23', '2015-07-23', '0012846134', 1),
 (8, 1, 2, 'Acer X113', '2015-07-20', '', 'Acer', '2015-07-20', '2015-07-20', '123456', 1),
 (9, 1, 2, 'test', '0000-00-00', '', '', '0000-00-00', '0000-00-00', '', 1);
+(10, 2, 7, 'Acer X113', '2015-07-02', '', 'Acer', '2015-07-02', '2017-07-02', '3465462357', 1),
+(11, 4, 7, 'Acer X113', '2015-07-02', '', 'Acer', '2015-07-02', '2017-07-02', '567435547', 1),
+(12, 5, 7, 'Acer X113', '2015-07-02', '', 'Acer', '2015-07-02', '2017-07-02', '546576432546', 1),
+(13, 7, 7, 'Acer X113', '2015-07-02', '', 'Acer', '2015-07-02', '2017-07-02', '4364537658', 1),
+(14, 8, 7, 'Acer X113', '2015-07-02', '', 'Acer', '2015-07-02', '2017-07-02', '65745634', 1),
+(15, 9, 10, 'BenQ TW526E', '2014-04-07', '', 'BenQ', '2014-04-07', '2016-04-07', '678679', 1),
+(16, 10, 10, 'BenQ TW526E', '2014-04-07', '', 'BenQ', '2014-04-07', '2016-04-07', '3453535', 1),
+(17, 11, 10, 'BenQ TW526E', '2014-04-07', '', 'BenQ', '2014-04-07', '2016-04-07', '6873489', 1),
+(18, 12, 10, 'BenQ TW526E', '2014-04-07', '', 'BenQ', '2014-04-07', '2016-04-07', '567654337', 1),
+(19, 13, 10, 'BenQ TW526E', '2014-04-07', '', 'BenQ', '2014-04-07', '2016-04-07', '4325678', 1),
+(20, 2, 7, 'Acer K242HLbd 24&quot;', '2013-08-12', '', 'Acer', '2013-08-12', '2015-08-12', '456765', 4),
+(21, 4, 7, 'Acer K242HLbd 24&quot;', '2013-08-12', '', 'Acer', '2013-08-12', '2015-08-12', '436543567', 4),
+(22, 5, 7, 'Acer K242HLbd 24&quot;', '2013-08-12', '', 'Acer', '2013-08-12', '2015-08-12', '3465643', 4),
+(23, 7, 7, 'Acer K242HLbd 24&quot;', '2013-08-12', '', 'Acer', '2013-08-12', '2015-08-12', '23442389', 4),
+(24, 12, 7, 'Acer K242HLbd 24&quot;', '2013-08-12', '', 'Acer', '2013-08-12', '2015-08-12', '2348989', 4),
+(25, 8, 7, 'Acer K242HLbd 24&quot;', '2013-08-12', '', 'Acer', '2013-08-12', '2015-08-12', '68734267', 4),
+(26, 9, 11, 'LG 29UM55-P 29&quot;', '2010-09-15', '', 'LG', '2010-09-15', '2012-09-15', '976532', 4),
+(27, 10, 11, 'LG 29UM55-P 29&quot;', '2010-09-15', '', 'LG', '2010-09-15', '2012-09-15', '67867434', 4),
+(28, 11, 11, 'LG 29UM55-P 29&quot;', '2010-09-15', '', 'LG', '2010-09-15', '2012-09-15', '3454367', 4),
+(29, 12, 11, 'LG 29UM55-P 29&quot;', '2010-09-15', '', 'LG', '2010-09-15', '2012-09-15', '34587343', 4),
+(30, 13, 11, 'LG 29UM55-P 29&quot;', '2010-09-15', '', 'LG', '2010-09-15', '2012-09-15', '234356', 4),
+(31, 1, 11, 'LG 29UM55-P 29&quot;', '2010-09-15', '', 'LG', '2010-09-15', '2012-09-15', '36575732', 4),
+(32, 1, 7, 'Acer K242HLbd 24&quot;', '2013-08-12', '', 'Acer', '2013-08-12', '2015-08-12', '254367', 4),
+(33, 2, 8, 'DELL Inspiron', '2008-08-12', '', 'DELL', '2008-08-12', '2010-08-12', '3454768', 3),
+(34, 9, 7, 'DELL Inspiron', '2008-08-12', '', 'DELL', '2008-08-12', '2010-08-12', '454356', 3),
+(35, 5, 8, 'DELL Inspiron', '2008-08-12', '', 'DELL', '2008-08-12', '2010-08-12', '3465487', 3),
+(36, 7, 8, 'DELL Inspiron', '2008-08-12', '', 'DELL', '2008-08-12', '2010-08-12', '5463234', 3),
+(37, 8, 8, 'DELL Inspiron', '2008-08-12', '', 'DELL', '2008-08-12', '2010-08-12', '234768', 3),
+(38, 9, 10, 'LENOVO IdeaCentre', '2015-07-16', '', 'Lenovo', '2015-07-16', '2017-07-16', '235467', 3),
+(39, 10, 7, 'LENOVO IdeaCentre', '2015-07-16', '', 'Lenovo', '2015-07-16', '2017-07-16', '', 3),
+(40, 10, 10, 'LENOVO IdeaCentre', '2015-07-16', '', 'Lenovo', '2015-07-16', '2017-07-16', '23468723', 3),
+(41, 11, 10, 'LENOVO IdeaCentre', '2015-07-16', '', 'Lenovo', '2015-07-16', '2017-07-16', '657876453', 3),
+(42, 12, 10, 'LENOVO IdeaCentre', '2015-07-16', '', 'Lenovo', '2015-07-16', '2017-07-16', '2546345', 3),
+(43, 13, 10, 'LENOVO IdeaCentre', '2015-07-16', '', 'Lenovo', '2015-07-16', '2017-07-16', '234562', 3);
+(44, 1, 2, 'test', '0000-00-00', '', '', '0000-00-00', '0000-00-00', '', 1);
 
 -- --------------------------------------------------------
 
@@ -111,15 +146,13 @@ CREATE TABLE IF NOT EXISTS `tbl_komponenten` (
   `komponente_name` text,
   `komponente_bestand` int(11) DEFAULT NULL,
   `komponenten_art_fk` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_komponenten`
 --
 
 INSERT INTO `tbl_komponenten` (`komponenten_id`, `komponente_name`, `komponente_bestand`, `komponenten_art_fk`) VALUES
-(1, 'miniature black hole', 1, 1),
-(4, 'capacitor', 10, 1),
 (5, 'GTX 780Ti', 10, 7),
 (6, 'i5 4690k', 2, 2),
 (7, 'Radeon HD 6990', 6, 7),
@@ -130,7 +163,22 @@ INSERT INTO `tbl_komponenten` (`komponenten_id`, `komponente_name`, `komponente_
 (12, 'Pentium G3258', 6, 2),
 (13, 'Core i7 860', 8, 2),
 (14, 'X99-DELUXE', 2, 3),
-(15, 'test', 0, 1);
+(15, 'Samsung Basic MZ-7KE512BW 850 Pro', 3, 9),
+(16, 'ASRock Z97 Pro4', 10, 3),
+(17, 'MSI X99S SLI PLUS', 4, 3),
+(18, 'GIGABYTE GA-970A-UD3P', 5, 3),
+(19, 'Corsair DIMM 8 GB DDR3-1333 Kit', 5, 11),
+(20, 'Patriot DIMM 4 GB DDR3-1333', 12, 11),
+(21, 'G.Skill DIMM 8 GB DDR3-1333 Kit', 2, 11),
+(22, 'Seagate ST1000DM003 1 TB', 40, 8),
+(23, 'Western Digital WD10EZEX 1 TB', 20, 8),
+(24, 'Samsung HN-M201RAD 2 TB', 11, 8),
+(25, 'Kingston HyperX SHSS37A/240G 240 GB', 13, 9),
+(26, 'Crucial CT250MX200SSD1 250 GB', 16, 9),
+(27, 'be quiet! Pure Power CM L8 530W', 10, 1),
+(28, 'Corsair RM850 850W', 12, 1);
+(29, 'test', 0, 1);
+
 
 -- --------------------------------------------------------
 
@@ -141,7 +189,7 @@ INSERT INTO `tbl_komponenten` (`komponenten_id`, `komponente_name`, `komponente_
 CREATE TABLE IF NOT EXISTS `tbl_komponenten_arten` (
 `komponenten_art_id` int(11) NOT NULL,
   `komponenten_art_name` text
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_komponenten_arten`
@@ -155,7 +203,8 @@ INSERT INTO `tbl_komponenten_arten` (`komponenten_art_id`, `komponenten_art_name
 (8, 'Festplatte (HDD)'),
 (9, 'Festplatte (SSD)'),
 (10, 'Laufwerk (DVD)'),
-(11, 'test');
+(11, 'Ram');
+(12, 'test');
 
 -- --------------------------------------------------------
 
@@ -193,18 +242,24 @@ CREATE TABLE IF NOT EXISTS `tbl_lieferanten` (
   `lieferant_plz` int(11) DEFAULT NULL,
   `lieferant_ort` text,
   `lieferant_strasse` text
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_lieferanten`
 --
 
 INSERT INTO `tbl_lieferanten` (`lieferant_id`, `lieferant_firmenname`, `lieferant_vorname`, `lieferant_nachname`, `lieferant_plz`, `lieferant_ort`, `lieferant_strasse`) VALUES
+<<<<<<< HEAD
 (2, 'Aperture Laboratories', 'Cave', 'Johnson', 90556, 'michigan', 'salt mine 6'),
 (3, 'Microsoft', '', '', 0, '', ''),
 (5, 'HP', '', '', 0, '', ''),
 (6, 'Dell', 'Michael', 'Beck', 90411, 'NÃ¼rnberg', 'Nordostpark 1'),
-(7, 'test', '', '', 0, '', '');
+(7, 'ALTERNATE GmbH', 'Carsten', 'Kellmann', 35440, 'Linden', 'Philipp-Reis-Str. 2-3'),
+(8, 'CSL-Computer GmbH &amp; Co. KG', '', '', 30165, 'Hannover', 'SokelantstraÃŸe 35'),
+(9, 'MIFcom GmbH', 'Dimitri', 'Mistetski', 81673, 'MÃ¼nchen', 'Neumarkter StraÃŸe 34'),
+(10, 'Cyberport GmbH', '', '', 1099, 'Dresden', 'Am Brauhaus 5'),
+(11, 'ATELCO Computer AG', 'Ralf', 'Schwalbe', 59519, 'MÃ¶hnesee', 'Dieselweg 6');
+(12, 'test', '', '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -217,20 +272,24 @@ CREATE TABLE IF NOT EXISTS `tbl_raeume` (
   `raum_notiz` text,
   `raum_name` text,
   `raum_stockwerk` text
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_raeume`
 --
 
 INSERT INTO `tbl_raeume` (`raum_id`, `raum_notiz`, `raum_name`, `raum_stockwerk`) VALUES
-(1, 'bla', 'Lager', '5'),
-(2, '', '001', ''),
-(4, '', '002', ''),
-(5, '', '003', ''),
-(7, '', '004', ''),
-(8, '', '005', ''),
-(9, '', 'test', '');
+(1, '', 'Lager', '0'),
+(2, '', '001', '1'),
+(4, '', '002', '1'),
+(5, '', '003', '1'),
+(7, '', '004', '1'),
+(8, '', '005', '1'),
+(9, '', '101', '2'),
+(10, '', '102', '2'),
+(11, '', '103', '2'),
+(12, '', '104', '2'),
+(13, '', '105', '2');
 
 -- --------------------------------------------------------
 
@@ -377,7 +436,7 @@ MODIFY `benutzer_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 -- AUTO_INCREMENT für Tabelle `tbl_geraete`
 --
 ALTER TABLE `tbl_geraete`
-MODIFY `geraete_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `geraete_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=44;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_geraete_art`
 --
@@ -387,7 +446,7 @@ MODIFY `geraete_art_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 -- AUTO_INCREMENT für Tabelle `tbl_komponenten`
 --
 ALTER TABLE `tbl_komponenten`
-MODIFY `komponenten_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+MODIFY `komponenten_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_komponenten_arten`
 --
@@ -402,12 +461,12 @@ MODIFY `komponenten_attribut_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=
 -- AUTO_INCREMENT für Tabelle `tbl_lieferanten`
 --
 ALTER TABLE `tbl_lieferanten`
-MODIFY `lieferant_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `lieferant_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_raeume`
 --
 ALTER TABLE `tbl_raeume`
-MODIFY `raum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `raum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_zulaessige_werte`
 --
