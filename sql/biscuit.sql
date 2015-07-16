@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 15. Jul 2015 um 12:40
+-- Erstellungszeit: 16. Jul 2015 um 09:06
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -32,14 +32,19 @@ CREATE TABLE IF NOT EXISTS `tbl_benutzer` (
   `benutzer_mail` text,
   `benutzer_rechte` int(11) DEFAULT NULL,
 `benutzer_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_benutzer`
 --
 
 INSERT INTO `tbl_benutzer` (`benutzer_name`, `benutzer_kennwort`, `benutzer_mail`, `benutzer_rechte`, `benutzer_id`) VALUES
-('test', '098f6bcd4621d373cade4e832627b4f6', NULL, NULL, 1);
+('test', '098f6bcd4621d373cade4e832627b4f6', NULL, NULL, 1),
+('test1', '098f6bcd4621d373cade4e832627b4f6', '', 0, 2),
+('test2', '098f6bcd4621d373cade4e832627b4f6', '', 0, 3),
+('test3', '098f6bcd4621d373cade4e832627b4f6', '', 0, 4),
+('test4', '81dc9bdb52d04dc20036dbd8313ed055', '', 0, 5),
+('test5', '098f6bcd4621d373cade4e832627b4f6', '', NULL, 16);
 
 -- --------------------------------------------------------
 
@@ -69,7 +74,7 @@ INSERT INTO `tbl_geraete` (`geraete_id`, `raum_fk`, `lieferant_fk`, `geraet_name
 (1, 4, 3, 'portal gun', '2015-07-13', 'in use', 'aperture labs', '2015-07-13', '2015-07-13', '0042', 6),
 (7, 1, 2, 'physics gun', '2015-07-23', 'dfjjb', 'black mesa', '2015-07-23', '2015-07-23', '0012846134', 1),
 (8, 1, 2, 'Acer X113', '2015-07-20', '', 'Acer', '2015-07-20', '2015-07-20', '123456', 1),
-(9, 1, 6, '001', '2015-07-20', '', 'Dell', '2015-07-20', '2015-07-20', '56785345', 3);
+(9, 1, 2, 'test', '0000-00-00', '', '', '0000-00-00', '0000-00-00', '', 1);
 
 -- --------------------------------------------------------
 
@@ -80,7 +85,7 @@ INSERT INTO `tbl_geraete` (`geraete_id`, `raum_fk`, `lieferant_fk`, `geraet_name
 CREATE TABLE IF NOT EXISTS `tbl_geraete_art` (
 `geraete_art_id` int(11) NOT NULL,
   `geraete_art_name` text
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_geraete_art`
@@ -92,7 +97,8 @@ INSERT INTO `tbl_geraete_art` (`geraete_art_id`, `geraete_art_name`) VALUES
 (3, 'Rechner'),
 (4, 'Monitore'),
 (5, 'Drucker'),
-(6, 'Handheld');
+(6, 'Handheld'),
+(7, 'test');
 
 -- --------------------------------------------------------
 
@@ -124,7 +130,7 @@ INSERT INTO `tbl_komponenten` (`komponenten_id`, `komponente_name`, `komponente_
 (12, 'Pentium G3258', 6, 2),
 (13, 'Core i7 860', 8, 2),
 (14, 'X99-DELUXE', 2, 3),
-(15, 'Samsung Basic MZ-7KE512BW 850 Pro', 3, 9);
+(15, 'test', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -135,7 +141,7 @@ INSERT INTO `tbl_komponenten` (`komponenten_id`, `komponente_name`, `komponente_
 CREATE TABLE IF NOT EXISTS `tbl_komponenten_arten` (
 `komponenten_art_id` int(11) NOT NULL,
   `komponenten_art_name` text
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_komponenten_arten`
@@ -148,7 +154,8 @@ INSERT INTO `tbl_komponenten_arten` (`komponenten_art_id`, `komponenten_art_name
 (7, 'Grafikkarte'),
 (8, 'Festplatte (HDD)'),
 (9, 'Festplatte (SSD)'),
-(10, 'Laufwerk (DVD)');
+(10, 'Laufwerk (DVD)'),
+(11, 'test');
 
 -- --------------------------------------------------------
 
@@ -159,7 +166,18 @@ INSERT INTO `tbl_komponenten_arten` (`komponenten_art_id`, `komponenten_art_name
 CREATE TABLE IF NOT EXISTS `tbl_komponenten_attribute` (
 `komponenten_attribut_id` int(11) NOT NULL,
   `komponenten_attribut_name` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `tbl_komponenten_attribute`
+--
+
+INSERT INTO `tbl_komponenten_attribute` (`komponenten_attribut_id`, `komponenten_attribut_name`) VALUES
+(1, 'Clockrate'),
+(2, 'Memorysize'),
+(3, 'Cores'),
+(4, 'Cachesize'),
+(5, 'test');
 
 -- --------------------------------------------------------
 
@@ -175,7 +193,7 @@ CREATE TABLE IF NOT EXISTS `tbl_lieferanten` (
   `lieferant_plz` int(11) DEFAULT NULL,
   `lieferant_ort` text,
   `lieferant_strasse` text
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_lieferanten`
@@ -185,7 +203,8 @@ INSERT INTO `tbl_lieferanten` (`lieferant_id`, `lieferant_firmenname`, `lieferan
 (2, 'Aperture Laboratories', 'Cave', 'Johnson', 90556, 'michigan', 'salt mine 6'),
 (3, 'Microsoft', '', '', 0, '', ''),
 (5, 'HP', '', '', 0, '', ''),
-(6, 'Dell', 'Michael', 'Beck', 90411, 'NÃ¼rnberg', 'Nordostpark 1');
+(6, 'Dell', 'Michael', 'Beck', 90411, 'NÃ¼rnberg', 'Nordostpark 1'),
+(7, 'test', '', '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -198,19 +217,20 @@ CREATE TABLE IF NOT EXISTS `tbl_raeume` (
   `raum_notiz` text,
   `raum_name` text,
   `raum_stockwerk` text
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_raeume`
 --
 
 INSERT INTO `tbl_raeume` (`raum_id`, `raum_notiz`, `raum_name`, `raum_stockwerk`) VALUES
-(1, '', 'Lager', ''),
+(1, 'bla', 'Lager', '5'),
 (2, '', '001', ''),
 (4, '', '002', ''),
 (5, '', '003', ''),
 (7, '', '004', ''),
-(8, '', '005', '');
+(8, '', '005', ''),
+(9, '', 'test', '');
 
 -- --------------------------------------------------------
 
@@ -235,28 +255,6 @@ INSERT INTO `tbl_zulaessige_werte` (`zulaessiger_wert_id`, `zulaessiger_wert_nam
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `tbl_z_attribut_art`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_z_attribut_art` (
-  `komponenten_art_fk` int(11) DEFAULT NULL,
-  `komponenten_attribut_fk` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Tabellenstruktur für Tabelle `tbl_z_attribut_zulaessig`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_z_attribut_zulaessig` (
-  `komponenten_attribut_fk` int(11) DEFAULT NULL,
-  `zulaessiger_wert_fk` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Tabellenstruktur für Tabelle `tbl_z_enthaelt`
 --
 
@@ -271,8 +269,10 @@ CREATE TABLE IF NOT EXISTS `tbl_z_enthaelt` (
 --
 
 INSERT INTO `tbl_z_enthaelt` (`geraet_fk`, `komponente_fk`, `datum`) VALUES
-(7, 1, '2015-07-14'),
-(7, 4, '2015-07-14');
+(7, 1, '2015-07-15'),
+(7, 4, '2015-07-15'),
+(7, 10, '2015-07-15'),
+(7, 8, '2015-07-15');
 
 -- --------------------------------------------------------
 
@@ -283,8 +283,16 @@ INSERT INTO `tbl_z_enthaelt` (`geraet_fk`, `komponente_fk`, `datum`) VALUES
 CREATE TABLE IF NOT EXISTS `tbl_z_komponente_attribute` (
   `komponenten_fk` int(11) DEFAULT NULL,
   `komponenten_attribut_fk` int(11) DEFAULT NULL,
-  `komponenten_menge` int(11) DEFAULT NULL
+  `komponenten_attribut_wert` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `tbl_z_komponente_attribute`
+--
+
+INSERT INTO `tbl_z_komponente_attribute` (`komponenten_fk`, `komponenten_attribut_fk`, `komponenten_attribut_wert`) VALUES
+(12, 3, '4'),
+(12, 4, '32');
 
 --
 -- Indizes der exportierten Tabellen
@@ -345,18 +353,6 @@ ALTER TABLE `tbl_zulaessige_werte`
  ADD PRIMARY KEY (`zulaessiger_wert_id`);
 
 --
--- Indizes für die Tabelle `tbl_z_attribut_art`
---
-ALTER TABLE `tbl_z_attribut_art`
- ADD KEY `foreignkey_tbl_z_attribut_art_komponenten_art_fk` (`komponenten_attribut_fk`), ADD KEY `foreignkey_tbl_z_attribut_art_komponenten_fk` (`komponenten_art_fk`);
-
---
--- Indizes für die Tabelle `tbl_z_attribut_zulaessig`
---
-ALTER TABLE `tbl_z_attribut_zulaessig`
- ADD KEY `foreignkey_tbl_z_attribut_zulaessig_komponenten_attribut_fk` (`komponenten_attribut_fk`), ADD KEY `foreignkey_tbl_z_attribut_zulaessig__zulaessiger_wert_fk` (`zulaessiger_wert_fk`);
-
---
 -- Indizes für die Tabelle `tbl_z_enthaelt`
 --
 ALTER TABLE `tbl_z_enthaelt`
@@ -376,7 +372,7 @@ ALTER TABLE `tbl_z_komponente_attribute`
 -- AUTO_INCREMENT für Tabelle `tbl_benutzer`
 --
 ALTER TABLE `tbl_benutzer`
-MODIFY `benutzer_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `benutzer_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_geraete`
 --
@@ -386,7 +382,7 @@ MODIFY `geraete_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 -- AUTO_INCREMENT für Tabelle `tbl_geraete_art`
 --
 ALTER TABLE `tbl_geraete_art`
-MODIFY `geraete_art_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `geraete_art_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_komponenten`
 --
@@ -396,22 +392,22 @@ MODIFY `komponenten_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 -- AUTO_INCREMENT für Tabelle `tbl_komponenten_arten`
 --
 ALTER TABLE `tbl_komponenten_arten`
-MODIFY `komponenten_art_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `komponenten_art_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_komponenten_attribute`
 --
 ALTER TABLE `tbl_komponenten_attribute`
-MODIFY `komponenten_attribut_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `komponenten_attribut_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_lieferanten`
 --
 ALTER TABLE `tbl_lieferanten`
-MODIFY `lieferant_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `lieferant_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_raeume`
 --
 ALTER TABLE `tbl_raeume`
-MODIFY `raum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+MODIFY `raum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_zulaessige_werte`
 --
@@ -434,20 +430,6 @@ ADD CONSTRAINT `tbl_geraete_ibfk_2` FOREIGN KEY (`raum_fk`) REFERENCES `tbl_raeu
 --
 ALTER TABLE `tbl_komponenten`
 ADD CONSTRAINT `tbl_komponenten_ibfk_1` FOREIGN KEY (`komponenten_art_fk`) REFERENCES `tbl_komponenten_arten` (`komponenten_art_id`);
-
---
--- Constraints der Tabelle `tbl_z_attribut_art`
---
-ALTER TABLE `tbl_z_attribut_art`
-ADD CONSTRAINT `tbl_z_attribut_art_ibfk_1` FOREIGN KEY (`komponenten_attribut_fk`) REFERENCES `tbl_komponenten_attribute` (`komponenten_attribut_id`),
-ADD CONSTRAINT `tbl_z_attribut_art_ibfk_2` FOREIGN KEY (`komponenten_art_fk`) REFERENCES `tbl_komponenten_arten` (`komponenten_art_id`);
-
---
--- Constraints der Tabelle `tbl_z_attribut_zulaessig`
---
-ALTER TABLE `tbl_z_attribut_zulaessig`
-ADD CONSTRAINT `tbl_z_attribut_zulaessig_ibfk_1` FOREIGN KEY (`komponenten_attribut_fk`) REFERENCES `tbl_komponenten_attribute` (`komponenten_attribut_id`),
-ADD CONSTRAINT `tbl_z_attribut_zulaessig_ibfk_2` FOREIGN KEY (`zulaessiger_wert_fk`) REFERENCES `tbl_zulaessige_werte` (`zulaessiger_wert_id`);
 
 --
 -- Constraints der Tabelle `tbl_z_enthaelt`
