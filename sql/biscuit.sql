@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 16. Jul 2015 um 09:16
+-- Erstellungszeit: 16. Jul 2015 um 10:18
 -- Server Version: 5.6.21
 -- PHP-Version: 5.6.3
 
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `tbl_geraete` (
   `geraet_gewaehr_ende` date DEFAULT NULL,
   `geraete_seriennummer` text,
   `geraete_art_fk` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_geraete`
@@ -99,7 +99,8 @@ INSERT INTO `tbl_geraete` (`geraete_id`, `raum_fk`, `lieferant_fk`, `geraet_name
 (40, 10, 10, 'LENOVO IdeaCentre', '2015-07-16', '', 'Lenovo', '2015-07-16', '2017-07-16', '23468723', 3),
 (41, 11, 10, 'LENOVO IdeaCentre', '2015-07-16', '', 'Lenovo', '2015-07-16', '2017-07-16', '657876453', 3),
 (42, 12, 10, 'LENOVO IdeaCentre', '2015-07-16', '', 'Lenovo', '2015-07-16', '2017-07-16', '2546345', 3),
-(43, 13, 10, 'LENOVO IdeaCentre', '2015-07-16', '', 'Lenovo', '2015-07-16', '2017-07-16', '234562', 3);
+(43, 13, 10, 'LENOVO IdeaCentre', '2015-07-16', '', 'Lenovo', '2015-07-16', '2017-07-16', '234562', 3),
+(44, 1, 7, 'test', '0000-00-00', '', '', '0000-00-00', '0000-00-00', '', 1);
 
 -- --------------------------------------------------------
 
@@ -110,7 +111,7 @@ INSERT INTO `tbl_geraete` (`geraete_id`, `raum_fk`, `lieferant_fk`, `geraet_name
 CREATE TABLE IF NOT EXISTS `tbl_geraete_art` (
 `geraete_art_id` int(11) NOT NULL,
   `geraete_art_name` text
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_geraete_art`
@@ -122,7 +123,8 @@ INSERT INTO `tbl_geraete_art` (`geraete_art_id`, `geraete_art_name`) VALUES
 (3, 'Rechner'),
 (4, 'Monitore'),
 (5, 'Drucker'),
-(6, 'Handheld');
+(6, 'Handheld'),
+(7, 'test');
 
 -- --------------------------------------------------------
 
@@ -135,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `tbl_komponenten` (
   `komponente_name` text,
   `komponente_bestand` int(11) DEFAULT NULL,
   `komponenten_art_fk` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_komponenten`
@@ -165,7 +167,8 @@ INSERT INTO `tbl_komponenten` (`komponenten_id`, `komponente_name`, `komponente_
 (25, 'Kingston HyperX SHSS37A/240G 240 GB', 13, 9),
 (26, 'Crucial CT250MX200SSD1 250 GB', 16, 9),
 (27, 'be quiet! Pure Power CM L8 530W', 10, 1),
-(28, 'Corsair RM850 850W', 12, 1);
+(28, 'Corsair RM850 850W', 12, 1),
+(29, 'test', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -176,7 +179,7 @@ INSERT INTO `tbl_komponenten` (`komponenten_id`, `komponente_name`, `komponente_
 CREATE TABLE IF NOT EXISTS `tbl_komponenten_arten` (
 `komponenten_art_id` int(11) NOT NULL,
   `komponenten_art_name` text
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_komponenten_arten`
@@ -190,7 +193,8 @@ INSERT INTO `tbl_komponenten_arten` (`komponenten_art_id`, `komponenten_art_name
 (8, 'Festplatte (HDD)'),
 (9, 'Festplatte (SSD)'),
 (10, 'Laufwerk (DVD)'),
-(11, 'Ram');
+(11, 'Ram'),
+(12, 'test');
 
 -- --------------------------------------------------------
 
@@ -201,7 +205,14 @@ INSERT INTO `tbl_komponenten_arten` (`komponenten_art_id`, `komponenten_art_name
 CREATE TABLE IF NOT EXISTS `tbl_komponenten_attribute` (
 `komponenten_attribut_id` int(11) NOT NULL,
   `komponenten_attribut_name` text
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `tbl_komponenten_attribute`
+--
+
+INSERT INTO `tbl_komponenten_attribute` (`komponenten_attribut_id`, `komponenten_attribut_name`) VALUES
+(1, 'test');
 
 -- --------------------------------------------------------
 
@@ -217,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `tbl_lieferanten` (
   `lieferant_plz` int(11) DEFAULT NULL,
   `lieferant_ort` text,
   `lieferant_strasse` text
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_lieferanten`
@@ -228,7 +239,8 @@ INSERT INTO `tbl_lieferanten` (`lieferant_id`, `lieferant_firmenname`, `lieferan
 (8, 'CSL-Computer GmbH &amp; Co. KG', '', '', 30165, 'Hannover', 'SokelantstraÃŸe 35'),
 (9, 'MIFcom GmbH', 'Dimitri', 'Mistetski', 81673, 'MÃ¼nchen', 'Neumarkter StraÃŸe 34'),
 (10, 'Cyberport GmbH', '', '', 1099, 'Dresden', 'Am Brauhaus 5'),
-(11, 'ATELCO Computer AG', 'Ralf', 'Schwalbe', 59519, 'MÃ¶hnesee', 'Dieselweg 6');
+(11, 'ATELCO Computer AG', 'Ralf', 'Schwalbe', 59519, 'MÃ¶hnesee', 'Dieselweg 6'),
+(12, 'test', '', '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -241,7 +253,7 @@ CREATE TABLE IF NOT EXISTS `tbl_raeume` (
   `raum_notiz` text,
   `raum_name` text,
   `raum_stockwerk` text
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
 -- Daten für Tabelle `tbl_raeume`
@@ -258,15 +270,8 @@ INSERT INTO `tbl_raeume` (`raum_id`, `raum_notiz`, `raum_name`, `raum_stockwerk`
 (10, '', '102', '2'),
 (11, '', '103', '2'),
 (12, '', '104', '2'),
-(13, '', '105', '2');
-
--- --------------------------------------------------------
-
---
--- Tabellenstruktur für Tabelle `tbl_zulaessige_werte`
---
--- in Benutzung(#1146 - Table 'biscuit.tbl_zulaessige_werte' doesn't exist)
--- Fehler beim Lesen der Daten: (#1146 - Table 'biscuit.tbl_zulaessige_werte' doesn't exist)
+(13, '', '105', '2'),
+(14, '', 'test', '');
 
 -- --------------------------------------------------------
 
@@ -289,8 +294,16 @@ CREATE TABLE IF NOT EXISTS `tbl_z_enthaelt` (
 CREATE TABLE IF NOT EXISTS `tbl_z_komponente_attribute` (
   `komponenten_fk` int(11) DEFAULT NULL,
   `komponenten_attribut_fk` int(11) DEFAULT NULL,
-  `komponenten_menge` int(11) DEFAULT NULL
+  `komponenten_attribut_wert` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `tbl_z_komponente_attribute`
+--
+
+INSERT INTO `tbl_z_komponente_attribute` (`komponenten_fk`, `komponenten_attribut_fk`, `komponenten_attribut_wert`) VALUES
+(10, 1, NULL),
+(8, 1, 'sbgdg');
 
 --
 -- Indizes der exportierten Tabellen
@@ -369,37 +382,37 @@ MODIFY `benutzer_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT für Tabelle `tbl_geraete`
 --
 ALTER TABLE `tbl_geraete`
-MODIFY `geraete_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=44;
+MODIFY `geraete_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=45;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_geraete_art`
 --
 ALTER TABLE `tbl_geraete_art`
-MODIFY `geraete_art_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `geraete_art_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_komponenten`
 --
 ALTER TABLE `tbl_komponenten`
-MODIFY `komponenten_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
+MODIFY `komponenten_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_komponenten_arten`
 --
 ALTER TABLE `tbl_komponenten_arten`
-MODIFY `komponenten_art_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+MODIFY `komponenten_art_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_komponenten_attribute`
 --
 ALTER TABLE `tbl_komponenten_attribute`
-MODIFY `komponenten_attribut_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `komponenten_attribut_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_lieferanten`
 --
 ALTER TABLE `tbl_lieferanten`
-MODIFY `lieferant_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+MODIFY `lieferant_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT für Tabelle `tbl_raeume`
 --
 ALTER TABLE `tbl_raeume`
-MODIFY `raum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+MODIFY `raum_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- Constraints der exportierten Tabellen
 --
