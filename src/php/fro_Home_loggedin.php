@@ -24,8 +24,7 @@
      
      
      $all_users = func_a_getBenutzer();
-//     var_dump($all_users);
-//    var_dump($_POST);
+
      function print_users_as_options($users)
      {
 	 foreach ($users as $user)
@@ -87,7 +86,10 @@
 
 	    else
 	    {
-		echo "Passwörter stimmen nicht überein";
+		try {
+			header("Location: fro_Auswahl.php?action=home&message=".urlencode("Passwörter stimmen nicht überein"));
+			die();
+		    } catch (Exception $ex) {}
 	    }
 	    break;
 	    
@@ -108,14 +110,28 @@
 			die();
 		    } catch (Exception $ex) {}
 		}
-		else
+		elseif ($returnwert == 0)
 		{
 		    try {
-			header("Location: fro_Auswahl.php?action=home&message=".urlencode("Passwort konnte nicht geändert werden"));
+			header("Location: fro_Auswahl.php?action=home&message=".urlencode("Aktuelles Passwort für den ist falsch"));
 			die();
 		    } catch (Exception $ex) {}
 		}
+                else
+                {
+                    try {
+			header("Location: fro_Auswahl.php?action=home&message=".urlencode("Passwort konnte nicht geändert werden"));
+			die();
+		    } catch (Exception $ex) {}
+                }
 	    }
+            else
+            {
+                try {
+			header("Location: fro_Auswahl.php?action=home&message=".urlencode("Neue Passwort stimmt mit der Wiederholung nicht überein"));
+			die();
+		    } catch (Exception $ex) {}
+            }
 	    break;
 
 	default:

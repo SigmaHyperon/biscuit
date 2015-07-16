@@ -1,16 +1,16 @@
 <?php
-    if($iAttribut_id = \utility\forms\get("selektiert", false));    
+    if($iKomponenten_id = \utility\forms\get("selektiert", false));    
     {
 	if(isset($_POST["ac_selected"]))
 	{
 	    if ($s_Selected = $_POST["ac_selected"])
 	    {
 		$a_Selected = json_decode($s_Selected);
-		var_dump($a_Selected);
-		func_form_delAttribut_art($iAttribut_id);
+//		var_dump($a_Selected);
+		func_form_delKomponente_attribute($iKomponenten_id);
 		foreach ($a_Selected as $value)
 		{
-		    var_dump(func_form_insertAttribut_art($iAttribut_id, $value));
+		    func_form_insertKompontente_attribut($iKomponenten_id, $value);
 		}
 	    }
 
@@ -69,20 +69,20 @@
 	    <td>
 		<select size="10" name="available[]" id="available" multiple="multiple">
 <?php
-    $aAlle_arten = func_a_getKomponentenArten();
-    $aAusgewaehlte_arten = func_a_getAttribut_art($iKomponente_id);
+    $aAlle_Attribute = func_a_getAttribute();
+    $aAusgewaehlte_attribute = func_a_getKomponente_attribute($iKomponenten_id);
     $aAKId = [];
-    foreach ($aAusgewaehlte_arten as $aElement)
+    foreach ($aAusgewaehlte_attribute as $aElement)
     {
-	$aAKId[] = $aElement["geraet_fk"];
+	$aAKId[] = $aElement["komponenten_attribut_fk"];
     }
 //    var_dump($aAKId);
-    foreach ($aAlle_arten as $aElement)
+    foreach ($aAlle_Attribute as $aElement)
     {
 //	var_dump($aElement);
-	if(!in_array($aElement["geraete_id"], $aAKId))
+	if(!in_array($aElement["komponenten_attribut_id"], $aAKId))
 	{
-	    echo "<option value='".$aElement["komponenten_art_id"]."'>".$aElement["komponenten_art_name"]."</option>";
+	    echo "<option value='".$aElement["komponenten_attribut_id"]."'>".$aElement["komponenten_attribut_name"]."</option>";
 	}
     }
 ?>
@@ -108,9 +108,9 @@
 	    <td>
 		<select size="10" name="selected[]" id="selected" multiple="multiple">
 <?php
-    foreach ($aAusgewaehlte_geraete as $aElement)
+    foreach ($aAusgewaehlte_attribute as $aElement)
     {
-	echo "<option value='".$aElement["komponenten_art_fk"]."'>".$aElement["komponenten_art_name"]."</option>";
+	echo "<option value='".$aElement["komponenten_attribut_fk"]."'>".$aElement["komponenten_attribut_name"]."</option>";
     }
 ?>
 		</select>

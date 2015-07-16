@@ -255,3 +255,11 @@ function func_form_delAttribut_art($id)
     
     return($int_response);
 }
+function func_form_delKomponente_attribute($id)
+{
+    $txt_sql_statement = "DELETE FROM tbl_z_komponente_attribute WHERE komponenten_fk ='".$id."';";
+    
+    $int_response = mysql_query($txt_sql_statement);
+    
+    return($int_response);
+}

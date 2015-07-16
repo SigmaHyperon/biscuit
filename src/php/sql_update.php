@@ -145,3 +145,18 @@ function func_form_updateGeraeteArt($int_id, $txt_geraeteart_name)
     $int_response = mysql_query($txt_sql_statement);
     return($int_response);
 }
+
+/**
+ * 
+ * @param int $int_id ID der Geräteart
+ * @param txt $txt_geraeteart_name Name d. Geräteart
+ * @return int Rückgabeinfo
+ */
+function func_form_updateKomponenten_attribut($iKomponente, $iAttribut, $mWert)
+{
+    $txt_sql_statement = "UPDATE tbl_z_komponente_attribute SET komponenten_attribut_wert = '".$mWert."'
+                                                                                  WHERE komponenten_fk ='".$iKomponente."' and komponenten_attribut_fk ='".$iAttribut."'";
+    var_dump($txt_sql_statement);
+    $int_response = mysql_query($txt_sql_statement);
+    return($int_response);
+}

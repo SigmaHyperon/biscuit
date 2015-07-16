@@ -247,8 +247,7 @@ function func_v_detail()
     {
 	$a_table_links = [
 	    "geraete"	=>  "fro_Zuordnung_geraete_komponenten.php",
-	    "komponenten"	=>  "fro_Zuordnung_komponenten_geraete.php",
-	    "komponentenattribute"	=>  "fro_Zuordnung_attribut_art.php",
+	    "komponenten"	=>  "fro_Zuordnung_komponenten_attribute.php",
 	];
 	if(isset($a_table_links[$s_table]))
 	{
