@@ -9,9 +9,9 @@ Inhalt:            Funktionen zum Auslesen PHP / SQL
 
 
  /**
-  * 
-  * @param $s_tabelle - Die Tabelle die Ausgegeben werden soll
-  * @return Gibt die vollständige Tabelle aus
+  * Gibt eine gesamte Tabelle, gewählt bei Namen, zurück
+  * @param string $s_tabelle - Die Tabelle die Ausgegeben werden soll
+  * @return Array Gibt die vollständige Tabelle aus
   */
 function func_a_getFullTable($s_tabelle)
 {
@@ -30,7 +30,7 @@ function func_a_getFullTable($s_tabelle)
 
 /**
  * 
- * @return Gibt alle Lieferanten aus
+ * @return Array Gibt alle Lieferanten aus
  */
 function func_a_getLieferanten()
 {
@@ -50,7 +50,7 @@ function func_a_getLieferanten()
 
 /**
  * 
- * @return Gibt alle Räume aus
+ * @return Array Gibt alle Räume aus
  */
 function func_a_getRaeume()
 {
@@ -69,7 +69,7 @@ function func_a_getRaeume()
 
 /**
  * 
- * @return Gibt alle Geräte aus
+ * @return Array Gibt alle Geräte aus
  */
 function func_a_getGeraete()
 {
@@ -91,7 +91,7 @@ function func_a_getGeraete()
 
 /**
  * 
- * @return Gibt alle Komponenten aus
+ * @return Array Gibt alle Komponenten aus
  */
 function func_a_getKomponenten()
 {
@@ -112,7 +112,7 @@ function func_a_getKomponenten()
 
 /**
  * 
- * @return Gibt alle Attribute aus
+ * @return Array Gibt alle Attribute aus
  */
 function func_a_getAttribute ()
 {
@@ -131,7 +131,7 @@ function func_a_getAttribute ()
 
 /**
  * 
- * @return Gibt alle Komponenten-Arten aus
+ * @return Array Gibt alle Komponenten-Arten aus
  */
 function func_a_getKomponentenArten()
 {
@@ -150,7 +150,7 @@ function func_a_getKomponentenArten()
 
 /**
  * 
- * @return Gibt alle Geraete-Arten aus
+ * @return Array Gibt alle Geraete-Arten aus
  */
 function func_a_getGeraeteArten()
 {
@@ -169,7 +169,7 @@ function func_a_getGeraeteArten()
 
 /**
  * 
- * @return Gibt die Benutzer ohne Kennwörter zurück
+ * @return Array Gibt die Benutzer ohne Kennwörter zurück
  */
 function func_a_getBenutzer()
 {
@@ -322,7 +322,11 @@ function func_a_getNutzer($id)
     return($a_Tabellen_daten);
 }
 
-
+/**
+ * Gibt Alle Geräte und Komponenten Gejoint aus
+ * @param int $id ID des Eintrags
+ * @return array Tabelle
+ */
 function func_a_getGeraete_komponenten($id)
 {
     $tst_sql_statement = "SELECT * FROM tbl_z_enthaelt left join tbl_komponenten on tbl_z_enthaelt.komponente_fk=tbl_komponenten.komponenten_id WHERE geraet_fk ='".$id."'";
@@ -340,6 +344,11 @@ function func_a_getGeraete_komponenten($id)
     return($a_sql_ausgabe);
 }
 
+/**
+ * Gibt den Inhalt von Geräte und Komponente gejoint aus.
+ * @param int $id Benötigte ID
+ * @return array
+ */
 function func_a_getKomponente_geraete($id)
 {
     $tst_sql_statement = "SELECT * FROM tbl_z_enthaelt left join tbl_geraete on tbl_z_enthaelt.geraet_fk=tbl_geraete.geraete_id WHERE komponente_fk ='".$id."'";
@@ -356,7 +365,11 @@ function func_a_getKomponente_geraete($id)
     
     return($a_sql_ausgabe);
 }
-
+/**
+ * Gibt die Inhalte von Attribut aus.
+ * @param int $id Benötigte ID
+ * @return Array Ausgabe Gejoint
+ */
 function func_a_getAttribut_art($id)
 {
     $tst_sql_statement = "SELECT * FROM tbl_z_attribut_art left join tbl_komponenten_arten on tbl_z_attribut_art.komponenten_art_fk=tbl_komponenten_arten.komponenten_art_id WHERE komponenten_attribut_fk ='".$id."'";
@@ -373,6 +386,12 @@ function func_a_getAttribut_art($id)
     
     return($a_sql_ausgabe);
 }
+
+/**
+ * Gibt die Inhalte von Attribute zusammen mit den Komponenten zurück
+ * @param int $id Benötigte ID
+ * @return array
+ */
 function func_a_getKomponente_attribute($id)
 {
     $tst_sql_statement = "SELECT * FROM tbl_z_komponente_attribute left join tbl_komponenten_attribute on tbl_z_komponente_attribute.komponenten_attribut_fk=tbl_komponenten_attribute.komponenten_attribut_id WHERE komponenten_fk ='".$id."'";
@@ -390,6 +409,11 @@ function func_a_getKomponente_attribute($id)
     return($a_sql_ausgabe);
 }
 
+/**
+ * Gibt die Räume zusammen mit den Geräten zurück.
+ * @param int $int_RaumID Raum-ID
+ * @return array Rückgabe
+ */
 function func_a_getGeraeteInRaum($int_RaumID)
 {
     $txt_sql_statement = "SELECT tbl_geraete.geraete_id, tbl_raeume.raum_name, tbl_lieferanten.lieferant_firmenname, tbl_geraete.geraet_name, tbl_geraete.geraet_ek_datum, tbl_geraete.geraet_notiz, tbl_geraete.geraet_hersteller, tbl_geraete.geraet_gewaehr_beginn, tbl_geraete.geraet_gewaehr_ende, tbl_geraete.geraete_seriennummer, tbl_geraete_art.geraete_art_name   "

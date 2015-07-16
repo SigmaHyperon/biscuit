@@ -7,7 +7,7 @@ Inhalt:            Funktionen zum Einfügen PHP / SQL
 <?php
 
 /**
- * 
+ * Einfügen von Lieferanten
  * @param type $txt_lieferant_firmenname - Name Firma
  * @param type $txt_lieferant_vorname - Vorname Kontaktperson
  * @param type $txt_lieferant_nachname - Nachname Kontaktperson
@@ -37,7 +37,7 @@ function func_form_insertLieferant($txt_lieferant_firmenname, $txt_lieferant_vor
 }
 
 /**
- * 
+ * Einfügen von Raum
  * @param txt $txt_raum_name - Der Name des Raumes
  * @param txt $txt_raum_notiz - Die Raumnotiz
  * @param txt $txt_stockwerk - Stockwerk
@@ -53,7 +53,7 @@ function func_form_insertRaum($txt_raum_name, $txt_raum_notiz, $txt_stockwerk)
 }
 
 /**
- * 
+ * Einfügen von Gerät
  * @param type $int_raum - Raum Gerät
  * @param type $int_lieferant - Lieferant Gerät
  * @param type $dat_ek_datum - Einkaufsdatum Gerät
@@ -93,7 +93,7 @@ function func_form_insertGeraet($int_raum, $int_lieferant, $dat_ek_datum, $txt_n
 }
 
 /**
- * 
+ * Einfügen von Komponente
  * @param type $txt_name - Komponentenname
  * @param type $int_anzahl - Menge d. Komponenten
  * @return Gibt Information über Erfolg d. Eintragens (Int)
@@ -111,7 +111,7 @@ function func_form_insertKomponente($txt_name, $int_anzahl,$int_art_fk)
 }
 
 /**
- * 
+ * Einfügen von Komponente-Art
  * @param type $txt_name - Name der Art
  * @return Gibt Information über Erfolg d. Eintragens (Int)
  */
@@ -125,7 +125,7 @@ function func_form_instertKomponentenArt($txt_name)
 }
 
 /**
- * 
+ * Einfügen von Attribut
  * @param type $txt_name - Name des Attributs
  * @return Gibt Information über Erfolg d. Eintragens (Int)
  */
@@ -152,6 +152,12 @@ function func_form_insertGeraeteArt($txt_name)
     return($int_response);
 }
 
+/**
+ * Einfügen von Bezug zwischen Komponente und Gerät
+ * @param int $iGeraet_id ID des Gerätes
+ * @param int $Komponenten_id ID der Komponente
+ * @return int Gibt Rückgabe über Erfolg der Operation
+ */
 function func_form_insertGeraet_komponente($iGeraet_id,$Komponenten_id)
 {
     $txt_sql_statement = "INSERT INTO tbl_z_enthaelt (geraet_fk,komponente_fk,datum)
@@ -160,6 +166,13 @@ function func_form_insertGeraet_komponente($iGeraet_id,$Komponenten_id)
     $int_response = mysql_query($txt_sql_statement); 
     return($int_response);
 }
+
+/**
+ * Einfügen von Bezug zwischen Attribut und Art
+ * @param int $iAttribut Attribute ID
+ * @param int $iArt Art ID
+ * @return int Rückgabe über Erfolg der Operation
+ */
 function func_form_insertAttribut_art($iAttribut,$iArt)
 {
     $txt_sql_statement = "INSERT INTO tbl_z_attribut_art (komponenten_art_fk,komponenten_attribut_fk)
@@ -168,6 +181,13 @@ function func_form_insertAttribut_art($iAttribut,$iArt)
     $int_response = mysql_query($txt_sql_statement); 
     return($int_response);
 }
+
+/**
+ * Einfügen von Bezug zwischen Komponente und Attribut
+ * @param int $iKomponente Komponenten-ID
+ * @param int $iAttribut Attribut-ID
+ * @return int Rückgabe über Erfolg der Operation
+ */
 function func_form_insertKompontente_attribut($iKomponente,$iAttribut)
 {
     $txt_sql_statement = "INSERT INTO tbl_z_komponente_attribute (komponenten_fk,komponenten_attribut_fk)
