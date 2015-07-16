@@ -245,18 +245,43 @@ function func_v_detail()
 {
     if($s_table = \utility\forms\get("table", false))
     {
-	$a_table_links = [
-	    "geraete"	=>  "fro_Zuordnung_geraete_komponenten.php",
-	    "komponenten"	=>  "fro_Zuordnung_komponenten_attribute.php",
-	];
-	if(isset($a_table_links[$s_table]))
+	if($s_table == "raeume")
 	{
-	    include $a_table_links[$s_table];
+	    $iselected = \utility\forms\get("selektiert", false);
+	    $aErgebnisse = func_a_getGeraeteInRaum($iselected);
+//	    var_dump($aErgebnisse);
+	    $aErgebnis_attribute = [
+		"Id",
+		"Raum",
+		"Lieferant",
+		"Name",
+		"Einkaufsdatum",
+		"Notiz",
+		"Hersteller",
+		"Gewährleistungsbeginn",
+		"Gewährleistungsende",
+		"Seriennummer",
+		"Art",
+	    ];
+	    $sTitel = "Geräte";
+	    include "log_Liste.php";
 	}
 	else
 	{
-	    func_v_invalid();
+	    $a_table_links = [
+		"geraete"	=>  "fro_Zuordnung_geraete_komponenten.php",
+		"komponenten"	=>  "fro_Zuordnung_komponenten_attribute.php",
+	    ];
+	    if(isset($a_table_links[$s_table]))
+	    {
+		include $a_table_links[$s_table];
+	    }
+	    else
+	    {
+		func_v_invalid();
+	    }
 	}
+	
     }
     else
     {
