@@ -3,7 +3,8 @@ Ersteller:          Pf3y
 Erstell-Datum:      10.07.2015
 Änderungsdatum:     12.07.2015
 Inhalt:             Hauptseite mit Auswahlmöglichkeiten
--------------------------------------------------------------------> 
+------------------------------------------------------------------->
+
 <?php
 //    require necessary stuff
 require_once './sql_main.php';
@@ -16,7 +17,7 @@ require_once '../lib/manager.php';
 <html >
 
 <head>
-    <title>fro_Auswahl</title>
+    <title> Inventory </title>
     <link href="../css/main.css" rel="stylesheet" type="text/css"/>
     <script src="../js/jquery.js" type="text/javascript"></script>
     <script src="../js/konami.js" type="text/javascript"></script>
@@ -32,6 +33,9 @@ require_once '../lib/manager.php';
 	    });
 	});
     </script>
+    <link rel="icon" 
+      type="image/png" 
+      href="../ico/Folder_Biscuit.ico">
 </head>
              
 

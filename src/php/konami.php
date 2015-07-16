@@ -8,6 +8,10 @@
 //	    achievement nach 5 sekunden anzeigen
 	    window.setTimeout(function(){$(".cake").animate({"bottom":  "+=94px"},"slow")},5000);
 	</script>
+        <title> The Cake is a lie! </title>
+            <link rel="icon" 
+            accesskey=""type="image/png" 
+            href="../ico/Portal_Cake_icon.ico">
     </head>
     <body style="width: 99%">
 	<a href="fro_Auswahl.php">Zurück</a>
