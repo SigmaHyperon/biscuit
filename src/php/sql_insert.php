@@ -168,5 +168,13 @@ function func_form_insertAttribut_art($iAttribut,$iArt)
     $int_response = mysql_query($txt_sql_statement); 
     return($int_response);
 }
+function func_form_insertKompontente_attribut($iKomponente,$iAttribut)
+{
+    $txt_sql_statement = "INSERT INTO tbl_z_komponente_attribute (komponenten_fk,komponenten_attribut_fk)
+                                               VALUES ('".$iKomponente."','".$iAttribut."');";
+                                               
+    $int_response = mysql_query($txt_sql_statement); 
+    return($int_response);
+}
 
 

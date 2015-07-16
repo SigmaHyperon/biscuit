@@ -15,6 +15,18 @@ Inhalt:             Komponenten ändern
 	$s_Komponente_art = \utility\forms\post("txt_Komponentenart_select", "");
 	$i_Komponente_bestand = \utility\forms\post("txt_Komponentenbestand", "");
 	
+	$komponenten_attribute = func_a_getKomponente_attribute($s_Komponente_id);
+	if(count($komponenten_attribute))
+	{
+	    foreach ($komponenten_attribute as $attribut)
+	    {
+		if($attribut_wert = \utility\forms\post($attribut["komponenten_attribut_fk"], false))
+		{
+		    func_form_updateKomponenten_attribut($s_Komponente_id, $attribut["komponenten_attribut_fk"], $attribut_wert);
+		}
+	    }
+	}
+	
 	if(func_form_updateKomponenten($s_Komponente_id, $s_Komponente_name, $i_Komponente_bestand, $s_Komponente_art))
 	{
 	    try {
@@ -63,6 +75,21 @@ Inhalt:             Komponenten ändern
                     </select>
                 </td>
             </tr> 
+	    <?php
+		$komponenten_attribute = func_a_getKomponente_attribute($int_selektiert);
+//		var_dump($komponenten_attribute);
+		if(count($komponenten_attribute))
+		{
+		    echo "<tr><td colspan='2'>Attribute</td></tr>";
+		    foreach ($komponenten_attribute as $attribut)
+		    {
+			echo "<tr>";
+			echo "<td>".$attribut["komponenten_attribut_name"]."</td>";
+			echo "<td><input type='text' name='".$attribut["komponenten_attribut_fk"]."' value='".$attribut["komponenten_attribut_wert"]."'></td>";
+			echo "</tr>";
+		    }
+		}
+	    ?>
             <tr>
                 <td colspan="2" align="center"> <input type="submit" value="Ändern" /><input type="reset" value="Verwerfen" /></td>
             </tr>              
