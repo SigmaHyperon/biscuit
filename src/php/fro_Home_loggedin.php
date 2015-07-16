@@ -1,9 +1,15 @@
 <?php
+//sql library einbinden
      require_once 'sql_main.php';
+//     wenn session nicht gestartet, starten
      if(!isset($_SESSION))
      {
 	 session_start();
      }
+     /**
+      * Security
+      * wenn benutzer nicht angemeldet, weiterleiten auf loginseite
+      */
      if(isset($_SESSION["login"]))
      {
 	 if($_SESSION["login"] != 1)
@@ -22,9 +28,13 @@
 	} catch (Exception $ex) {}
      }
      
-     
+//     daten aller benutzer laden
      $all_users = func_a_getBenutzer();
 
+     /**
+      * gibt alle benutzernamen als teil eines select feldes aus
+      * @param type $users
+      */
      function print_users_as_options($users)
      {
 	 foreach ($users as $user)
@@ -32,14 +42,26 @@
 	    echo "<option value='".$user["benutzer_id"]."'>".$user["benutzer_name"]."</option>";
 	}
      }
-     
+//     prüfen, ob das formular abgeschickt wurde
      if (isset($_POST["txt_Benutzer_add"]))
     {
-	switch ($_GET["action"]) {
-	case "delete":
-	    $benutzerid = $_POST["txt_Benutzer_add"];
-	    $returnwert = func_form_delBenutzerByID($benutzerid);
+	 /**
+	  * unterscheidung nach aktion
+	  * hinzufügen
+	  * ändern
+	  * löschen
+	  */
 
+	switch ($_GET["action"]) {
+//	    löschen
+	case "delete":
+//	    abfragen der benutzer_id
+	    $benutzerid = $_POST["txt_Benutzer_add"];
+//	    löschen dess benutzers
+	    $returnwert = func_form_delBenutzerByID($benutzerid);
+	    /**
+	     * je nach ergebnis wwiterleitung auf startseite mit erfolgs- oder fehlermeldung
+	     */
 	    if ($returnwert == 1)
 	    {
 		try {
@@ -56,17 +78,24 @@
 	    }
 
 	    break;
-	    
+//	    hunzufügen
 	case "add":
+	    /**
+	     * formulardaten abfragen
+	     */
 	    $benutzername = $_POST["txt_Benutzer_add"];
 	    $PW = $_POST["txt_Passwort"];
 	    $PW_WH = $_POST["txt_Passwort_wh"];
 	    $email = $_POST["txt_email"];
-
+	    
+//	    prüfen, ob das neu passwort mit dem check übereinstimmt
 	    if ($PW == $PW_WH)
 	    {
+//		benutzer hinzufügen
 		$returnwert = func_form_insertBenutzer($benutzername, $PW, $email);
-
+		/**
+		 * je nach ergebnis wwiterleitung auf startseite mit erfolgs- oder fehlermeldung
+		 */
 		if ($returnwert == 1)
 		{
 		    try {
@@ -86,23 +115,30 @@
 
 	    else
 	    {
+//		weiterleitung auf startseite mit fehlermeldung
 		try {
 			header("Location: fro_Auswahl.php?action=home&message=".urlencode("Passwörter stimmen nicht überein"));
 			die();
 		    } catch (Exception $ex) {}
 	    }
 	    break;
-	    
+//	    ändern
 	case "change":
+	    /**
+	     * formulardaten afragen
+	     */
 	    $benutzerid = $_POST["txt_Benutzer_add"];
 	    $passwort_alt = $_POST["txt_Passwort_alt"];
 	    $passwort_neu = $_POST["txt_Passwort_neu"];
 	    $passwort_neu_wh = $_POST["txt_Passwort_neu_wh"]; 
-
+//	    prüfen ob neue passörter übereinstimmen
 	    if($passwort_neu == $passwort_neu_wh)
 	    {
+//		benutzer ändern
 		$returnwert = funct_form_KennwortAendern($benutzerid, $passwort_alt, $passwort_neu);
-
+		/**
+		 * je nach ergebnis wwiterleitung auf startseite mit erfolgs- oder fehlermeldung
+		 */
 		if ($returnwert == 1)
 		{
 		    try {
@@ -142,6 +178,7 @@
 ?>
 <table align="center"> 
     <?php
+//    wenn fehler meldung vorhanden, diese anzeigen
 	if(isset($_GET["message"]))
 	{
 	    echo "<tr><td colspan='2' align='center'>".$_GET["message"]."</td></tr>";
@@ -179,6 +216,7 @@
 		    <tr>
 			<td>Benutzername:</td><td><select name="txt_Benutzer_add">
 				<?php
+//				alle benutzer ausgeben
 				print_users_as_options($all_users);
 				?>
 			    </select></td>
@@ -207,6 +245,7 @@
 		    <tr>
 			<td>Benutzername:</td><td><select name="txt_Benutzer_add">
 				<?php
+//				alle benutzer ausgeben
 				print_users_as_options($all_users);
 				?>
 			    </select></td>

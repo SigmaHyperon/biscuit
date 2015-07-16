@@ -22,6 +22,10 @@ require_once '../lib/manager.php';
     <script src="../js/jquery.js" type="text/javascript"></script>
     <script src="../js/konami.js" type="text/javascript"></script>
     <script>
+	/**
+	 * script um abhängig von der bildschirmgröße die höhe der unteren teile der seite zu setzen
+	 * @returns {undefined}
+	 */
 	$(function(){
 	    var dyn = $(document).height()-163+"px";
 	    $("#left").css("height", dyn);
@@ -89,6 +93,7 @@ require_once '../lib/manager.php';
 <!-- --------------------- Start des Interaktionsfeldes -------------------- -->    
         <div id="right">
             <?php
+//	    enbindung der logikdatei
                  require_once './log_Auswahl.php';
             ?>
         </div>

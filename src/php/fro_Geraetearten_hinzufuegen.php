@@ -5,14 +5,20 @@ Erstell-Datum:      14.07.2015
 Inhalt:            Gerätearten ändern
 ------------------------------------------------------------------->
 <?php
+//library einbinden
     require_once '../lib/manager.php';
+//    slq library einbinden
     require_once './sql_main.php';
+//    formular komponente laden
     \utility\loadForms();
     
+//    prüfen, ob das formular abgeschickt wurde
     if($s_Geraeteart_name = \utility\forms\post("txt_geraete_art_name", false))
     {
+//	geräteart eintragen
 	if(func_form_insertGeraeteArt($s_Geraeteart_name))
 	{
+//	    wenn eintrag erfolgreich weiterleitung auf geräte art liste
 	    try {
 		header("Location: fro_Auswahl.php?action=list&table=geraetearten");
 		die();
@@ -20,6 +26,7 @@ Inhalt:            Gerätearten ändern
 	}
 	else
 	{
+//	    wenn eintrag nicht erfolgreich fehler anzeigen
 	    echo "An error occured!";
 	}
     }
