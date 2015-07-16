@@ -198,6 +198,7 @@ span.username {
 a.logout button {
     width: 60px;
     
+    
 }
 
 table.multi_form{
@@ -217,4 +218,10 @@ table.navi_buttons{
     position: relative;
     margin: auto;
     top: 75px;
+}
+
+p.loginfehler{
+    color: #e53935;
+    margin-left: 320px;
+    font-size: 20px;
 }
