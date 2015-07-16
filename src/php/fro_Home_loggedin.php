@@ -87,7 +87,10 @@
 
 	    else
 	    {
-		echo "Passwörter stimmen nicht überein";
+		try {
+			header("Location: fro_Auswahl.php?action=home&message=".urlencode("Passwörter stimmen nicht überein"));
+			die();
+		    } catch (Exception $ex) {}
 	    }
 	    break;
 	    
