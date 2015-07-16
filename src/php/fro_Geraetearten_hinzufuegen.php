@@ -33,6 +33,7 @@ Inhalt:            Gerätearten ändern
     else
     {
 ?>
+<!-- ------------------ Beginn des Gerätearten-Hinzufügenformulars ------------------- -->
 <h2 align="center">Geräteart hinzufügen</h2>
 <form action="fro_Geraetearten_hinzufuegen.php" method="post">
         <table  class="formular">

@@ -38,6 +38,7 @@
 	     * die daten werden dann als vorgefertigte werte ins formular eingetragen
 	     */
 ?>
+<!-- ------------------ Beginn des Gerätearten-Ändernformulars ------------------- -->
 <h2 align="center">Geräteart ändern</h2>
 <form action="fro_Geraetearten_aendern.php" method="post">
     <input type="hidden" name="int_id" value="<?php echo $aGeraetearten_daten["geraete_art_id"];?>"/>
