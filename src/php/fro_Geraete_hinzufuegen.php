@@ -5,12 +5,16 @@ Erstell-Datum:      13.07.2015
 Inhalt:            Geräte hinzufügen
 -------------------------------------------------------------------> 
 <?php
+//  library einbinden
     require_once '../lib/manager.php';
+//    sql library einbinden
     require_once './sql_main.php';
+//    formualar komponente laden
     \utility\loadForms();
-    
+//    prüfen, ob das formular abgeschickt wurde
     if($s_Geraet_name = \utility\forms\post("txt_Name", false))
     {
+//	formulardaten auslesen
 	$s_Geraet_art = \utility\forms\post("txt_Geraetetyp_select", "");
 	$s_Geraet_raum = \utility\forms\post("txt_Raum_select", "");
 	$s_Geraet_lieferant = \utility\forms\post("txt_Lieferanten_select", "");
@@ -22,8 +26,10 @@ Inhalt:            Geräte hinzufügen
 	$s_Geraet_gewaehrleistungsende = \utility\forms\post("txt_Gewaehr_ende", "");
 	$s_Geraet_seriennummer = \utility\forms\post("txt_Geraete_seriennummer", "");
 	
+//	Neuen eintrag anlegen
 	if(func_form_insertGeraet($s_Geraet_raum, $s_Geraet_lieferant, $s_Geraet_einkaufsdatum, $s_Geraet_notiz, $s_Geraet_hersteller, $s_Geraet_gewaehrleistungsbeginn, $s_Geraet_gewaehrleistungsende, $s_Geraet_seriennummer, $s_Geraet_art, $s_Geraet_name))
 	{
+//	    wenn erfolgreich angelegt, weiterleitung auf geräte liste
 	    try {
 		header("Location: fro_Auswahl.php?action=list&table=geraete");
 		die();
@@ -31,6 +37,7 @@ Inhalt:            Geräte hinzufügen
 	}
 	else 
 	{
+//	    wenn nicht erfolgreich fehler anzeigen
 	    echo "An error occured!";
 	}
     }
@@ -46,6 +53,7 @@ Inhalt:            Geräte hinzufügen
 		<td> 
 		    <select name="txt_Geraetetyp_select" size="1" >
 			<?php
+//			alle geräte arten werden als auswahlliste ausgegeben
 			    $aAlle_geraete_typen = func_a_getGeraeteArten();
 			    foreach ($aAlle_geraete_typen as $value) {
 				echo "<option value='".$value["geraete_art_id"]."'>".$value["geraete_art_name"]."</option>";
@@ -65,6 +73,7 @@ Inhalt:            Geräte hinzufügen
                 <td>
                     <select name="txt_Lieferanten_select" size="1">
                         <?php
+//			alle lieferanten werden als auswahlliste ausgegeben
 			    $aAlle_lieferanten = func_a_getLieferanten();
 			    foreach ($aAlle_lieferanten as $value) {
 				echo "<option value='".$value["lieferant_id"]."'>".$value["lieferant_firmenname"]."</option>";
@@ -93,6 +102,7 @@ Inhalt:            Geräte hinzufügen
                 <td>
                     <select name="txt_Raum_select" size="1">
                         <?php
+//			alle räume werden als auswahlliste ausgegeben
 			    $aAlle_raeume = func_a_getRaeume();
 			    foreach ($aAlle_raeume as $value) {
 				echo "<option value='".$value["raum_id"]."'>".$value["raum_name"]."</option>";
