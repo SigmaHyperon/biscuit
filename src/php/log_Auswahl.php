@@ -108,7 +108,7 @@ function func_v_list()
 	    "lieferanten"	=>  "Lieferanten",
 	    "raeume"		=>  "Räume",
 	    "geraete"		=>  "Geräte",
-	    "komponenten"	=>  "Komponeten",
+	    "komponenten"	=>  "Komponenten",
 	    "komponentenarten"	=>  "Komponentenarten",
 	    "geraetearten"	=>  "Gerätearten",
 	    "komponentenattribute"	=>  "Gerätearten",
