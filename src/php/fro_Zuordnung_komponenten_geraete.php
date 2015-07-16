@@ -9,7 +9,7 @@
 		func_form_delKomponente_geraete($iKomponente_id);
 		foreach ($a_Selected as $value)
 		{
-		    func_form_insertGeraet_komponete($value, $iKomponente_id);
+		    func_form_insertGeraet_komponente($value, $iKomponente_id);
 		}
 	    }
 

@@ -6,10 +6,10 @@
 	    if ($s_Selected = $_POST["ac_selected"])
 	    {
 		$a_Selected = json_decode($s_Selected);
-		func_form_delGeraet_komponeten($iGeraete_id);
+		func_form_delGeraet_komponenten($iGeraete_id);
 		foreach ($a_Selected as $value)
 		{
-		    func_form_insertGeraet_komponete($iGeraete_id, $value);
+		    func_form_insertGeraet_komponente($iGeraete_id, $value);
 		}
 	    }
 
