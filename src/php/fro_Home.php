@@ -2,6 +2,10 @@
 <?PHP 
 function showLogin()
 {
+	if(isset($_GET["message"]))
+	{
+	    echo "<p class='loginfehler'>".$_GET["message"]."</p>";
+	}
         ?>
 	<div id='logindiv'>
 	    <form action='fro_Home.php' method='post'>
@@ -62,8 +66,10 @@ if(isset($_SESSION))
             }
         else 
             {
-                echo "Benutzername oder Passwort falsch"; 
-             
+                try {
+		    header("Location: fro_Auswahl.php?message=".  urlencode("Benutzername oder Passwort falsch"));
+		    die();
+		} catch (Exception $ex) {} 
             }
             
     }
