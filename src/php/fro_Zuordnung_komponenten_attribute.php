@@ -67,6 +67,17 @@
     <table class="multi_form">
 	<tr>
 	    <td>
+		verfügbare Attribute
+	    </td>
+	    <td>
+		
+	    </td>
+	    <td>
+		zugeordnete Attribute
+	    </td>
+	</tr>
+	<tr>
+	    <td>
 		<select size="10" name="available[]" id="available" multiple="multiple">
 <?php
     $aAlle_Attribute = func_a_getAttribute();

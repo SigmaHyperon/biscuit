@@ -111,7 +111,7 @@ function func_v_list()
 	    "komponenten"	=>  "Komponenten",
 	    "komponentenarten"	=>  "Komponentenarten",
 	    "geraetearten"	=>  "Gerätearten",
-	    "komponentenattribute"	=>  "Gerätearten",
+	    "komponentenattribute"	=>  "Komponentenattribute",
 	];
 	if(isset($a_table_links[$s_table]))
 	{

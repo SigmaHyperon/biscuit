@@ -66,6 +66,17 @@
     <table class="multi_form">
 	<tr>
 	    <td>
+		verfügbare Komponenten
+	    </td>
+	    <td>
+		
+	    </td>
+	    <td>
+		zugeordnete Komponenten
+	    </td>
+	</tr>
+	<tr>
+	    <td>
 		<select size="10" name="available[]" id="available" multiple="multiple">
 <?php
     $aAlle_komponenten = func_a_getKomponenten();
