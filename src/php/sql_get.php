@@ -356,6 +356,7 @@ function func_a_getKomponente_geraete($id)
     
     return($a_sql_ausgabe);
 }
+
 function func_a_getAttribut_art($id)
 {
     $tst_sql_statement = "SELECT * FROM tbl_z_attribut_art left join tbl_komponenten_arten on tbl_z_attribut_art.komponenten_art_fk=tbl_komponenten_arten.komponenten_art_id WHERE komponenten_attribut_fk ='".$id."'";
@@ -371,4 +372,16 @@ function func_a_getAttribut_art($id)
     }
     
     return($a_sql_ausgabe);
+}
+
+function func_a_getGeraeteInRaum($int_RaumID)
+{
+    $txt_sql_statement = "SELECT * FROM tbl_geraete WHERE raum_fk = ".$int_RaumID.";";
+    
+    $a_sql_result = mysql_query($txt_sql_statement)
+            or die ("Anfrage Fehlgeschlagen");
+    
+    $a_return = mysql_fetch_assoc($a_sql_result);
+    
+    return($a_return);
 }
