@@ -62,7 +62,8 @@ if(isset($_SESSION))
             }
         else 
             {
-                echo "Benutzername oder Passwort falsch";
+                echo "Benutzername oder Passwort falsch"; 
+             
             }
             
     }
