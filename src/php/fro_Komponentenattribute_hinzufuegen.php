@@ -5,14 +5,20 @@ Erstell-Datum:      14.07.2015
 Inhalt:             Komponentenarten hinzufügen
 ------------------------------------------------------------------->
 <?php
+//library laden
     require_once '../lib/manager.php';
+//    sql library laden
     require_once './sql_main.php';
+//    formular komponente laden
     \utility\loadForms();
     
+//    prüfen, ob das formualr abgeschickt wurde
     if($s_Komponentenattribut_name = \utility\forms\post("txt_Komponenten_attribut_name", false))
     {
+//	attribut einfügen
 	if(func_form_instertAttribut($s_Komponentenattribut_name))
 	{
+//	    wenn erfolgreich weiterleitung auf attribut liste
 	    try {
 		header("Location: fro_Auswahl.php?action=list&table=komponentenattribute");
 		die();
@@ -20,6 +26,7 @@ Inhalt:             Komponentenarten hinzufügen
 	}
 	else
 	{
+//	    wenn nicht erfolgreich, fehler meldung anzeigen
 	    echo "An error occured!";
 	}
     }

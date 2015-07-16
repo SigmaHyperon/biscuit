@@ -5,16 +5,25 @@ Erstell-Datum:      13.07.2015
 Inhalt:             Räume hinzufügen
 -------------------------------------------------------------------> 
 <?php
+//library laden
     require_once '../lib/manager.php';
+//    sql library laden
     require_once './sql_main.php';
+//    fotmular komponente laden
     \utility\loadForms();
     
+//    prüfen, ob fomrular abgeschickt wurde
     if($sRaum_name = \utility\forms\post("txt_Raumname", false))
     {
+	/**
+	 * formular daten laden
+	 */
 	$sRaum_notiz = \utility\forms\post("txt_Raumnotiz", false);
 	$sRaum_stockwerk = \utility\forms\post("txt_Stockwerk", false);
+//	raum einfügen
 	if(func_form_insertRaum($sRaum_name, $sRaum_notiz, $sRaum_stockwerk))
 	{
+//	    wenn erfolgreich, weiterleitung auf raumliste
 	    try {
 		header("Location: fro_Auswahl.php?action=list&table=raeume");
 		die();
@@ -22,6 +31,7 @@ Inhalt:             Räume hinzufügen
 	}
 	else
 	{
+//	    wenn nicht erfolgreich, fehlermeldung anzeigen
 	    echo "An error occured!";
 	}
     }

@@ -5,17 +5,25 @@ Erstell-Datum:      13.07.2015
 Inhalt:             Räume hinzufügen
 -------------------------------------------------------------------> 
 <?php
+//library laden
     require_once '../lib/manager.php';
+//    sql lirary laden
     require_once './sql_main.php';
     \utility\loadForms();
     
+//    prüfen, ob formular abgeschickt wurde
     if($sRaum_name = \utility\forms\post("txt_Raumname", false))
     {
+	/**
+	 * formular daten laden
+	 */
 	$iRaum_id = \utility\forms\post("int_id", false);
 	$sRaum_notiz = \utility\forms\post("txt_Raumnotiz", false);
 	$sRaum_stockwerk = \utility\forms\post("txt_Stockwerk", false);
+//	raum updaten 
 	if(func_b_updateRaum($iRaum_id, $sRaum_name, $sRaum_notiz, $sRaum_stockwerk))
 	{
+//	    wenn erfolgreich, weiterleitung auf raumliste
 	    try {
 		header("Location: fro_Auswahl.php?action=list&table=raeume");
 		die();
@@ -23,14 +31,20 @@ Inhalt:             Räume hinzufügen
 	}
 	else
 	{
+//	    wenn nicht erfolgreich, fehlermeldung anzeigen
 	    echo "An error occured!";
 	}
     }
     else
     {
+//	prüfen, ob eintrag selektiert wurde
 	if($int_selektiert = \utility\forms\get("selektiert", false))
 	{
+//	    raumdaten laden
 	    $aRaum_daten = func_a_getRaum($int_selektiert);
+	    /**
+	     * die daten werden dann ins formular als default werte eingetragen
+	     */
 ?>
 <h2 align="center">Raum ändern</h2>
 <form action="fro_Raeume_aendern.php" method="post">

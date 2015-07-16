@@ -1,12 +1,18 @@
 <?php
+//prüfen, ob formular abgeschickt wurde
     if($iGeraete_id = \utility\forms\get("selektiert", false));    
     {
+//	prüfen ob daten übertragen wurden
 	if(isset($_POST["ac_selected"]))
 	{
+//	    unnecessary check 
 	    if ($s_Selected = $_POST["ac_selected"])
 	    {
+//		json decodierung der daten
 		$a_Selected = json_decode($s_Selected);
+//		löschen aller komponenten des geräts
 		func_form_delGeraet_komponenten($iGeraete_id);
+//		alle ausgewählten komponenten neu hinzufügen
 		foreach ($a_Selected as $value)
 		{
 		    func_form_insertGeraet_komponente($iGeraete_id, $value);
@@ -18,16 +24,18 @@
 <script>
     
     $(function(){
+//	schiebt alle ausgewählten einträge von ursprung zu ziel
 	function moveItems(origin, dest) {
 	    $(origin).find(':selected').appendTo(dest);
 	    update();
 	}
-
+//	schiebt alle einträge von ursprung zu ziel
 	function moveAllItems(origin, dest) {
 	    $(origin).children().appendTo(dest);
 	    update();
 	}
 	
+//	schreibt ausgewählte daten json enkodiert in ein hidden field
 	function update()
 	{
 	    var values = [];
@@ -38,6 +46,13 @@
 
 	}
 	
+	/**
+	 * fügt events für die buttons hinzu
+	 * links
+	 * rechts
+	 * alle links
+	 * alle rechts
+	 */
 	$('#move_left').click(function (e) {
 	    e.preventDefault();
 	    moveItems('#selected', '#available');
@@ -57,7 +72,8 @@
 	    e.preventDefault();
 	    moveAllItems('#available', '#selected');
 	});
-	update();
+//	führt update einmal aus
+	update(); 
     });
 </script>
 <div>
@@ -79,17 +95,23 @@
 	    <td>
 		<select size="10" name="available[]" id="available" multiple="multiple">
 <?php
+//lädt alle komponenten
     $aAlle_komponenten = func_a_getKomponenten();
+//    lädt alle ausgewählten komponenten
     $aAusgewaehlte_komponenten = func_a_getGeraete_komponenten($iGeraete_id);
+//    initialisiert ein neues array
     $aAKId = [];
+//    liest ausgewählte komponenten ids in des leere array
     foreach ($aAusgewaehlte_komponenten as $aElement)
     {
 	$aAKId[] = $aElement["komponente_fk"];
     }
-//    var_dump($aAKId);
+    /**
+     * git alle nicht ausgewählten komponenten als auswahlfeld aus
+     */
     foreach ($aAlle_komponenten as $aElement)
     {
-//	var_dump($aElement);
+//	prüft ob komponenten id nicht in der ausgewählten liste
 	if(!in_array($aElement["komponenten_id"], $aAKId))
 	{
 	    echo "<option value='".$aElement["komponenten_id"]."'>".$aElement["komponente_name"]."</option>";
@@ -118,6 +140,9 @@
 	    <td>
 		<select size="10" name="selected[]" id="selected" multiple="multiple">
 <?php
+    /**
+     * gibt alle ausgewählten komponenten als auswahllliste aus
+     */
     foreach ($aAusgewaehlte_komponenten as $aElement)
     {
 	echo "<option value='".$aElement["komponente_fk"]."'>".$aElement["komponente_name"]."</option>";

@@ -1,13 +1,17 @@
 <?php
     if($iKomponenten_id = \utility\forms\get("selektiert", false));    
     {
+//	prüfen ob daten übertragen wurden
 	if(isset($_POST["ac_selected"]))
 	{
+//	    unnecessary check 
 	    if ($s_Selected = $_POST["ac_selected"])
 	    {
+//		json decodierung der daten
 		$a_Selected = json_decode($s_Selected);
-//		var_dump($a_Selected);
+//		löscht alle attribute der komponente
 		func_form_delKomponente_attribute($iKomponenten_id);
+//		fügt alle ausgewählten attribute wieder hinzu
 		foreach ($a_Selected as $value)
 		{
 		    func_form_insertKompontente_attribut($iKomponenten_id, $value);
@@ -19,16 +23,18 @@
 <script>
     
     $(function(){
+//	schiebt alle ausgewählten einträge von ursprung zu ziel
 	function moveItems(origin, dest) {
 	    $(origin).find(':selected').appendTo(dest);
 	    update();
 	}
-
+//	schiebt alle einträge von ursprung zu ziel
 	function moveAllItems(origin, dest) {
 	    $(origin).children().appendTo(dest);
 	    update();
 	}
 	
+//	schreibt ausgewählte daten json enkodiert in ein hidden field
 	function update()
 	{
 	    var values = [];
@@ -39,6 +45,13 @@
 
 	}
 	
+	/**
+	 * fügt events für die buttons hinzu
+	 * links
+	 * rechts
+	 * alle links
+	 * alle rechts
+	 */
 	$('#move_left').click(function (e) {
 	    e.preventDefault();
 	    moveItems('#selected', '#available');
@@ -58,6 +71,7 @@
 	    e.preventDefault();
 	    moveAllItems('#available', '#selected');
 	});
+//	führt update einmal aus
 	update();
     });
 </script>
@@ -80,17 +94,23 @@
 	    <td>
 		<select size="10" name="available[]" id="available" multiple="multiple">
 <?php
+//lädt alle attribute
     $aAlle_Attribute = func_a_getAttribute();
+//    lädt alle ausgewählten attibute
     $aAusgewaehlte_attribute = func_a_getKomponente_attribute($iKomponenten_id);
+//    initialisiert ein leeres array
     $aAKId = [];
+//    liest alle ausgewählten attirbute_ids in das leere array
     foreach ($aAusgewaehlte_attribute as $aElement)
     {
 	$aAKId[] = $aElement["komponenten_attribut_fk"];
     }
-//    var_dump($aAKId);
+    /**
+     * gibt alle nicht sugewählten attribute als auswahlliste aus
+     */
     foreach ($aAlle_Attribute as $aElement)
     {
-//	var_dump($aElement);
+//	prüft, ob ein attibut nict ausgewählt ist
 	if(!in_array($aElement["komponenten_attribut_id"], $aAKId))
 	{
 	    echo "<option value='".$aElement["komponenten_attribut_id"]."'>".$aElement["komponenten_attribut_name"]."</option>";
@@ -119,6 +139,7 @@
 	    <td>
 		<select size="10" name="selected[]" id="selected" multiple="multiple">
 <?php
+//git alle ausgweählten attribute als auswahlliste aus
     foreach ($aAusgewaehlte_attribute as $aElement)
     {
 	echo "<option value='".$aElement["komponenten_attribut_fk"]."'>".$aElement["komponenten_attribut_name"]."</option>";
