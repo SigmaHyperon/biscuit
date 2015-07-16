@@ -60,6 +60,7 @@ body {
 }
 /* Design des Interaktionsbereiches*********************************************/
 #right{
+    overflow: auto;
   position: relative;
   top: 20px;
   width: 955px;
