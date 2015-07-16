@@ -62,6 +62,17 @@ function func_a_searchKomponentenArten($txt_suche)
 }
 
 /**
+ * Funktion Suche für KomponentenArten
+ * @param txt $txt_suche Schlagwort für Suche
+ * @return array Suchergebnisse
+ */
+function func_a_searchKomponentenAttribute($txt_suche)
+{
+    $a_ergebnisse = func_s_searchEscaped($txt_suche, 'tbl_komponenten_attribute','komponenten_attribut_name');
+    return($a_ergebnisse);
+}
+
+/**
  * Funktion Suche für Lieferanten
  * @param txt $txt_suche Schlagwort für Suche
  * @return array Suchergebnisse
@@ -121,11 +132,12 @@ function func_s_searchGlobal($txt_string)
 {   
     $search_output = array
             (
-            array("Benutzer","Geräte","Gerätearten","Komponenten","Komponentenarten","Lieferanten","Räume" ),
+            array("Benutzer","Geräte","Gerätearten","Komponenten","Komponentenarten", "Komponentenattribute","Lieferanten","Räume" ),
             array("Benutzer"),
             array("Geräte"),
             array("Geräte_Arten"),
             array("Komponenten"),
+            array("Komponenten Arten"),
             array("Komponenten Attribute"),
             array("Lieferanten"),
             array("Räume"),
@@ -135,7 +147,8 @@ function func_s_searchGlobal($txt_string)
     $search_output[3]=func_a_searchGeraeteArt($txt_string);
     $search_output[4]=func_a_searchKomponenten($txt_string);
     $search_output[5]=func_a_searchKomponentenArten($txt_string);
-    $search_output[6]=func_a_searchLieferanten($txt_string);
-    $search_output[7]=func_a_searchRaeume($txt_string);
+    $search_output[6]=func_a_searchKomponentenAttribute($txt_string);
+    $search_output[7]=func_a_searchLieferanten($txt_string);
+    $search_output[8]=func_a_searchRaeume($txt_string);
     return($search_output);
 }

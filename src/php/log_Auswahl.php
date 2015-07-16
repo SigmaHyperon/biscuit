@@ -263,7 +263,8 @@ function func_v_detail()
 		"Seriennummer",
 		"Art",
 	    ];
-	    $sTitel = "Geräte";
+	    $raum_data = func_a_getRaum($iselected);
+	    $sTitel = "Geräte in Raum ".$raum_data["raum_name"];
 	    include "log_Liste.php";
 	}
 	else
