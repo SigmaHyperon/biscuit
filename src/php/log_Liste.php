@@ -1,5 +1,13 @@
 <script>
+/**
+ * onload
+ * @returns {undefined}
+ */
     $(function(){
+	/**
+	 * verhinndert, dass man ändern, details, oder löschen drücken kann wenn kein eintrag ausgewählt wurde
+	 * wenn kein eintrag ausgewählt wurde wird eine fehlermeldung angezeigt und der sibmitvorgang abgebrochen
+	 */
 	$("#right form input[value='Ändern'], #right form input[value='Details'], #right form input[value='Löschen']").on("click", function(e){
 	    if($("#right form input[type='radio']:checked").length == 0)
 	    {
